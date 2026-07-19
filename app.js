@@ -221,7 +221,7 @@ function setDefaultFilters() {
   });
 
   // 2. Default Meet Types: exclude Club Champs and League
-  const meetTypesToExclude = ['club champs', 'league', 'club'];
+  const meetTypesToExclude = ['club champs', 'league'];
   meetTypes.forEach(t => {
     const tLower = t.toLowerCase().trim();
     const shouldExclude = meetTypesToExclude.some(exclude => tLower.includes(exclude));
