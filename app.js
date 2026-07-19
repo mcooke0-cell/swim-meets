@@ -15,24 +15,33 @@ const MONTH_NAMES = [
 ];
 
 // DOM Elements
-const searchInput = document.getElementById('search-input');
-const clearSearchBtn = document.getElementById('clear-search-btn');
-const regionSelect = document.getElementById('region-select');
-const monthSelect = document.getElementById('month-select');
-const resetFiltersBtn = document.getElementById('reset-filters-btn');
-const meetsCountElement = document.getElementById('meets-count');
-const lastUpdatedElement = document.getElementById('last-updated');
-
-const loadingState = document.getElementById('loading-state');
-const errorState = document.getElementById('error-state');
-const emptyState = document.getElementById('empty-state');
-const tableContainer = document.getElementById('table-container');
-const meetsTableBody = document.getElementById('meets-table-body');
-const emptyStateResetBtn = document.getElementById('empty-state-reset-btn');
+let searchInput, clearSearchBtn, regionSelect, monthSelect, resetFiltersBtn;
+let meetsCountElement, lastUpdatedElement, loadingState, errorState, emptyState;
+let tableContainer, meetsTableBody, emptyStateResetBtn;
 
 // Initialize Application
 async function init() {
+  // Bind DOM Elements
+  searchInput = document.getElementById('search-input');
+  clearSearchBtn = document.getElementById('clear-search-btn');
+  regionSelect = document.getElementById('region-select');
+  monthSelect = document.getElementById('month-select');
+  resetFiltersBtn = document.getElementById('reset-filters-btn');
+  meetsCountElement = document.getElementById('meets-count');
+  lastUpdatedElement = document.getElementById('last-updated');
+
+  loadingState = document.getElementById('loading-state');
+  errorState = document.getElementById('error-state');
+  emptyState = document.getElementById('empty-state');
+  tableContainer = document.getElementById('table-container');
+  meetsTableBody = document.getElementById('meets-table-body');
+  emptyStateResetBtn = document.getElementById('empty-state-reset-btn');
+
+  // Set up Event Listeners
+  setupEventListeners();
+
   try {
+    // Fetch local JSON data
     const response = await fetch('./meets.json');
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
@@ -54,17 +63,18 @@ async function init() {
     renderMeets();
     
     // Transition UI from loading to active
-    loadingState.style.display = 'none';
-    tableContainer.style.display = 'block';
+    if (loadingState) loadingState.style.display = 'none';
+    if (tableContainer) tableContainer.style.display = 'block';
   } catch (err) {
     console.error('Error fetching meets data:', err);
-    loadingState.style.display = 'none';
-    errorState.style.display = 'flex';
+    if (loadingState) loadingState.style.display = 'none';
+    if (errorState) errorState.style.display = 'flex';
   }
 }
 
 // Format and Display Scraped Time
 function updateLastUpdated(isoString) {
+  if (!lastUpdatedElement) return;
   if (!isoString) {
     lastUpdatedElement.textContent = 'Last updated: unknown';
     return;
@@ -134,6 +144,8 @@ function extractFilterOptions(meets) {
 
 // Populate Select Options
 function populateDropdowns() {
+  if (!regionSelect || !monthSelect) return;
+
   // Region Select Options
   regionSelect.innerHTML = '<option value="all">All Regions</option>';
   regions.forEach(region => {
@@ -182,18 +194,22 @@ function renderMeets() {
   });
   
   // Update count indicator
-  meetsCountElement.textContent = `${filteredMeets.length} Meet${filteredMeets.length === 1 ? '' : 's'}`;
+  if (meetsCountElement) {
+    meetsCountElement.textContent = `${filteredMeets.length} Meet${filteredMeets.length === 1 ? '' : 's'}`;
+  }
   
   // Display checks
   if (filteredMeets.length === 0) {
-    tableContainer.style.display = 'none';
-    emptyState.style.display = 'flex';
+    if (tableContainer) tableContainer.style.display = 'none';
+    if (emptyState) emptyState.style.display = 'flex';
   } else {
-    emptyState.style.display = 'none';
-    tableContainer.style.display = 'block';
+    if (emptyState) emptyState.style.display = 'none';
+    if (tableContainer) tableContainer.style.display = 'block';
     
     // Build Table Rows
-    meetsTableBody.innerHTML = filteredMeets.map(meet => createTableRowHTML(meet)).join('');
+    if (meetsTableBody) {
+      meetsTableBody.innerHTML = filteredMeets.map(meet => createTableRowHTML(meet)).join('');
+    }
   }
 }
 
@@ -248,34 +264,52 @@ function escapeHTML(str) {
     .replace(/'/g, '&#039;');
 }
 
-// Event Listeners
-searchInput.addEventListener('input', (e) => {
-  state.search = e.target.value;
-  if (state.search) {
-    clearSearchBtn.style.display = 'flex';
-  } else {
-    clearSearchBtn.style.display = 'none';
+// Event Listeners Setup
+function setupEventListeners() {
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      state.search = e.target.value;
+      if (clearSearchBtn) {
+        clearSearchBtn.style.display = state.search ? 'flex' : 'none';
+      }
+      renderMeets();
+    });
   }
-  renderMeets();
-});
 
-clearSearchBtn.addEventListener('click', () => {
-  searchInput.value = '';
-  state.search = '';
-  clearSearchBtn.style.display = 'none';
-  renderMeets();
-  searchInput.focus();
-});
+  if (clearSearchBtn) {
+    clearSearchBtn.addEventListener('click', () => {
+      if (searchInput) {
+        searchInput.value = '';
+        searchInput.focus();
+      }
+      state.search = '';
+      clearSearchBtn.style.display = 'none';
+      renderMeets();
+    });
+  }
 
-regionSelect.addEventListener('change', (e) => {
-  state.selectedRegion = e.target.value;
-  renderMeets();
-});
+  if (regionSelect) {
+    regionSelect.addEventListener('change', (e) => {
+      state.selectedRegion = e.target.value;
+      renderMeets();
+    });
+  }
 
-monthSelect.addEventListener('change', (e) => {
-  state.selectedMonth = e.target.value;
-  renderMeets();
-});
+  if (monthSelect) {
+    monthSelect.addEventListener('change', (e) => {
+      state.selectedMonth = e.target.value;
+      renderMeets();
+    });
+  }
+
+  if (resetFiltersBtn) {
+    resetFiltersBtn.addEventListener('click', resetFilters);
+  }
+
+  if (emptyStateResetBtn) {
+    emptyStateResetBtn.addEventListener('click', resetFilters);
+  }
+}
 
 function resetFilters() {
   state.search = '';
@@ -283,16 +317,13 @@ function resetFilters() {
   state.selectedMonth = 'all';
   
   // Sync inputs
-  searchInput.value = '';
-  clearSearchBtn.style.display = 'none';
-  regionSelect.value = 'all';
-  monthSelect.value = 'all';
+  if (searchInput) searchInput.value = '';
+  if (clearSearchBtn) clearSearchBtn.style.display = 'none';
+  if (regionSelect) regionSelect.value = 'all';
+  if (monthSelect) monthSelect.value = 'all';
   
   renderMeets();
 }
 
-resetFiltersBtn.addEventListener('click', resetFilters);
-emptyStateResetBtn.addEventListener('click', resetFilters);
-
-// Run Init
-init();
+// Run Init on DOM Content Loaded
+document.addEventListener('DOMContentLoaded', init);
