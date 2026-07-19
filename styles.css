@@ -644,8 +644,8 @@ body {
   }
   
   .meets-table tbody tr {
-    background-color: var(--bg-card);
-    border: 1px solid var(--border-color);
+    background-color: #151e36; /* slightly lighter card blue for definition */
+    border: 1px solid #334155; /* distinct border slate color */
     border-radius: var(--radius-md);
     padding: 8px 40px 8px 14px; /* space on the right for absolute link icon */
     box-shadow: var(--shadow-sm);
@@ -756,12 +756,77 @@ body {
     display: inline !important;
   }
 
-  /* Micro badges sizes on mobile */
-  .region-tag, .level-badge, .type-tag, .holiday-badge {
+  /* High contrast typography for readability on mobile screens */
+  .meets-table td.cell-meet-name {
+    color: #ffffff !important;
+  }
+
+  .location-name, .course-format {
+    color: #e2e8f0 !important; /* brighter text for readability */
+    font-weight: 500;
+  }
+
+  .col-date {
+    color: #60a5fa !important;
+  }
+
+  /* Micro badges with solid, high-contrast backgrounds on mobile */
+  .region-tag {
     font-size: 9px !important;
-    padding: 1px 4px !important;
-    line-height: 1.25 !important;
+    padding: 2px 5px !important;
+    line-height: 1.2 !important;
     border-radius: 3px !important;
+    background-color: #0f766e !important; /* solid teal-700 */
+    color: #ccfbf1 !important; /* teal-100 */
+    border: none !important;
+    font-weight: 700 !important;
+  }
+
+  .level-badge {
+    font-size: 9px !important;
+    padding: 2px 5px !important;
+    line-height: 1.2 !important;
+    border-radius: 3px !important;
+    background-color: #334155 !important; /* solid slate-700 */
+    color: #f1f5f9 !important; /* slate-100 */
+    border: none !important;
+    font-weight: 600 !important;
+  }
+
+  .type-tag {
+    font-size: 9px !important;
+    padding: 2px 5px !important;
+    line-height: 1.2 !important;
+    border-radius: 3px !important;
+    background-color: #475569 !important; /* solid slate-600 */
+    color: #f8fafc !important; /* slate-50 */
+    border: none !important;
+    font-weight: 700 !important;
+  }
+
+  .holiday-badge {
+    font-size: 9px !important;
+    padding: 2px 5px !important;
+    line-height: 1.2 !important;
+    border-radius: 3px !important;
+    background-color: #78350f !important; /* solid amber-900 */
+    color: #fef3c7 !important; /* amber-100 */
+    border: none !important;
+    font-weight: 700 !important;
+  }
+
+  /* Distinct card boundaries and search controls on mobile */
+  .search-input {
+    color: #ffffff !important;
+  }
+  .search-input::placeholder {
+    color: #94a3b8 !important;
+  }
+
+  .custom-select-trigger {
+    background-color: #16203d !important;
+    border: 1px solid #334155 !important;
+    color: #ffffff !important;
   }
   
   .meets-table td.text-center {
