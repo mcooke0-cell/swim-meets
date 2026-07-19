@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swim Meet Calendar</title>
+  <!-- Google Fonts: Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header Section -->
+    <header class="app-header">
+      <div class="header-content">
+        <div class="logo-area">
+          <div class="logo-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.6 2 5.1 2 2.5 0 2.5-2 5.1-2 1.3 0 1.9.5 2.5 1"/>
+              <path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5.1-2 2.6 0 2.6 2 5.1 2 2.5 0 2.5-2 5.1-2 1.3 0 1.9.5 2.5 1"/>
+              <path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5.1-2 2.6 0 2.6 2 5.1 2 2.5 0 2.5-2 5.1-2 1.3 0 1.9.5 2.5 1"/>
+            </svg>
+          </div>
+          <h1>Swim Meet Calendar</h1>
+        </div>
+        <p class="subtitle">Find and filter upcoming swimming galas & meets</p>
+        <div class="meta-info">
+          <span class="badge count-badge" id="meets-count">0 Meets</span>
+          <span class="last-updated" id="last-updated">Last updated: Loading...</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="app-main">
+      <!-- Search and Filter Controls -->
+      <section class="controls-section">
+        <!-- Search bar -->
+        <div class="search-wrapper">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="search-input" placeholder="Search by meet name, location..." aria-label="Search swim meets">
+          <button class="clear-search-btn" id="clear-search-btn" style="display: none;" aria-label="Clear search">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Filter toggles -->
+        <div class="filter-toggles">
+          <button class="toggle-btn" id="filter-toggle-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+            </svg>
+            <span>Filters</span>
+            <span class="active-filter-indicator" id="active-filter-indicator" style="display: none;">0</span>
+          </button>
+          
+          <button class="quick-toggle-btn" id="holiday-toggle-btn">
+            <span class="toggle-switch"></span>
+            <span>School Holidays Only</span>
+          </button>
+        </div>
+
+        <!-- Collapsible Filters Drawer -->
+        <div class="filters-drawer" id="filters-drawer">
+          <div class="drawer-header">
+            <h3>Refine Swim Meets</h3>
+            <button class="reset-all-btn" id="reset-all-btn">Reset All</button>
+          </div>
+          
+          <div class="drawer-body">
+            <!-- Region Filter -->
+            <div class="filter-group">
+              <label>Regions</label>
+              <div class="filter-chips" id="region-chips-container">
+                <!-- Dynamically populated -->
+                <span class="loading-chips">Loading...</span>
+              </div>
+            </div>
+
+            <!-- Meet Type Filter -->
+            <div class="filter-group">
+              <label>Meet Types</label>
+              <div class="filter-chips" id="meet-type-chips-container">
+                <!-- Dynamically populated -->
+                <span class="loading-chips">Loading...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Meets List Section -->
+      <section class="meets-section">
+        <!-- Loading Indicator -->
+        <div class="loading-state" id="loading-state">
+          <div class="spinner"></div>
+          <p>Fetching swim calendar...</p>
+        </div>
+
+        <!-- Error State -->
+        <div class="error-state" id="error-state" style="display: none;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg>
+          <p>Failed to load meet data. Please make sure the scraper has run.</p>
+        </div>
+
+        <!-- Empty State -->
+        <div class="empty-state" id="empty-state" style="display: none;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="8" y1="12" x2="16" y2="12"></line>
+          </svg>
+          <p>No meets match your search criteria.</p>
+          <button class="clear-filters-action" id="empty-state-reset-btn">Clear All Filters</button>
+        </div>
+
+        <!-- Main Meets Grid -->
+        <div class="meets-grid" id="meets-grid" style="display: none;">
+          <!-- Dynamically populated -->
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>© 2026 Swim Meet Calendar. Fast, responsive, and local.</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

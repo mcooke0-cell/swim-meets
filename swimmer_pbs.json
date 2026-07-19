@@ -1,0 +1,1496 @@
+[
+  {
+    "event": "50m Butterfly",
+    "course": "Short Course (25m)",
+    "timeStr": "31.07",
+    "timeSec": 31.07,
+    "convertedTimeStr": "31.70",
+    "convertedTimeSec": 31.7,
+    "date": "28/06/26",
+    "meet": "NCD & NC LL4 Combined Club Championships",
+    "venue": "Bodmin",
+    "licence": "SW261229",
+    "historyUrl": "https://www.swimmingresults.org/individualbest/./personal_best_time_date.php?back=individualbest&tiref=1460894&mode=A&tstroke=10&tcourse=S",
+    "history": [
+      {
+        "date": "28/06/26",
+        "timeStr": "31.07",
+        "timeSec": 31.07,
+        "meet": "NCD & NC LL4 Combined Club Championships",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "07/12/25",
+        "timeStr": "31.12",
+        "timeSec": 31.12,
+        "meet": "Plymouth Leander Xmas Open SC Level 3 2025",
+        "venue": "Plymouth"
+      },
+      {
+        "date": "01/03/26",
+        "timeStr": "31.25",
+        "timeSec": 31.25,
+        "meet": "2026 Cornwall County Championships",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "22/03/26",
+        "timeStr": "31.35",
+        "timeSec": 31.35,
+        "meet": "Carn Brea & Helston 9th Open Sprint Meet 2026",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "01/03/26",
+        "timeStr": "31.58",
+        "timeSec": 31.58,
+        "meet": "2026 Cornwall County Championships",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "18/10/25",
+        "timeStr": "31.77",
+        "timeSec": 31.77,
+        "meet": "Exeter City Lyndsay Powell Memorial Meet 2025",
+        "venue": "Plymouth"
+      },
+      {
+        "date": "05/10/25",
+        "timeStr": "32.11",
+        "timeSec": 32.11,
+        "meet": "38th Carn Brea & Helston Open Meet 2025",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "23/03/25",
+        "timeStr": "32.16",
+        "timeSec": 32.16,
+        "meet": "Carn Brea & Helston 8th Open Sprint Meet 2025",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "02/02/25",
+        "timeStr": "32.21",
+        "timeSec": 32.21,
+        "meet": "2025 Cornwall County Championships",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "02/06/25",
+        "timeStr": "32.72",
+        "timeSec": 32.72,
+        "meet": "Truro City SC Club Championships 2025",
+        "venue": "Truro"
+      },
+      {
+        "date": "23/11/24",
+        "timeStr": "33.18",
+        "timeSec": 33.18,
+        "meet": "Dawlish Firecracker Meet 2024",
+        "venue": "Plymouth"
+      },
+      {
+        "date": "02/02/25",
+        "timeStr": "33.18",
+        "timeSec": 33.18,
+        "meet": "2025 Cornwall County Championships",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "09/06/24",
+        "timeStr": "34.20",
+        "timeSec": 34.2,
+        "meet": "Truro City SC Club Championships 2024",
+        "venue": "Penzance"
+      },
+      {
+        "date": "06/10/24",
+        "timeStr": "34.82",
+        "timeSec": 34.82,
+        "meet": "37th Carn Brea & Helston Open Meet 2024",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "28/01/24",
+        "timeStr": "34.98",
+        "timeSec": 34.98,
+        "meet": "2024 Cornwall County & Age Groups Championships",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "28/01/24",
+        "timeStr": "35.01",
+        "timeSec": 35.01,
+        "meet": "2024 Cornwall County & Age Groups Championships",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "19/11/23",
+        "timeStr": "35.12",
+        "timeSec": 35.12,
+        "meet": "Dawlish Firecracker 2023",
+        "venue": "Plymouth"
+      },
+      {
+        "date": "24/06/23",
+        "timeStr": "35.44",
+        "timeSec": 35.44,
+        "meet": "City of St Albans SC End of Season Meet 2023",
+        "venue": "St Albans"
+      },
+      {
+        "date": "10/12/23",
+        "timeStr": "35.83",
+        "timeSec": 35.83,
+        "meet": "Plymouth Leander Christmas Open SC L3 2023",
+        "venue": "Plymouth"
+      },
+      {
+        "date": "05/03/23",
+        "timeStr": "36.12",
+        "timeSec": 36.12,
+        "meet": "Watford SC Regional Qualifier 2023",
+        "venue": "Garston"
+      },
+      {
+        "date": "01/07/23",
+        "timeStr": "36.34",
+        "timeSec": 36.34,
+        "meet": "National Arena Junior Swimming League 2023 Round 3",
+        "venue": "Leighton Buzzard"
+      },
+      {
+        "date": "08/10/23",
+        "timeStr": "36.98",
+        "timeSec": 36.98,
+        "meet": "Carn Brea & Helston 35th Open Meet 2023",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "23/10/22",
+        "timeStr": "38.44",
+        "timeSec": 38.44,
+        "meet": "Team Luton Autumn Short Course Meet 2022",
+        "venue": "Luton"
+      },
+      {
+        "date": "24/09/22",
+        "timeStr": "41.09",
+        "timeSec": 41.09,
+        "meet": "Dunstable Swimming Club Splash Night",
+        "venue": "Dunstable"
+      },
+      {
+        "date": "25/06/22",
+        "timeStr": "44.22",
+        "timeSec": 44.22,
+        "meet": "Watford SC Terry Davies Alternative Nationals",
+        "venue": "Garston"
+      },
+      {
+        "date": "11/06/22",
+        "timeStr": "45.29",
+        "timeSec": 45.29,
+        "meet": "Dunstable SC Club Championships",
+        "venue": "Dunstable"
+      },
+      {
+        "date": "23/04/22",
+        "timeStr": "47.57",
+        "timeSec": 47.57,
+        "meet": "Dunstable Swimming Club Splash Night",
+        "venue": "Dunstable"
+      },
+      {
+        "date": "25/05/21",
+        "timeStr": "1:03.31",
+        "timeSec": 63.31,
+        "meet": "Dunstable",
+        "venue": "The Dunstable Centre"
+      }
+    ]
+  },
+  {
+    "event": "50m Butterfly",
+    "course": "Long Course (50m)",
+    "timeStr": "31.51",
+    "timeSec": 31.51,
+    "convertedTimeStr": "30.90",
+    "convertedTimeSec": 30.9,
+    "date": "04/05/26",
+    "meet": "SE SWR Summer Championships 2026",
+    "venue": "Bristol",
+    "licence": "SW260539",
+    "historyUrl": "https://www.swimmingresults.org/individualbest/./personal_best_time_date.php?back=individualbest&tiref=1460894&mode=A&tstroke=10&tcourse=L",
+    "history": [
+      {
+        "date": "04/05/26",
+        "timeStr": "31.51",
+        "timeSec": 31.51,
+        "meet": "SE SWR Summer Championships 2026",
+        "venue": "Bristol"
+      },
+      {
+        "date": "07/03/26",
+        "timeStr": "31.90",
+        "timeSec": 31.9,
+        "meet": "Ocean City Spring National Qualifier 2026",
+        "venue": "Plymouth"
+      },
+      {
+        "date": "15/03/26",
+        "timeStr": "32.12",
+        "timeSec": 32.12,
+        "meet": "Team Bath AS L1 LC Spring Qualifier",
+        "venue": "Glastonbury"
+      },
+      {
+        "date": "08/04/26",
+        "timeStr": "32.47",
+        "timeSec": 32.47,
+        "meet": "SS SNAGS Championships",
+        "venue": "Aberdeen"
+      },
+      {
+        "date": "10/05/25",
+        "timeStr": "33.44",
+        "timeSec": 33.44,
+        "meet": "South West Region Long Course Summer Championships",
+        "venue": "Hengrove"
+      },
+      {
+        "date": "10/05/24",
+        "timeStr": "35.22",
+        "timeSec": 35.22,
+        "meet": "Plymouth Leander Last Chance Nat Qualifier L1 2024",
+        "venue": "Plymouth"
+      },
+      {
+        "date": "27/04/24",
+        "timeStr": "35.49",
+        "timeSec": 35.49,
+        "meet": "SE SWR Summer Championships 2024",
+        "venue": "Millfield"
+      },
+      {
+        "date": "16/07/23",
+        "timeStr": "35.88",
+        "timeSec": 35.88,
+        "meet": "Team Luton Summer LC Meet 2023",
+        "venue": "Luton"
+      },
+      {
+        "date": "04/02/23",
+        "timeStr": "36.56",
+        "timeSec": 36.56,
+        "meet": "Bedfordshire ASA County Championships 2023",
+        "venue": "Luton"
+      },
+      {
+        "date": "04/02/23",
+        "timeStr": "36.70",
+        "timeSec": 36.7,
+        "meet": "Bedfordshire ASA County Championships 2023",
+        "venue": "Luton"
+      },
+      {
+        "date": "14/05/23",
+        "timeStr": "36.77",
+        "timeSec": 36.77,
+        "meet": "Swim England East Region LC Championships 2023",
+        "venue": "Luton"
+      }
+    ]
+  },
+  {
+    "event": "100m Butterfly",
+    "course": "Short Course (25m)",
+    "timeStr": "1:10.04",
+    "timeSec": 70.03999999999999,
+    "convertedTimeStr": "1:11.10",
+    "convertedTimeSec": 71.1,
+    "date": "09/12/25",
+    "meet": "Plymouth Leander Xmas Open SC Level 3 2025",
+    "venue": "Plymouth",
+    "licence": "SW251950",
+    "historyUrl": "https://www.swimmingresults.org/individualbest/./personal_best_time_date.php?back=individualbest&tiref=1460894&mode=A&tstroke=11&tcourse=S",
+    "history": [
+      {
+        "date": "09/12/25",
+        "timeStr": "1:10.04",
+        "timeSec": 70.03999999999999,
+        "meet": "Plymouth Leander Xmas Open SC Level 3 2025",
+        "venue": "Plymouth"
+      },
+      {
+        "date": "18/10/25",
+        "timeStr": "1:10.10",
+        "timeSec": 70.1,
+        "meet": "Exeter City Lyndsay Powell Memorial Meet 2025",
+        "venue": "Plymouth"
+      },
+      {
+        "date": "08/11/25",
+        "timeStr": "1:12.11",
+        "timeSec": 72.11,
+        "meet": "National Arena Swimming League Western 2025 R2 G1",
+        "venue": "Weston Super Mare"
+      },
+      {
+        "date": "29/03/25",
+        "timeStr": "1:12.69",
+        "timeSec": 72.69,
+        "meet": "Exeter City L3 Regional Qualifier Meet 2025",
+        "venue": "Plymouth"
+      },
+      {
+        "date": "06/12/25",
+        "timeStr": "1:12.77",
+        "timeSec": 72.77,
+        "meet": "National Arena Swimming League Western 2025 R3 G1",
+        "venue": "Weston Super Mare"
+      },
+      {
+        "date": "02/03/25",
+        "timeStr": "1:12.97",
+        "timeSec": 72.97,
+        "meet": "Team Bath & Millfield L3 Regional Qualifier 2025",
+        "venue": "Millfield"
+      },
+      {
+        "date": "11/10/25",
+        "timeStr": "1:13.60",
+        "timeSec": 73.6,
+        "meet": "National Arena Swimming League Western 2025 R1 G1",
+        "venue": "Barnstaple"
+      },
+      {
+        "date": "28/06/26",
+        "timeStr": "1:13.60",
+        "timeSec": 73.6,
+        "meet": "NCD & NC LL4 Combined Club Championships",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "01/02/26",
+        "timeStr": "1:13.84",
+        "timeSec": 73.84,
+        "meet": "2026 Cornwall County Championships",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "05/10/25",
+        "timeStr": "1:14.25",
+        "timeSec": 74.25,
+        "meet": "38th Carn Brea & Helston Open Meet 2025",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "09/02/25",
+        "timeStr": "1:14.41",
+        "timeSec": 74.41,
+        "meet": "2025 Cornwall County Championships",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "14/12/24",
+        "timeStr": "1:14.66",
+        "timeSec": 74.66,
+        "meet": "The National Arena Swim League Western R3 G2 2024",
+        "venue": "Newport"
+      },
+      {
+        "date": "09/02/25",
+        "timeStr": "1:15.19",
+        "timeSec": 75.19,
+        "meet": "2025 Cornwall County Championships",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "12/10/24",
+        "timeStr": "1:15.37",
+        "timeSec": 75.37,
+        "meet": "National Arena Swimming League Western R1 G2 2024",
+        "venue": "Plymouth"
+      },
+      {
+        "date": "09/11/24",
+        "timeStr": "1:16.20",
+        "timeSec": 76.2,
+        "meet": "The National Arena Swim League Western R2 G1 2024",
+        "venue": "Newport"
+      },
+      {
+        "date": "02/06/25",
+        "timeStr": "1:16.77",
+        "timeSec": 76.77,
+        "meet": "Truro City SC Club Championships 2025",
+        "venue": "Truro"
+      },
+      {
+        "date": "06/10/24",
+        "timeStr": "1:17.26",
+        "timeSec": 77.26,
+        "meet": "37th Carn Brea & Helston Open Meet 2024",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "01/02/26",
+        "timeStr": "1:17.29",
+        "timeSec": 77.28999999999999,
+        "meet": "2026 Cornwall County Championships",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "09/06/24",
+        "timeStr": "1:17.71",
+        "timeSec": 77.71000000000001,
+        "meet": "Truro City SC Club Championships 2024",
+        "venue": "Penzance"
+      },
+      {
+        "date": "12/12/23",
+        "timeStr": "1:17.97",
+        "timeSec": 77.97,
+        "meet": "Plymouth Leander Christmas Open SC L3 2023",
+        "venue": "Plymouth"
+      },
+      {
+        "date": "04/02/24",
+        "timeStr": "1:18.58",
+        "timeSec": 78.58,
+        "meet": "2024 Cornwall County & Age Groups Championships",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "04/02/24",
+        "timeStr": "1:19.61",
+        "timeSec": 79.61,
+        "meet": "2024 Cornwall County & Age Groups Championships",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "20/11/23",
+        "timeStr": "1:20.98",
+        "timeSec": 80.98,
+        "meet": "Dawlish Firecracker 2023",
+        "venue": "Plymouth"
+      },
+      {
+        "date": "08/10/23",
+        "timeStr": "1:25.28",
+        "timeSec": 85.28,
+        "meet": "Carn Brea & Helston 35th Open Meet 2023",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "25/06/23",
+        "timeStr": "1:27.03",
+        "timeSec": 87.03,
+        "meet": "City of St Albans SC End of Season Meet 2023",
+        "venue": "St Albans"
+      },
+      {
+        "date": "03/06/23",
+        "timeStr": "1:29.40",
+        "timeSec": 89.4,
+        "meet": "Dunstable SC Club Championships 2023",
+        "venue": "Dunstable"
+      },
+      {
+        "date": "23/10/22",
+        "timeStr": "1:42.05",
+        "timeSec": 102.05,
+        "meet": "Team Luton Autumn Short Course Meet 2022",
+        "venue": "Luton"
+      }
+    ]
+  },
+  {
+    "event": "100m Butterfly",
+    "course": "Long Course (50m)",
+    "timeStr": "1:13.88",
+    "timeSec": 73.88,
+    "convertedTimeStr": "1:12.80",
+    "convertedTimeSec": 72.8,
+    "date": "02/05/26",
+    "meet": "SE SWR Summer Championships 2026",
+    "venue": "Bristol",
+    "licence": "SW260539",
+    "historyUrl": "https://www.swimmingresults.org/individualbest/./personal_best_time_date.php?back=individualbest&tiref=1460894&mode=A&tstroke=11&tcourse=L",
+    "history": [
+      {
+        "date": "02/05/26",
+        "timeStr": "1:13.88",
+        "timeSec": 73.88,
+        "meet": "SE SWR Summer Championships 2026",
+        "venue": "Bristol"
+      },
+      {
+        "date": "15/03/26",
+        "timeStr": "1:14.62",
+        "timeSec": 74.62,
+        "meet": "Team Bath AS L1 LC Spring Qualifier",
+        "venue": "Glastonbury"
+      },
+      {
+        "date": "27/04/25",
+        "timeStr": "1:14.69",
+        "timeSec": 74.69,
+        "meet": "South West Region Long Course Summer Championships",
+        "venue": "Millfield"
+      },
+      {
+        "date": "08/04/25",
+        "timeStr": "1:15.17",
+        "timeSec": 75.17,
+        "meet": "Scottish National Age Group Swimming Champs 2025",
+        "venue": "Aberdeen"
+      },
+      {
+        "date": "07/04/26",
+        "timeStr": "1:16.89",
+        "timeSec": 76.89,
+        "meet": "SS SNAGS Championships",
+        "venue": "Aberdeen"
+      },
+      {
+        "date": "16/07/23",
+        "timeStr": "1:24.75",
+        "timeSec": 84.75,
+        "meet": "Team Luton Summer LC Meet 2023",
+        "venue": "Luton"
+      },
+      {
+        "date": "23/04/23",
+        "timeStr": "1:26.99",
+        "timeSec": 86.99,
+        "meet": "Swim England East Region LC Championships 2023",
+        "venue": "Norwich"
+      },
+      {
+        "date": "28/01/23",
+        "timeStr": "1:28.10",
+        "timeSec": 88.1,
+        "meet": "Bedfordshire ASA County Championships 2023",
+        "venue": "Luton"
+      },
+      {
+        "date": "28/01/23",
+        "timeStr": "1:30.57",
+        "timeSec": 90.57,
+        "meet": "Bedfordshire ASA County Championships 2023",
+        "venue": "Luton"
+      }
+    ]
+  },
+  {
+    "event": "200m Butterfly",
+    "course": "Short Course (25m)",
+    "timeStr": "2:49.57",
+    "timeSec": 169.57,
+    "convertedTimeStr": "2:51.40",
+    "convertedTimeSec": 171.4,
+    "date": "08/12/25",
+    "meet": "Plymouth Leander Xmas Open SC Level 3 2025",
+    "venue": "Plymouth",
+    "licence": "SW251950",
+    "historyUrl": "https://www.swimmingresults.org/individualbest/./personal_best_time_date.php?back=individualbest&tiref=1460894&mode=A&tstroke=12&tcourse=S",
+    "history": [
+      {
+        "date": "08/12/25",
+        "timeStr": "2:49.57",
+        "timeSec": 169.57,
+        "meet": "Plymouth Leander Xmas Open SC Level 3 2025",
+        "venue": "Plymouth"
+      },
+      {
+        "date": "07/02/26",
+        "timeStr": "2:55.08",
+        "timeSec": 175.07999999999998,
+        "meet": "2026 Cornwall County Championships",
+        "venue": "Penzance"
+      },
+      {
+        "date": "08/02/25",
+        "timeStr": "3:02.20",
+        "timeSec": 182.2,
+        "meet": "2025 Cornwall County Championships",
+        "venue": "Penzance"
+      },
+      {
+        "date": "20/11/24",
+        "timeStr": "3:07.56",
+        "timeSec": 187.56,
+        "meet": "Truro City SC Low L4 Distance Champs 2024",
+        "venue": "Truro"
+      }
+    ]
+  },
+  {
+    "event": "50m Freestyle",
+    "course": "Short Course (25m)",
+    "timeStr": "28.92",
+    "timeSec": 28.92,
+    "convertedTimeStr": "29.60",
+    "convertedTimeSec": 29.6,
+    "date": "28/06/26",
+    "meet": "NCD & NC LL4 Combined Club Championships",
+    "venue": "Bodmin",
+    "licence": "SW261229",
+    "historyUrl": "https://www.swimmingresults.org/individualbest/./personal_best_time_date.php?back=individualbest&tiref=1460894&mode=A&tstroke=1&tcourse=S",
+    "history": [
+      {
+        "date": "28/06/26",
+        "timeStr": "28.92",
+        "timeSec": 28.92,
+        "meet": "NCD & NC LL4 Combined Club Championships",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "22/03/26",
+        "timeStr": "29.89",
+        "timeSec": 29.89,
+        "meet": "Carn Brea & Helston 9th Open Sprint Meet 2026",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "07/02/26",
+        "timeStr": "29.97",
+        "timeSec": 29.97,
+        "meet": "2026 Cornwall County Championships",
+        "venue": "Penzance"
+      },
+      {
+        "date": "19/10/25",
+        "timeStr": "30.11",
+        "timeSec": 30.11,
+        "meet": "Exeter City Lyndsay Powell Memorial Meet 2025",
+        "venue": "Plymouth"
+      },
+      {
+        "date": "09/12/25",
+        "timeStr": "30.16",
+        "timeSec": 30.16,
+        "meet": "Plymouth Leander Xmas Open SC Level 3 2025",
+        "venue": "Plymouth"
+      },
+      {
+        "date": "02/11/25",
+        "timeStr": "30.25",
+        "timeSec": 30.25,
+        "meet": "Truro City SC Distance Champs 2025",
+        "venue": "Truro"
+      },
+      {
+        "date": "07/02/26",
+        "timeStr": "30.37",
+        "timeSec": 30.37,
+        "meet": "2026 Cornwall County Championships",
+        "venue": "Penzance"
+      },
+      {
+        "date": "23/03/25",
+        "timeStr": "31.18",
+        "timeSec": 31.18,
+        "meet": "Carn Brea & Helston 8th Open Sprint Meet 2025",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "03/02/24",
+        "timeStr": "32.05",
+        "timeSec": 32.05,
+        "meet": "2024 Cornwall County & Age Groups Championships",
+        "venue": "Penzance"
+      },
+      {
+        "date": "03/02/24",
+        "timeStr": "32.39",
+        "timeSec": 32.39,
+        "meet": "2024 Cornwall County & Age Groups Championships",
+        "venue": "Penzance"
+      },
+      {
+        "date": "12/12/23",
+        "timeStr": "32.99",
+        "timeSec": 32.99,
+        "meet": "Plymouth Leander Christmas Open SC L3 2023",
+        "venue": "Plymouth"
+      },
+      {
+        "date": "08/10/23",
+        "timeStr": "33.28",
+        "timeSec": 33.28,
+        "meet": "Carn Brea & Helston 35th Open Meet 2023",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "25/06/23",
+        "timeStr": "33.29",
+        "timeSec": 33.29,
+        "meet": "City of St Albans SC End of Season Meet 2023",
+        "venue": "St Albans"
+      },
+      {
+        "date": "26/03/23",
+        "timeStr": "33.43",
+        "timeSec": 33.43,
+        "meet": "Linslade Crusaders Mad March Meet 2023",
+        "venue": "Bletchley"
+      },
+      {
+        "date": "01/07/23",
+        "timeStr": "33.47",
+        "timeSec": 33.47,
+        "meet": "National Arena Junior Swimming League 2023 Round 3",
+        "venue": "Leighton Buzzard"
+      },
+      {
+        "date": "05/03/23",
+        "timeStr": "33.79",
+        "timeSec": 33.79,
+        "meet": "Watford SC Regional Qualifier 2023",
+        "venue": "Garston"
+      },
+      {
+        "date": "11/12/22",
+        "timeStr": "34.59",
+        "timeSec": 34.59,
+        "meet": "Team Luton December Short Course Meet 2022",
+        "venue": "Luton"
+      },
+      {
+        "date": "20/11/22",
+        "timeStr": "34.91",
+        "timeSec": 34.91,
+        "meet": "Watford Swimming Club County Qualifier",
+        "venue": "Garston"
+      },
+      {
+        "date": "22/10/22",
+        "timeStr": "35.34",
+        "timeSec": 35.34,
+        "meet": "Team Luton Autumn Short Course Meet 2022",
+        "venue": "Luton"
+      },
+      {
+        "date": "26/06/22",
+        "timeStr": "36.98",
+        "timeSec": 36.98,
+        "meet": "Watford SC Terry Davies Alternative Nationals",
+        "venue": "Garston"
+      },
+      {
+        "date": "24/09/22",
+        "timeStr": "37.56",
+        "timeSec": 37.56,
+        "meet": "Dunstable Swimming Club Splash Night",
+        "venue": "Dunstable"
+      },
+      {
+        "date": "11/06/22",
+        "timeStr": "37.90",
+        "timeSec": 37.9,
+        "meet": "Dunstable SC Club Championships",
+        "venue": "Dunstable"
+      },
+      {
+        "date": "23/04/22",
+        "timeStr": "38.57",
+        "timeSec": 38.57,
+        "meet": "Dunstable Swimming Club Splash Night",
+        "venue": "Dunstable"
+      },
+      {
+        "date": "26/02/22",
+        "timeStr": "39.06",
+        "timeSec": 39.06,
+        "meet": "Dunstable SC Splash Night",
+        "venue": "Dunstable"
+      },
+      {
+        "date": "12/12/21",
+        "timeStr": "39.09",
+        "timeSec": 39.09,
+        "meet": "Harpenden SC FINIS Last Chance Meet",
+        "venue": "Westminster Lodge"
+      },
+      {
+        "date": "21/11/21",
+        "timeStr": "39.47",
+        "timeSec": 39.47,
+        "meet": "Watford SC County Qualifier",
+        "venue": "Garston"
+      },
+      {
+        "date": "04/12/21",
+        "timeStr": "39.81",
+        "timeSec": 39.81,
+        "meet": "Dunstable SC Splash Night - County Qualifier",
+        "venue": "Dunstable"
+      },
+      {
+        "date": "02/10/21",
+        "timeStr": "40.68",
+        "timeSec": 40.68,
+        "meet": "Harpenden SC FINIS Legacy Meet",
+        "venue": "Westminster Lodge"
+      },
+      {
+        "date": "24/07/21",
+        "timeStr": "41.50",
+        "timeSec": 41.5,
+        "meet": "Swim England East Region Future Champions Meet",
+        "venue": "Basildon"
+      },
+      {
+        "date": "25/05/21",
+        "timeStr": "41.82",
+        "timeSec": 41.82,
+        "meet": "Dunstable",
+        "venue": "The Dunstable Centre"
+      },
+      {
+        "date": "23/10/21",
+        "timeStr": "42.37",
+        "timeSec": 42.37,
+        "meet": "Dunstable SC Splash Night",
+        "venue": "Dunstable"
+      },
+      {
+        "date": "29/02/20",
+        "timeStr": "49.96",
+        "timeSec": 49.96,
+        "meet": "Dunstable Splash Night - Homecoming",
+        "venue": "Dunstable"
+      }
+    ]
+  },
+  {
+    "event": "50m Freestyle",
+    "course": "Long Course (50m)",
+    "timeStr": "30.87",
+    "timeSec": 30.87,
+    "convertedTimeStr": "30.20",
+    "convertedTimeSec": 30.2,
+    "date": "14/03/26",
+    "meet": "Team Bath AS L1 LC Spring Qualifier",
+    "venue": "Glastonbury",
+    "licence": "SW260280",
+    "historyUrl": "https://www.swimmingresults.org/individualbest/./personal_best_time_date.php?back=individualbest&tiref=1460894&mode=A&tstroke=1&tcourse=L",
+    "history": [
+      {
+        "date": "14/03/26",
+        "timeStr": "30.87",
+        "timeSec": 30.87,
+        "meet": "Team Bath AS L1 LC Spring Qualifier",
+        "venue": "Glastonbury"
+      },
+      {
+        "date": "05/02/23",
+        "timeStr": "34.22",
+        "timeSec": 34.22,
+        "meet": "Bedfordshire ASA County Championships 2023",
+        "venue": "Luton"
+      },
+      {
+        "date": "15/07/23",
+        "timeStr": "34.23",
+        "timeSec": 34.23,
+        "meet": "Team Luton Summer LC Meet 2023",
+        "venue": "Luton"
+      },
+      {
+        "date": "05/02/23",
+        "timeStr": "34.35",
+        "timeSec": 34.35,
+        "meet": "Bedfordshire ASA County Championships 2023",
+        "venue": "Luton"
+      }
+    ]
+  },
+  {
+    "event": "100m Freestyle",
+    "course": "Short Course (25m)",
+    "timeStr": "1:06.26",
+    "timeSec": 66.26,
+    "convertedTimeStr": "1:07.50",
+    "convertedTimeSec": 67.5,
+    "date": "08/12/25",
+    "meet": "Plymouth Leander Xmas Open SC Level 3 2025",
+    "venue": "Plymouth",
+    "licence": "SW251950",
+    "historyUrl": "https://www.swimmingresults.org/individualbest/./personal_best_time_date.php?back=individualbest&tiref=1460894&mode=A&tstroke=2&tcourse=S",
+    "history": [
+      {
+        "date": "08/12/25",
+        "timeStr": "1:06.26",
+        "timeSec": 66.26,
+        "meet": "Plymouth Leander Xmas Open SC Level 3 2025",
+        "venue": "Plymouth"
+      },
+      {
+        "date": "23/11/24",
+        "timeStr": "1:08.57",
+        "timeSec": 68.57,
+        "meet": "Dawlish Firecracker Meet 2024",
+        "venue": "Plymouth"
+      },
+      {
+        "date": "02/02/25",
+        "timeStr": "1:08.88",
+        "timeSec": 68.88,
+        "meet": "2025 Cornwall County Championships",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "02/02/25",
+        "timeStr": "1:09.17",
+        "timeSec": 69.17,
+        "meet": "2025 Cornwall County Championships",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "06/10/24",
+        "timeStr": "1:09.41",
+        "timeSec": 69.41,
+        "meet": "37th Carn Brea & Helston Open Meet 2024",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "11/12/23",
+        "timeStr": "1:09.75",
+        "timeSec": 69.75,
+        "meet": "Plymouth Leander Christmas Open SC L3 2023",
+        "venue": "Plymouth"
+      },
+      {
+        "date": "28/01/24",
+        "timeStr": "1:10.57",
+        "timeSec": 70.57,
+        "meet": "2024 Cornwall County & Age Groups Championships",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "28/01/24",
+        "timeStr": "1:10.62",
+        "timeSec": 70.62,
+        "meet": "2024 Cornwall County & Age Groups Championships",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "24/06/23",
+        "timeStr": "1:11.62",
+        "timeSec": 71.62,
+        "meet": "City of St Albans SC End of Season Meet 2023",
+        "venue": "St Albans"
+      },
+      {
+        "date": "08/10/23",
+        "timeStr": "1:12.75",
+        "timeSec": 72.75,
+        "meet": "Carn Brea & Helston 35th Open Meet 2023",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "03/06/23",
+        "timeStr": "1:15.00",
+        "timeSec": 75,
+        "meet": "Dunstable SC Club Championships 2023",
+        "venue": "Dunstable"
+      },
+      {
+        "date": "04/03/23",
+        "timeStr": "1:15.04",
+        "timeSec": 75.03999999999999,
+        "meet": "Watford SC Regional Qualifier 2023",
+        "venue": "Garston"
+      },
+      {
+        "date": "26/06/22",
+        "timeStr": "1:25.75",
+        "timeSec": 85.75,
+        "meet": "Watford SC Terry Davies Alternative Nationals",
+        "venue": "Garston"
+      },
+      {
+        "date": "20/11/21",
+        "timeStr": "1:31.50",
+        "timeSec": 91.5,
+        "meet": "Watford SC County Qualifier",
+        "venue": "Garston"
+      },
+      {
+        "date": "17/07/21",
+        "timeStr": "1:34.73",
+        "timeSec": 94.72999999999999,
+        "meet": "Swim England East Region Future Champions Meet",
+        "venue": "Basildon"
+      },
+      {
+        "date": "27/06/21",
+        "timeStr": "1:36.12",
+        "timeSec": 96.12,
+        "meet": "Dunstable Swimming Club",
+        "venue": "Dunstable"
+      },
+      {
+        "date": "27/06/21",
+        "timeStr": "1:36.12",
+        "timeSec": 96.12,
+        "meet": "Dunstable Swimming Club",
+        "venue": "Dunstable"
+      },
+      {
+        "date": "23/10/21",
+        "timeStr": "1:39.50",
+        "timeSec": 99.5,
+        "meet": "Dunstable SC Splash Night",
+        "venue": "Dunstable"
+      },
+      {
+        "date": "02/10/21",
+        "timeStr": "1:44.30",
+        "timeSec": 104.3,
+        "meet": "Harpenden SC FINIS Legacy Meet",
+        "venue": "Westminster Lodge"
+      }
+    ]
+  },
+  {
+    "event": "100m Freestyle",
+    "course": "Long Course (50m)",
+    "timeStr": "1:14.83",
+    "timeSec": 74.83,
+    "convertedTimeStr": "1:13.70",
+    "convertedTimeSec": 73.7,
+    "date": "15/07/23",
+    "meet": "Team Luton Summer LC Meet 2023",
+    "venue": "Luton",
+    "licence": "ER230397",
+    "historyUrl": "https://www.swimmingresults.org/individualbest/./personal_best_time_date.php?back=individualbest&tiref=1460894&mode=A&tstroke=2&tcourse=L",
+    "history": [
+      {
+        "date": "15/07/23",
+        "timeStr": "1:14.83",
+        "timeSec": 74.83,
+        "meet": "Team Luton Summer LC Meet 2023",
+        "venue": "Luton"
+      }
+    ]
+  },
+  {
+    "event": "200m Freestyle",
+    "course": "Short Course (25m)",
+    "timeStr": "2:27.59",
+    "timeSec": 147.59,
+    "convertedTimeStr": "2:29.90",
+    "convertedTimeSec": 149.9,
+    "date": "02/11/25",
+    "meet": "Truro City SC Distance Champs 2025",
+    "venue": "Truro",
+    "licence": "SW252242",
+    "historyUrl": "https://www.swimmingresults.org/individualbest/./personal_best_time_date.php?back=individualbest&tiref=1460894&mode=A&tstroke=3&tcourse=S",
+    "history": [
+      {
+        "date": "02/11/25",
+        "timeStr": "2:27.59",
+        "timeSec": 147.59,
+        "meet": "Truro City SC Distance Champs 2025",
+        "venue": "Truro"
+      },
+      {
+        "date": "17/11/24",
+        "timeStr": "2:28.50",
+        "timeSec": 148.5,
+        "meet": "Truro City SC Low L4 Distance Champs 2024",
+        "venue": "Truro"
+      },
+      {
+        "date": "20/05/23",
+        "timeStr": "2:36.87",
+        "timeSec": 156.87,
+        "meet": "Dunstable SC Club Championships 2023",
+        "venue": "Dunstable"
+      },
+      {
+        "date": "14/05/22",
+        "timeStr": "3:11.69",
+        "timeSec": 191.69,
+        "meet": "Dunstable SC Club Championships",
+        "venue": "Dunstable"
+      }
+    ]
+  },
+  {
+    "event": "50m Backstroke",
+    "course": "Short Course (25m)",
+    "timeStr": "34.06",
+    "timeSec": 34.06,
+    "convertedTimeStr": "34.60",
+    "convertedTimeSec": 34.6,
+    "date": "28/06/26",
+    "meet": "NCD & NC LL4 Combined Club Championships",
+    "venue": "Bodmin",
+    "licence": "SW261229",
+    "historyUrl": "https://www.swimmingresults.org/individualbest/./personal_best_time_date.php?back=individualbest&tiref=1460894&mode=A&tstroke=13&tcourse=S",
+    "history": [
+      {
+        "date": "28/06/26",
+        "timeStr": "34.06",
+        "timeSec": 34.06,
+        "meet": "NCD & NC LL4 Combined Club Championships",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "22/03/26",
+        "timeStr": "34.34",
+        "timeSec": 34.34,
+        "meet": "Carn Brea & Helston 9th Open Sprint Meet 2026",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "23/03/25",
+        "timeStr": "35.75",
+        "timeSec": 35.75,
+        "meet": "Carn Brea & Helston 8th Open Sprint Meet 2025",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "19/11/23",
+        "timeStr": "37.44",
+        "timeSec": 37.44,
+        "meet": "Dawlish Firecracker 2023",
+        "venue": "Plymouth"
+      },
+      {
+        "date": "04/03/23",
+        "timeStr": "40.46",
+        "timeSec": 40.46,
+        "meet": "Watford SC Regional Qualifier 2023",
+        "venue": "Garston"
+      },
+      {
+        "date": "25/02/23",
+        "timeStr": "40.78",
+        "timeSec": 40.78,
+        "meet": "Dunstable SC Splash Night 2023",
+        "venue": "Dunstable"
+      },
+      {
+        "date": "11/06/22",
+        "timeStr": "44.84",
+        "timeSec": 44.84,
+        "meet": "Dunstable SC Club Championships",
+        "venue": "Dunstable"
+      },
+      {
+        "date": "25/06/22",
+        "timeStr": "44.84",
+        "timeSec": 44.84,
+        "meet": "Watford SC Terry Davies Alternative Nationals",
+        "venue": "Garston"
+      },
+      {
+        "date": "26/02/22",
+        "timeStr": "47.69",
+        "timeSec": 47.69,
+        "meet": "Dunstable SC Splash Night",
+        "venue": "Dunstable"
+      },
+      {
+        "date": "23/10/21",
+        "timeStr": "51.60",
+        "timeSec": 51.6,
+        "meet": "Dunstable SC Splash Night",
+        "venue": "Dunstable"
+      },
+      {
+        "date": "25/05/21",
+        "timeStr": "55.44",
+        "timeSec": 55.44,
+        "meet": "Dunstable",
+        "venue": "The Dunstable Centre"
+      }
+    ]
+  },
+  {
+    "event": "50m Backstroke",
+    "course": "Long Course (50m)",
+    "timeStr": "40.87",
+    "timeSec": 40.87,
+    "convertedTimeStr": "40.40",
+    "convertedTimeSec": 40.4,
+    "date": "15/07/23",
+    "meet": "Team Luton Summer LC Meet 2023",
+    "venue": "Luton",
+    "licence": "ER230397",
+    "historyUrl": "https://www.swimmingresults.org/individualbest/./personal_best_time_date.php?back=individualbest&tiref=1460894&mode=A&tstroke=13&tcourse=L",
+    "history": [
+      {
+        "date": "15/07/23",
+        "timeStr": "40.87",
+        "timeSec": 40.87,
+        "meet": "Team Luton Summer LC Meet 2023",
+        "venue": "Luton"
+      }
+    ]
+  },
+  {
+    "event": "100m Backstroke",
+    "course": "Short Course (25m)",
+    "timeStr": "1:28.58",
+    "timeSec": 88.58,
+    "convertedTimeStr": "1:29.50",
+    "convertedTimeSec": 89.5,
+    "date": "03/06/23",
+    "meet": "Dunstable SC Club Championships 2023",
+    "venue": "Dunstable",
+    "licence": "ER230719",
+    "historyUrl": "https://www.swimmingresults.org/individualbest/./personal_best_time_date.php?back=individualbest&tiref=1460894&mode=A&tstroke=14&tcourse=S",
+    "history": [
+      {
+        "date": "03/06/23",
+        "timeStr": "1:28.58",
+        "timeSec": 88.58,
+        "meet": "Dunstable SC Club Championships 2023",
+        "venue": "Dunstable"
+      }
+    ]
+  },
+  {
+    "event": "50m Breaststroke",
+    "course": "Short Course (25m)",
+    "timeStr": "40.36",
+    "timeSec": 40.36,
+    "convertedTimeStr": "41.10",
+    "convertedTimeSec": 41.1,
+    "date": "31/01/26",
+    "meet": "2026 Cornwall County Championships",
+    "venue": "Penzance",
+    "licence": "SW260146",
+    "historyUrl": "https://www.swimmingresults.org/individualbest/./personal_best_time_date.php?back=individualbest&tiref=1460894&mode=A&tstroke=7&tcourse=S",
+    "history": [
+      {
+        "date": "31/01/26",
+        "timeStr": "40.36",
+        "timeSec": 40.36,
+        "meet": "2026 Cornwall County Championships",
+        "venue": "Penzance"
+      },
+      {
+        "date": "31/01/26",
+        "timeStr": "40.83",
+        "timeSec": 40.83,
+        "meet": "2026 Cornwall County Championships",
+        "venue": "Penzance"
+      },
+      {
+        "date": "22/03/26",
+        "timeStr": "40.93",
+        "timeSec": 40.93,
+        "meet": "Carn Brea & Helston 9th Open Sprint Meet 2026",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "23/03/25",
+        "timeStr": "43.29",
+        "timeSec": 43.29,
+        "meet": "Carn Brea & Helston 8th Open Sprint Meet 2025",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "20/11/23",
+        "timeStr": "45.55",
+        "timeSec": 45.55,
+        "meet": "Dawlish Firecracker 2023",
+        "venue": "Plymouth"
+      },
+      {
+        "date": "27/01/24",
+        "timeStr": "46.41",
+        "timeSec": 46.41,
+        "meet": "2024 Cornwall County & Age Groups Championships",
+        "venue": "Penzance"
+      },
+      {
+        "date": "25/02/23",
+        "timeStr": "47.81",
+        "timeSec": 47.81,
+        "meet": "Dunstable SC Splash Night 2023",
+        "venue": "Dunstable"
+      },
+      {
+        "date": "14/05/22",
+        "timeStr": "1:01.34",
+        "timeSec": 61.34,
+        "meet": "Dunstable SC Club Championships",
+        "venue": "Dunstable"
+      },
+      {
+        "date": "04/12/21",
+        "timeStr": "1:03.11",
+        "timeSec": 63.11,
+        "meet": "Dunstable SC Splash Night - County Qualifier",
+        "venue": "Dunstable"
+      }
+    ]
+  },
+  {
+    "event": "100m Breaststroke",
+    "course": "Short Course (25m)",
+    "timeStr": "1:40.78",
+    "timeSec": 100.78,
+    "convertedTimeStr": "1:42.00",
+    "convertedTimeSec": 102,
+    "date": "20/05/23",
+    "meet": "Dunstable SC Club Championships 2023",
+    "venue": "Dunstable",
+    "licence": "ER230721",
+    "historyUrl": "https://www.swimmingresults.org/individualbest/./personal_best_time_date.php?back=individualbest&tiref=1460894&mode=A&tstroke=8&tcourse=S",
+    "history": [
+      {
+        "date": "20/05/23",
+        "timeStr": "1:40.78",
+        "timeSec": 100.78,
+        "meet": "Dunstable SC Club Championships 2023",
+        "venue": "Dunstable"
+      }
+    ]
+  },
+  {
+    "event": "100m Individual Medley",
+    "course": "Short Course (25m)",
+    "timeStr": "1:15.75",
+    "timeSec": 75.75,
+    "convertedTimeStr": "1:15.80",
+    "convertedTimeSec": 75.8,
+    "date": "07/12/25",
+    "meet": "Plymouth Leander Xmas Open SC Level 3 2025",
+    "venue": "Plymouth",
+    "licence": "SW251949",
+    "historyUrl": "https://www.swimmingresults.org/individualbest/./personal_best_time_date.php?back=individualbest&tiref=1460894&mode=A&tstroke=18&tcourse=S",
+    "history": [
+      {
+        "date": "07/12/25",
+        "timeStr": "1:15.75",
+        "timeSec": 75.75,
+        "meet": "Plymouth Leander Xmas Open SC Level 3 2025",
+        "venue": "Plymouth"
+      },
+      {
+        "date": "22/03/26",
+        "timeStr": "1:17.58",
+        "timeSec": 77.58,
+        "meet": "Carn Brea & Helston 9th Open Sprint Meet 2026",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "23/03/25",
+        "timeStr": "1:18.51",
+        "timeSec": 78.51,
+        "meet": "Carn Brea & Helston 8th Open Sprint Meet 2025",
+        "venue": "Bodmin"
+      },
+      {
+        "date": "01/02/25",
+        "timeStr": "1:18.83",
+        "timeSec": 78.83,
+        "meet": "2025 Cornwall County Championships",
+        "venue": "Penzance"
+      },
+      {
+        "date": "01/02/25",
+        "timeStr": "1:19.62",
+        "timeSec": 79.62,
+        "meet": "2025 Cornwall County Championships",
+        "venue": "Penzance"
+      },
+      {
+        "date": "27/01/24",
+        "timeStr": "1:20.73",
+        "timeSec": 80.73,
+        "meet": "2024 Cornwall County & Age Groups Championships",
+        "venue": "Penzance"
+      },
+      {
+        "date": "27/01/24",
+        "timeStr": "1:22.24",
+        "timeSec": 82.24,
+        "meet": "2024 Cornwall County & Age Groups Championships",
+        "venue": "Penzance"
+      },
+      {
+        "date": "01/07/23",
+        "timeStr": "1:25.43",
+        "timeSec": 85.43,
+        "meet": "National Arena Junior Swimming League 2023 Round 3",
+        "venue": "Leighton Buzzard"
+      },
+      {
+        "date": "14/05/22",
+        "timeStr": "1:43.78",
+        "timeSec": 103.78,
+        "meet": "Dunstable SC Club Championships",
+        "venue": "Dunstable"
+      },
+      {
+        "date": "27/06/21",
+        "timeStr": "2:10.81",
+        "timeSec": 130.81,
+        "meet": "Dunstable Swimming Club",
+        "venue": "Dunstable"
+      },
+      {
+        "date": "27/06/21",
+        "timeStr": "2:10.81",
+        "timeSec": 130.81,
+        "meet": "Dunstable Swimming Club",
+        "venue": "Dunstable"
+      }
+    ]
+  },
+  {
+    "event": "200m Individual Medley",
+    "course": "Short Course (25m)",
+    "timeStr": "2:48.29",
+    "timeSec": 168.29,
+    "convertedTimeStr": "2:50.60",
+    "convertedTimeSec": 170.6,
+    "date": "02/11/25",
+    "meet": "Truro City SC Distance Champs 2025",
+    "venue": "Truro",
+    "licence": "SW252243",
+    "historyUrl": "https://www.swimmingresults.org/individualbest/./personal_best_time_date.php?back=individualbest&tiref=1460894&mode=A&tstroke=16&tcourse=S",
+    "history": [
+      {
+        "date": "02/11/25",
+        "timeStr": "2:48.29",
+        "timeSec": 168.29,
+        "meet": "Truro City SC Distance Champs 2025",
+        "venue": "Truro"
+      },
+      {
+        "date": "31/01/26",
+        "timeStr": "2:49.44",
+        "timeSec": 169.44,
+        "meet": "2026 Cornwall County Championships",
+        "venue": "Penzance"
+      },
+      {
+        "date": "03/02/24",
+        "timeStr": "2:59.23",
+        "timeSec": 179.23,
+        "meet": "2024 Cornwall County & Age Groups Championships",
+        "venue": "Penzance"
+      },
+      {
+        "date": "20/05/23",
+        "timeStr": "3:03.69",
+        "timeSec": 183.69,
+        "meet": "Dunstable SC Club Championships 2023",
+        "venue": "Dunstable"
+      }
+    ]
+  }
+]

@@ -1,0 +1,50 @@
+name: Update Swim Calendar
+
+on:
+  schedule:
+    # Runs at 00:00 every 2 days
+    - cron: '0 0 */2 * *'
+  workflow_dispatch:
+    # Allows manual trigger from the GitHub UI
+
+permissions:
+  contents: write # Needed to commit and push meets.json back to the repo
+
+jobs:
+  scrape-and-update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Scraper
+        run: npm run scrape:local
+        env:
+          # If Google Sheets updates are configured, SPREADSHEET_ID can be set here.
+          # Otherwise, it runs and skips Sheets update, generating only meets.json.
+          SPREADSHEET_ID: ${{ secrets.SPREADSHEET_ID }}
+
+      - name: Commit and Push Data Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          # Check if meets.json has changed
+          if git diff --name-only | grep -q "meets.json"; then
+            echo "Changes detected in meets.json. Committing..."
+            git add meets.json
+            git commit -m "chore: auto-update meets calendar data [skip ci]"
+            git push
+          else
+            echo "No changes in meets.json. Skipping commit."
+          fi

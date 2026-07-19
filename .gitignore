@@ -1,0 +1,8 @@
+node_modules/
+dist/
+credentials.json
+sheets_config.json
+.env
+.env.*
+.DS_Store
+*.log

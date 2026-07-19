@@ -1,0 +1,30 @@
+{
+  "name": "react-example",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "dist/cli.cjs",
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "dev": "tsx cli.ts",
+    "build": "esbuild cli.ts --bundle --platform=node --format=cjs --packages=external --sourcemap --outfile=dist/cli.cjs",
+    "gcp-build": "npm run build",
+    "scrape:local": "tsx cli.ts",
+    "start": "node dist/cli.cjs",
+    "preview": "node dist/cli.cjs",
+    "clean": "rm -rf dist",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "cheerio": "^1.2.0",
+    "googleapis": "^173.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "esbuild": "^0.25.0",
+    "tsx": "^4.21.0",
+    "typescript": "~5.8.2"
+  }
+}
