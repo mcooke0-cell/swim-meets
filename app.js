@@ -40,6 +40,14 @@ function shouldHighlightMeet(meet) {
   return HIGHLIGHTED_LOCATIONS.some(hl => locLower.includes(hl.toLowerCase()));
 }
 
+function getCourseAbbreviation(course) {
+  if (!course) return 'TBD';
+  const cLower = course.toLowerCase();
+  if (cLower.includes('short course') || cLower.includes('25m')) return 'SC';
+  if (cLower.includes('long course') || cLower.includes('50m')) return 'LC';
+  return course;
+}
+
 // DOM Elements
 let searchInput, clearSearchBtn, resetFiltersBtn;
 let regionCustomSelect, regionTrigger, regionOptions;
@@ -446,7 +454,10 @@ function createTableRowHTML(meet) {
       </td>
       <td data-label="Format">
         <div class="col-course-info">
-          <span class="course-format">${escapeHTML(displayCourse)}</span>
+          <span class="course-format">
+            <span class="course-desktop">${escapeHTML(displayCourse)}</span>
+            <span class="course-mobile">${escapeHTML(getCourseAbbreviation(displayCourse))}</span>
+          </span>
           <span class="level-badge">${escapeHTML(displayLevel)}</span>
         </div>
       </td>

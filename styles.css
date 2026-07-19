@@ -521,6 +521,10 @@ body {
   color: var(--text-secondary);
 }
 
+.course-mobile {
+  display: none;
+}
+
 .level-badge {
   display: inline-block;
   font-size: 11px;
@@ -643,13 +647,13 @@ body {
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
-    padding: 10px 48px 10px 18px; /* space on the right for absolute link icon */
+    padding: 8px 40px 8px 14px; /* space on the right for absolute link icon */
     box-shadow: var(--shadow-sm);
     transition: transform var(--transition-fast), background-color var(--transition-fast);
     position: relative;
     overflow: hidden;
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
   
   .meets-table tbody tr::before {
@@ -685,8 +689,8 @@ body {
     border-bottom: none;
     display: block;
     text-align: left;
-    font-size: 13px;
-    line-height: 1.4;
+    font-size: 12.5px;
+    line-height: 1.35;
   }
   
   .meets-table td::before {
@@ -696,33 +700,68 @@ body {
   .col-date {
     color: #60a5fa;
     font-weight: 700;
-    font-size: 12px;
+    font-size: 11.5px;
     display: inline-block;
   }
   
   .meets-table td[data-label="Type"] {
     display: inline-block;
-    margin-left: 8px;
+    margin-left: 6px;
   }
   
   .meets-table td.cell-meet-name {
-    font-size: 14.5px;
+    font-size: 14px;
     font-weight: 700;
     color: var(--text-primary);
-    margin: 2px 0 4px;
+    margin: 1px 0 3px;
+  }
+
+  .meets-table td[data-label="Location"] {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+  }
+
+  .meets-table td[data-label="Location"]::after {
+    content: "•";
+    color: var(--text-muted);
+    margin-left: 6px;
+    font-size: 10px;
+  }
+
+  .meets-table td[data-label="Format"] {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+    margin-left: 6px;
   }
   
   .col-location-info, .col-course-info {
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     align-items: center;
-    gap: 8px;
-    flex-wrap: wrap;
+    gap: 5px;
     text-align: left;
   }
   
   .location-name, .course-format {
     color: var(--text-secondary);
+  }
+
+  .course-desktop {
+    display: none !important;
+  }
+
+  .course-mobile {
+    display: inline !important;
+  }
+
+  /* Micro badges sizes on mobile */
+  .region-tag, .level-badge, .type-tag, .holiday-badge {
+    font-size: 9px !important;
+    padding: 1px 4px !important;
+    line-height: 1.25 !important;
+    border-radius: 3px !important;
   }
   
   .meets-table td.text-center {
