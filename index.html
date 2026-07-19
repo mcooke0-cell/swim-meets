@@ -56,29 +56,44 @@
         <div class="filters-dropdown-group">
           <!-- Region Dropdown -->
           <div class="select-wrapper">
-            <label for="region-select">Region</label>
-            <select id="region-select" class="filter-select">
-              <option value="all">All Regions</option>
-              <!-- Dynamically populated -->
-            </select>
+            <span class="select-label">Region</span>
+            <div class="custom-select" id="region-custom-select">
+              <button type="button" class="select-trigger" id="region-trigger" aria-haspopup="listbox" aria-expanded="false">
+                <span class="trigger-text">All Regions</span>
+                <span class="arrow-icon"></span>
+              </button>
+              <div class="options-container" id="region-options" role="listbox">
+                <!-- Checkboxes populated dynamically -->
+              </div>
+            </div>
           </div>
 
           <!-- Meet Type Dropdown -->
           <div class="select-wrapper">
-            <label for="meet-type-select">Meet Type</label>
-            <select id="meet-type-select" class="filter-select">
-              <option value="all">All Meet Types</option>
-              <!-- Dynamically populated -->
-            </select>
+            <span class="select-label">Meet Type</span>
+            <div class="custom-select" id="meet-type-custom-select">
+              <button type="button" class="select-trigger" id="meet-type-trigger" aria-haspopup="listbox" aria-expanded="false">
+                <span class="trigger-text">All Meet Types</span>
+                <span class="arrow-icon"></span>
+              </button>
+              <div class="options-container" id="meet-type-options" role="listbox">
+                <!-- Checkboxes populated dynamically -->
+              </div>
+            </div>
           </div>
 
           <!-- Month Dropdown -->
           <div class="select-wrapper">
-            <label for="month-select">Month</label>
-            <select id="month-select" class="filter-select">
-              <option value="all">All Months</option>
-              <!-- Dynamically populated -->
-            </select>
+            <span class="select-label">Month</span>
+            <div class="custom-select" id="month-custom-select">
+              <button type="button" class="select-trigger" id="month-trigger" aria-haspopup="listbox" aria-expanded="false">
+                <span class="trigger-text">All Months</span>
+                <span class="arrow-icon"></span>
+              </button>
+              <div class="options-container" id="month-options" role="listbox">
+                <!-- Checkboxes populated dynamically -->
+              </div>
+            </div>
           </div>
 
           <!-- Reset Button -->

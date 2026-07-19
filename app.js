@@ -6,9 +6,9 @@ let months = [];
 
 const state = {
   search: '',
-  selectedRegion: 'all',
-  selectedMeetType: 'all',
-  selectedMonth: 'all'
+  selectedRegions: new Set(),
+  selectedMeetTypes: new Set(),
+  selectedMonths: new Set()
 };
 
 const MONTH_NAMES = [
@@ -17,7 +17,10 @@ const MONTH_NAMES = [
 ];
 
 // DOM Elements
-let searchInput, clearSearchBtn, regionSelect, meetTypeSelect, monthSelect, resetFiltersBtn;
+let searchInput, clearSearchBtn, resetFiltersBtn;
+let regionCustomSelect, regionTrigger, regionOptions;
+let meetTypeCustomSelect, meetTypeTrigger, meetTypeOptions;
+let monthCustomSelect, monthTrigger, monthOptions;
 let meetsCountElement, lastUpdatedElement, loadingState, errorState, emptyState;
 let tableContainer, meetsTableBody, emptyStateResetBtn;
 
@@ -26,9 +29,6 @@ async function init() {
   // Bind DOM Elements
   searchInput = document.getElementById('search-input');
   clearSearchBtn = document.getElementById('clear-search-btn');
-  regionSelect = document.getElementById('region-select');
-  meetTypeSelect = document.getElementById('meet-type-select');
-  monthSelect = document.getElementById('month-select');
   resetFiltersBtn = document.getElementById('reset-filters-btn');
   meetsCountElement = document.getElementById('meets-count');
   lastUpdatedElement = document.getElementById('last-updated');
@@ -39,6 +39,19 @@ async function init() {
   tableContainer = document.getElementById('table-container');
   meetsTableBody = document.getElementById('meets-table-body');
   emptyStateResetBtn = document.getElementById('empty-state-reset-btn');
+
+  // Custom Dropdown Elements
+  regionCustomSelect = document.getElementById('region-custom-select');
+  regionTrigger = document.getElementById('region-trigger');
+  regionOptions = document.getElementById('region-options');
+
+  meetTypeCustomSelect = document.getElementById('meet-type-custom-select');
+  meetTypeTrigger = document.getElementById('meet-type-trigger');
+  meetTypeOptions = document.getElementById('meet-type-options');
+
+  monthCustomSelect = document.getElementById('month-custom-select');
+  monthTrigger = document.getElementById('month-trigger');
+  monthOptions = document.getElementById('month-options');
 
   // Set up Event Listeners
   setupEventListeners();
@@ -62,59 +75,82 @@ async function init() {
     // Populate dropdown HTML elements
     populateDropdowns();
     
-    // Render Initial List
+    // Render initial page list
     renderMeets();
     
-    // Transition UI from loading to active
+    // Hide loader
     if (loadingState) loadingState.style.display = 'none';
-    if (tableContainer) tableContainer.style.display = 'block';
-  } catch (err) {
-    console.error('Error fetching meets data:', err);
+    
+  } catch (error) {
+    console.error('Error loading swim meets:', error);
     if (loadingState) loadingState.style.display = 'none';
     if (errorState) errorState.style.display = 'flex';
   }
 }
 
-// Format and Display Scraped Time
-function updateLastUpdated(isoString) {
-  if (!lastUpdatedElement) return;
-  if (!isoString) {
-    lastUpdatedElement.textContent = 'Last updated: unknown';
-    return;
+// Convert ISO string date or short text date to a JS Date
+function getStartDate(dateString) {
+  if (!dateString) return new Date();
+  
+  // Format matches "24 Jan 2026" or "24-25 Jan 2026" or "24 Jan - 1 Feb 2026"
+  const cleanStr = dateString.split('-')[0].trim();
+  
+  // Parse month and year from string if split didn't contain month
+  const parts = cleanStr.split(/\s+/);
+  if (parts.length === 1 && !isNaN(Date.parse(cleanStr))) {
+    return new Date(cleanStr);
   }
   
-  try {
-    const date = new Date(isoString);
-    const options = { 
-      weekday: 'short', 
-      month: 'short', 
-      day: 'numeric', 
-      hour: '2-digit', 
-      minute: '2-digit' 
-    };
-    lastUpdatedElement.textContent = `Last updated: ${date.toLocaleDateString('en-GB', options)}`;
-  } catch (e) {
-    lastUpdatedElement.textContent = `Last updated: ${isoString}`;
+  // Try directly parsing
+  const parsed = Date.parse(cleanStr);
+  if (!isNaN(parsed)) return new Date(parsed);
+  
+  // Attempt to scan for a year and a month name in the original full string
+  let year = new Date().getFullYear();
+  const yearMatch = dateString.match(/\b(202\d)\b/);
+  if (yearMatch) year = parseInt(yearMatch[1], 10);
+  
+  let monthIndex = new Date().getMonth();
+  for (let i = 0; i < MONTH_NAMES.length; i++) {
+    if (dateString.toLowerCase().includes(MONTH_NAMES[i].toLowerCase().substring(0, 3))) {
+      monthIndex = i;
+      break;
+    }
   }
+  
+  // Day parsing
+  let day = 1;
+  const dayMatch = parts[0] ? parts[0].match(/\d+/) : null;
+  if (dayMatch) day = parseInt(dayMatch[0], 10);
+  
+  return new Date(year, monthIndex, day);
 }
 
-// Parse month string from UK format DD/MM/YYYY
+// Determine Month Name for a meet
 function getMeetMonthName(meet) {
-  const dateStr = meet.formattedDate || meet.date;
-  if (!dateStr) return null;
+  if (!meet.date) return null;
   
-  // Extract first date if it's a range e.g. "16/07/2026 - 22/07/2026"
-  const datePart = dateStr.split('-')[0].trim();
-  const parts = datePart.split('/');
+  // First, extract the date part (before any year boundary or range)
+  const datePart = meet.date.trim();
   
-  if (parts.length === 3) {
-    const monthIndex = parseInt(parts[1], 10) - 1;
+  // Look for full month names
+  for (const name of MONTH_NAMES) {
+    const reg = new RegExp(`\\b${name}\\b`, 'i');
+    if (reg.test(datePart)) {
+      return name;
+    }
+  }
+  
+  // Try parsing Date
+  const parsedDate = getStartDate(meet.date);
+  if (parsedDate && !isNaN(parsedDate.getTime())) {
+    const monthIndex = parsedDate.getMonth();
     if (monthIndex >= 0 && monthIndex < 12) {
       return MONTH_NAMES[monthIndex];
     }
   }
   
-  // Fallback: Check if raw textual date contains month name
+  // Fallback: Check if raw textual date contains month name abbreviation
   const rawLower = datePart.toLowerCase();
   for (const name of MONTH_NAMES) {
     if (rawLower.includes(name.toLowerCase().substring(0, 3))) {
@@ -148,36 +184,109 @@ function extractFilterOptions(meets) {
   });
 }
 
-// Populate Select Options
+// Populate Custom Dropdown Lists
 function populateDropdowns() {
-  if (!regionSelect || !meetTypeSelect || !monthSelect) return;
+  // 1. Regions
+  if (regionOptions) {
+    regionOptions.innerHTML = '';
+    regions.forEach(region => {
+      const label = document.createElement('label');
+      label.className = 'option-item';
+      
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+      checkbox.value = region;
+      
+      checkbox.addEventListener('change', () => {
+        if (checkbox.checked) {
+          state.selectedRegions.add(region);
+          label.classList.add('checked');
+        } else {
+          state.selectedRegions.delete(region);
+          label.classList.remove('checked');
+        }
+        updateTriggerText(regionTrigger, state.selectedRegions, 'Region', 'Regions');
+        renderMeets();
+      });
+      
+      label.appendChild(checkbox);
+      label.appendChild(document.createTextNode(region));
+      regionOptions.appendChild(label);
+    });
+  }
 
-  // Region Select Options
-  regionSelect.innerHTML = '<option value="all">All Regions</option>';
-  regions.forEach(region => {
-    const option = document.createElement('option');
-    option.value = region;
-    option.textContent = region;
-    regionSelect.appendChild(option);
-  });
+  // 2. Meet Types
+  if (meetTypeOptions) {
+    meetTypeOptions.innerHTML = '';
+    meetTypes.forEach(type => {
+      const label = document.createElement('label');
+      label.className = 'option-item';
+      
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+      checkbox.value = type;
+      
+      checkbox.addEventListener('change', () => {
+        if (checkbox.checked) {
+          state.selectedMeetTypes.add(type);
+          label.classList.add('checked');
+        } else {
+          state.selectedMeetTypes.delete(type);
+          label.classList.remove('checked');
+        }
+        updateTriggerText(meetTypeTrigger, state.selectedMeetTypes, 'Meet Type', 'Meet Types');
+        renderMeets();
+      });
+      
+      label.appendChild(checkbox);
+      label.appendChild(document.createTextNode(type));
+      meetTypeOptions.appendChild(label);
+    });
+  }
 
-  // Meet Type Select Options
-  meetTypeSelect.innerHTML = '<option value="all">All Meet Types</option>';
-  meetTypes.forEach(type => {
-    const option = document.createElement('option');
-    option.value = type;
-    option.textContent = type;
-    meetTypeSelect.appendChild(option);
-  });
+  // 3. Months
+  if (monthOptions) {
+    monthOptions.innerHTML = '';
+    months.forEach(month => {
+      const label = document.createElement('label');
+      label.className = 'option-item';
+      
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+      checkbox.value = month;
+      
+      checkbox.addEventListener('change', () => {
+        if (checkbox.checked) {
+          state.selectedMonths.add(month);
+          label.classList.add('checked');
+        } else {
+          state.selectedMonths.delete(month);
+          label.classList.remove('checked');
+        }
+        updateTriggerText(monthTrigger, state.selectedMonths, 'Month', 'Months');
+        renderMeets();
+      });
+      
+      label.appendChild(checkbox);
+      label.appendChild(document.createTextNode(month));
+      monthOptions.appendChild(label);
+    });
+  }
+}
 
-  // Month Select Options
-  monthSelect.innerHTML = '<option value="all">All Months</option>';
-  months.forEach(month => {
-    const option = document.createElement('option');
-    option.value = month;
-    option.textContent = month;
-    monthSelect.appendChild(option);
-  });
+// Update the label text displayed on custom select triggers
+function updateTriggerText(triggerElement, selectedSet, singularLabel, pluralLabel) {
+  if (!triggerElement) return;
+  const textSpan = triggerElement.querySelector('.trigger-text');
+  if (!textSpan) return;
+
+  if (selectedSet.size === 0) {
+    textSpan.textContent = `All ${pluralLabel}`;
+  } else if (selectedSet.size === 1) {
+    textSpan.textContent = Array.from(selectedSet)[0];
+  } else {
+    textSpan.textContent = `${selectedSet.size} ${pluralLabel} selected`;
+  }
 }
 
 // Filter and Render Table Rows
@@ -195,19 +304,19 @@ function renderMeets() {
     }
     
     // 2. Region Filter
-    if (state.selectedRegion !== 'all') {
-      if (!meet.region || meet.region !== state.selectedRegion) return false;
+    if (state.selectedRegions.size > 0) {
+      if (!meet.region || !state.selectedRegions.has(meet.region)) return false;
     }
 
     // 3. Meet Type Filter
-    if (state.selectedMeetType !== 'all') {
-      if (!meet.meetType || meet.meetType !== state.selectedMeetType) return false;
+    if (state.selectedMeetTypes.size > 0) {
+      if (!meet.meetType || !state.selectedMeetTypes.has(meet.meetType)) return false;
     }
     
     // 4. Month Filter
-    if (state.selectedMonth !== 'all') {
+    if (state.selectedMonths.size > 0) {
       const monthName = getMeetMonthName(meet);
-      if (!monthName || monthName !== state.selectedMonth) return false;
+      if (!monthName || !state.selectedMonths.has(monthName)) return false;
     }
     
     return true;
@@ -320,26 +429,37 @@ function setupEventListeners() {
     });
   }
 
-  if (regionSelect) {
-    regionSelect.addEventListener('change', (e) => {
-      state.selectedRegion = e.target.value;
-      renderMeets();
+  // Dropdown Toggles
+  if (regionTrigger) {
+    regionTrigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleDropdown(regionCustomSelect);
     });
   }
 
-  if (meetTypeSelect) {
-    meetTypeSelect.addEventListener('change', (e) => {
-      state.selectedMeetType = e.target.value;
-      renderMeets();
+  if (meetTypeTrigger) {
+    meetTypeTrigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleDropdown(meetTypeCustomSelect);
     });
   }
 
-  if (monthSelect) {
-    monthSelect.addEventListener('change', (e) => {
-      state.selectedMonth = e.target.value;
-      renderMeets();
+  if (monthTrigger) {
+    monthTrigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleDropdown(monthCustomSelect);
     });
   }
+
+  // Prevent dropdown closing when clicking options
+  if (regionOptions) regionOptions.addEventListener('click', (e) => e.stopPropagation());
+  if (meetTypeOptions) meetTypeOptions.addEventListener('click', (e) => e.stopPropagation());
+  if (monthOptions) monthOptions.addEventListener('click', (e) => e.stopPropagation());
+
+  // Close dropdowns on clicking outside
+  document.addEventListener('click', () => {
+    closeAllDropdowns();
+  });
 
   if (resetFiltersBtn) {
     resetFiltersBtn.addEventListener('click', resetFilters);
@@ -350,20 +470,65 @@ function setupEventListeners() {
   }
 }
 
+// Toggle a single dropdown
+function toggleDropdown(customSelectElement) {
+  if (!customSelectElement) return;
+  const isOpen = customSelectElement.classList.contains('open');
+  closeAllDropdowns();
+  if (!isOpen) {
+    customSelectElement.classList.add('open');
+    const trigger = customSelectElement.querySelector('.select-trigger');
+    if (trigger) trigger.setAttribute('aria-expanded', 'true');
+  }
+}
+
+// Close all custom dropdowns
+function closeAllDropdowns() {
+  const selects = document.querySelectorAll('.custom-select');
+  selects.forEach(select => {
+    select.classList.remove('open');
+    const trigger = select.querySelector('.select-trigger');
+    if (trigger) trigger.setAttribute('aria-expanded', 'false');
+  });
+}
+
 function resetFilters() {
   state.search = '';
-  state.selectedRegion = 'all';
-  state.selectedMeetType = 'all';
-  state.selectedMonth = 'all';
+  state.selectedRegions.clear();
+  state.selectedMeetTypes.clear();
+  state.selectedMonths.clear();
   
   // Sync inputs
   if (searchInput) searchInput.value = '';
   if (clearSearchBtn) clearSearchBtn.style.display = 'none';
-  if (regionSelect) regionSelect.value = 'all';
-  if (meetTypeSelect) meetTypeSelect.value = 'all';
-  if (monthSelect) monthSelect.value = 'all';
   
+  // Uncheck all checkbox inputs in dropdown lists
+  const checkboxes = document.querySelectorAll('.options-container input[type="checkbox"]');
+  checkboxes.forEach(cb => {
+    cb.checked = false;
+    const label = cb.closest('.option-item');
+    if (label) label.classList.remove('checked');
+  });
+
+  // Reset triggers labels text representation
+  updateTriggerText(regionTrigger, state.selectedRegions, 'Region', 'Regions');
+  updateTriggerText(meetTypeTrigger, state.selectedMeetTypes, 'Meet Type', 'Meet Types');
+  updateTriggerText(monthTrigger, state.selectedMonths, 'Month', 'Months');
+
   renderMeets();
+}
+
+// Update Last Updated indicator
+function updateLastUpdated(dateStr) {
+  if (lastUpdatedElement && dateStr) {
+    const date = new Date(dateStr);
+    if (!isNaN(date.getTime())) {
+      const options = { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' };
+      lastUpdatedElement.textContent = `Last updated: ${date.toLocaleDateString('en-GB', options)}`;
+      return;
+    }
+    lastUpdatedElement.textContent = `Last updated: ${dateStr}`;
+  }
 }
 
 // Run Init safely depending on document readyState
