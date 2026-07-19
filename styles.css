@@ -643,11 +643,13 @@ body {
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
-    padding: 16px;
+    padding: 10px 48px 10px 18px; /* space on the right for absolute link icon */
     box-shadow: var(--shadow-sm);
     transition: transform var(--transition-fast), background-color var(--transition-fast);
     position: relative;
     overflow: hidden;
+    display: block;
+    margin-bottom: 10px;
   }
   
   .meets-table tbody tr::before {
@@ -679,69 +681,68 @@ body {
   }
   
   .meets-table td {
-    padding: 6px 0;
+    padding: 0;
     border-bottom: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: right;
-    font-size: 14px;
-  }
-  
-  /* Show responsive labels for cells */
-  .meets-table td::before {
-    content: attr(data-label);
-    font-weight: 600;
-    color: var(--text-secondary);
-    text-align: left;
-    margin-right: 12px;
-  }
-  
-  /* Customize specific rows to stand out */
-  .meets-table td.cell-meet-name {
     display: block;
     text-align: left;
-    font-size: 17px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 13px;
+    line-height: 1.4;
   }
   
-  .meets-table td.cell-meet-name::before {
-    display: none; /* Hide 'Meet Name' label */
+  .meets-table td::before {
+    display: none; /* Hide labels completely on mobile */
   }
   
   .col-date {
     color: #60a5fa;
+    font-weight: 700;
+    font-size: 12px;
+    display: inline-block;
   }
   
-  .col-location-info {
-    align-items: flex-end;
-    text-align: right;
+  .meets-table td[data-label="Type"] {
+    display: inline-block;
+    margin-left: 8px;
   }
   
-  .col-course-info {
-    align-items: flex-end;
-    text-align: right;
+  .meets-table td.cell-meet-name {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 2px 0 4px;
+  }
+  
+  .col-location-info, .col-course-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    text-align: left;
+  }
+  
+  .location-name, .course-format {
+    color: var(--text-secondary);
   }
   
   .meets-table td.text-center {
-    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
   }
   
   .visit-link {
-    width: auto;
-    height: auto;
-    border-radius: var(--radius-sm);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
     background-color: rgba(59, 130, 246, 0.1);
     color: var(--accent-blue);
-    padding: 6px 14px;
-    font-size: 13px;
-    font-weight: 600;
-    display: inline-flex;
-    gap: 6px;
+    display: flex;
     align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: all var(--transition-fast);
   }
   
   .visit-link:hover {
