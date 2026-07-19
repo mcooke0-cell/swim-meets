@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-07-19T16:50:33.959Z",
-  "meetsCount": 286,
+  "lastUpdated": "2026-07-19T19:16:09.351Z",
+  "meetsCount": 285,
   "meets": [
     {
       "id": "aqgb-aquatics-gb-next-gen-championships-2026-16thjul-22ndjul-2026",
@@ -53,19 +53,6 @@
       "meetType": "Open Meet",
       "isHoliday": true,
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88793&page=1&region=P&level=P&month=P&year=P"
-    },
-    {
-      "id": "masters-swim-england-open-water-national-masters-championships-2026",
-      "name": "Swim England Open Water National Masters Championships 2026",
-      "date": "26 Jul 2026",
-      "formattedDate": "26/07/2026",
-      "location": "Sheffield",
-      "region": "National",
-      "course": "Open Water",
-      "level": "Masters",
-      "meetType": "Masters",
-      "isHoliday": true,
-      "sourceUrl": "https://www.swimming.org/calendar/all/swim-england-open-water-national-masters-championships-2026/"
     },
     {
       "id": "swimeng-swim-england-national-summer-meet-2026-27thjul-1staug-2026",

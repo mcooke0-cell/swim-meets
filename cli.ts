@@ -181,7 +181,13 @@ async function runLocalScraper() {
     // Filter meets:
     // 1) Remove where meet type = League, Gala, County, County Championship, Club or Club Champs AND region is not South West
     // 2) Remove where meet type = Disability
+    // 3) Remove where meet name contains "open water" (case-insensitive)
     const meets = rawMeets.filter(m => {
+      const nameLower = (m.name || '').toLowerCase();
+      if (nameLower.includes('open water')) {
+        return false;
+      }
+
       const meetTypeLower = (m.meetType || '').toLowerCase();
       const regionLower = (m.region || '').toLowerCase();
 
