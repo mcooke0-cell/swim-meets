@@ -489,6 +489,15 @@ body {
   background-color: rgba(255, 255, 255, 0.02);
 }
 
+.meets-table tbody tr.highlighted-meet {
+  background-color: rgba(245, 158, 11, 0.03); /* warm amber tint */
+  border-left: 3px solid #fbbf24; /* golden border */
+}
+
+.meets-table tbody tr.highlighted-meet:hover {
+  background-color: rgba(245, 158, 11, 0.06);
+}
+
 .meets-table tbody tr:last-child td {
   border-bottom: none;
 }
@@ -670,6 +679,18 @@ body {
     bottom: 0;
     width: 4px;
     background: linear-gradient(to bottom, var(--accent-blue), var(--accent-purple));
+  }
+
+  .meets-table tbody tr.highlighted-meet::before {
+    background: linear-gradient(to bottom, #f59e0b, #d97706); /* golden highlight */
+  }
+
+  .meets-table tbody tr.highlighted-meet {
+    background-color: rgba(245, 158, 11, 0.03);
+  }
+
+  .meets-table tbody tr.highlighted-meet:hover {
+    background-color: rgba(245, 158, 11, 0.06);
   }
   
   .meets-table tbody tr:hover {
