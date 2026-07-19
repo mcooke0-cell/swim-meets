@@ -96,6 +96,9 @@ async function init() {
     // Parse Filter Options
     extractFilterOptions(rawMeets);
     
+    // Set default selections
+    setDefaultFilters();
+    
     // Populate dropdown HTML elements
     populateDropdowns();
     
@@ -208,6 +211,26 @@ function extractFilterOptions(meets) {
   });
 }
 
+function setDefaultFilters() {
+  // 1. Default Regions: select South West, National, GB, England, Scotland, Wales
+  const defaultRegionsToSelect = ['south west', 'national', 'gb', 'england', 'scotland', 'wales'];
+  regions.forEach(r => {
+    if (defaultRegionsToSelect.includes(r.toLowerCase().trim())) {
+      state.selectedRegions.add(r);
+    }
+  });
+
+  // 2. Default Meet Types: exclude Club Champs and League
+  const meetTypesToExclude = ['club champs', 'league', 'club'];
+  meetTypes.forEach(t => {
+    const tLower = t.toLowerCase().trim();
+    const shouldExclude = meetTypesToExclude.some(exclude => tLower.includes(exclude));
+    if (!shouldExclude) {
+      state.selectedMeetTypes.add(t);
+    }
+  });
+}
+
 // Populate Custom Dropdown Lists
 function populateDropdowns() {
   // 1. Regions
@@ -220,6 +243,11 @@ function populateDropdowns() {
       const checkbox = document.createElement('input');
       checkbox.type = 'checkbox';
       checkbox.value = region;
+      
+      if (state.selectedRegions.has(region)) {
+        checkbox.checked = true;
+        label.classList.add('checked');
+      }
       
       checkbox.addEventListener('change', () => {
         if (checkbox.checked) {
@@ -249,6 +277,11 @@ function populateDropdowns() {
       const checkbox = document.createElement('input');
       checkbox.type = 'checkbox';
       checkbox.value = type;
+      
+      if (state.selectedMeetTypes.has(type)) {
+        checkbox.checked = true;
+        label.classList.add('checked');
+      }
       
       checkbox.addEventListener('change', () => {
         if (checkbox.checked) {
@@ -296,6 +329,11 @@ function populateDropdowns() {
       monthOptions.appendChild(label);
     });
   }
+
+  // Initialize trigger text representations
+  updateTriggerText(regionTrigger, state.selectedRegions, 'Region', 'Regions');
+  updateTriggerText(meetTypeTrigger, state.selectedMeetTypes, 'Meet Type', 'Meet Types');
+  updateTriggerText(monthTrigger, state.selectedMonths, 'Month', 'Months');
 }
 
 // Update the label text displayed on custom select triggers
