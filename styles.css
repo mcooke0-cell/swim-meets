@@ -56,60 +56,29 @@ body {
 
 /* Header styling */
 .app-header {
-  padding: 32px 0 24px;
+  padding: 16px 0;
   border-bottom: 1px solid var(--border-color);
 }
 
 .header-content {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.logo-area {
-  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   gap: 12px;
-}
-
-.logo-icon {
-  background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
-  color: white;
-  width: 42px;
-  height: 42px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-glow);
-}
-
-.logo-icon svg {
-  width: 24px;
-  height: 24px;
-  stroke-width: 2.5;
-}
-
-.logo-area h1 {
-  font-size: 28px;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-  background: linear-gradient(to right, #ffffff, #94a3b8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .subtitle {
   color: var(--text-secondary);
-  font-size: 15px;
-  font-weight: 400;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .meta-info {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-top: 8px;
   flex-wrap: wrap;
 }
 
@@ -638,6 +607,12 @@ body {
 
 /* Responsive Styles for Table -> Card format on mobile */
 @media (max-width: 639px) {
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
   /* Break the table structure */
   .meets-table, 
   .meets-table thead, 
@@ -777,11 +752,7 @@ body {
 
 @media (min-width: 1024px) {
   .app-header {
-    padding: 48px 0 32px;
-  }
-  
-  .logo-area h1 {
-    font-size: 32px;
+    padding: 20px 0;
   }
   
   .controls-section {
