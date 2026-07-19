@@ -1,11 +1,13 @@
 // State Management
 let rawMeets = [];
 let regions = [];
+let meetTypes = [];
 let months = [];
 
 const state = {
   search: '',
   selectedRegion: 'all',
+  selectedMeetType: 'all',
   selectedMonth: 'all'
 };
 
@@ -15,7 +17,7 @@ const MONTH_NAMES = [
 ];
 
 // DOM Elements
-let searchInput, clearSearchBtn, regionSelect, monthSelect, resetFiltersBtn;
+let searchInput, clearSearchBtn, regionSelect, meetTypeSelect, monthSelect, resetFiltersBtn;
 let meetsCountElement, lastUpdatedElement, loadingState, errorState, emptyState;
 let tableContainer, meetsTableBody, emptyStateResetBtn;
 
@@ -25,6 +27,7 @@ async function init() {
   searchInput = document.getElementById('search-input');
   clearSearchBtn = document.getElementById('clear-search-btn');
   regionSelect = document.getElementById('region-select');
+  meetTypeSelect = document.getElementById('meet-type-select');
   monthSelect = document.getElementById('month-select');
   resetFiltersBtn = document.getElementById('reset-filters-btn');
   meetsCountElement = document.getElementById('meets-count');
@@ -122,19 +125,22 @@ function getMeetMonthName(meet) {
   return null;
 }
 
-// Extract unique regions and months sorted alphabetically/chronologically
+// Extract unique regions, meet types, and months sorted
 function extractFilterOptions(meets) {
   const regionsSet = new Set();
+  const meetTypesSet = new Set();
   const monthsSet = new Set();
   
   meets.forEach(meet => {
     if (meet.region) regionsSet.add(meet.region);
+    if (meet.meetType) meetTypesSet.add(meet.meetType);
     
     const monthName = getMeetMonthName(meet);
     if (monthName) monthsSet.add(monthName);
   });
   
   regions = Array.from(regionsSet).sort((a, b) => a.localeCompare(b));
+  meetTypes = Array.from(meetTypesSet).sort((a, b) => a.localeCompare(b));
   
   // Sort months chronologically according to MONTH_NAMES index
   months = Array.from(monthsSet).sort((a, b) => {
@@ -144,7 +150,7 @@ function extractFilterOptions(meets) {
 
 // Populate Select Options
 function populateDropdowns() {
-  if (!regionSelect || !monthSelect) return;
+  if (!regionSelect || !meetTypeSelect || !monthSelect) return;
 
   // Region Select Options
   regionSelect.innerHTML = '<option value="all">All Regions</option>';
@@ -153,6 +159,15 @@ function populateDropdowns() {
     option.value = region;
     option.textContent = region;
     regionSelect.appendChild(option);
+  });
+
+  // Meet Type Select Options
+  meetTypeSelect.innerHTML = '<option value="all">All Meet Types</option>';
+  meetTypes.forEach(type => {
+    const option = document.createElement('option');
+    option.value = type;
+    option.textContent = type;
+    meetTypeSelect.appendChild(option);
   });
 
   // Month Select Options
@@ -183,8 +198,13 @@ function renderMeets() {
     if (state.selectedRegion !== 'all') {
       if (!meet.region || meet.region !== state.selectedRegion) return false;
     }
+
+    // 3. Meet Type Filter
+    if (state.selectedMeetType !== 'all') {
+      if (!meet.meetType || meet.meetType !== state.selectedMeetType) return false;
+    }
     
-    // 3. Month Filter
+    // 4. Month Filter
     if (state.selectedMonth !== 'all') {
       const monthName = getMeetMonthName(meet);
       if (!monthName || monthName !== state.selectedMonth) return false;
@@ -232,10 +252,19 @@ function createTableRowHTML(meet) {
        </a>`
     : '<span class="text-secondary">-</span>';
 
+  const holidayBadgeHTML = meet.isHoliday 
+    ? '<span class="holiday-badge">🏖️ Holiday</span>' 
+    : '';
+
   return `
     <tr>
       <td class="col-date" data-label="Date">${escapeHTML(displayDate)}</td>
-      <td class="col-meet-name cell-meet-name" data-label="Meet">${escapeHTML(meet.name)}</td>
+      <td class="col-meet-name cell-meet-name" data-label="Meet">
+        <div class="meet-name-wrapper">
+          <span class="meet-name-text">${escapeHTML(meet.name)}</span>
+          ${holidayBadgeHTML}
+        </div>
+      </td>
       <td data-label="Location">
         <div class="col-location-info">
           <span class="location-name">${escapeHTML(displayLocation)}</span>
@@ -247,6 +276,9 @@ function createTableRowHTML(meet) {
           <span class="course-format">${escapeHTML(displayCourse)}</span>
           <span class="level-badge">${escapeHTML(displayLevel)}</span>
         </div>
+      </td>
+      <td data-label="Type">
+        <span class="type-tag">${escapeHTML(meet.meetType || 'Other')}</span>
       </td>
       <td class="text-center" data-label="Info">${visitLinkHTML}</td>
     </tr>
@@ -295,6 +327,13 @@ function setupEventListeners() {
     });
   }
 
+  if (meetTypeSelect) {
+    meetTypeSelect.addEventListener('change', (e) => {
+      state.selectedMeetType = e.target.value;
+      renderMeets();
+    });
+  }
+
   if (monthSelect) {
     monthSelect.addEventListener('change', (e) => {
       state.selectedMonth = e.target.value;
@@ -314,12 +353,14 @@ function setupEventListeners() {
 function resetFilters() {
   state.search = '';
   state.selectedRegion = 'all';
+  state.selectedMeetType = 'all';
   state.selectedMonth = 'all';
   
   // Sync inputs
   if (searchInput) searchInput.value = '';
   if (clearSearchBtn) clearSearchBtn.style.display = 'none';
   if (regionSelect) regionSelect.value = 'all';
+  if (meetTypeSelect) meetTypeSelect.value = 'all';
   if (monthSelect) monthSelect.value = 'all';
   
   renderMeets();

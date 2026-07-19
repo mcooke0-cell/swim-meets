@@ -461,6 +461,40 @@ body {
   width: fit-content;
 }
 
+.type-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background-color: rgba(139, 92, 246, 0.12);
+  color: #a78bfa;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  width: fit-content;
+}
+
+.holiday-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.meet-name-wrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
 .text-center {
   text-align: center;
 }
