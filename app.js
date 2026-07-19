@@ -325,5 +325,9 @@ function resetFilters() {
   renderMeets();
 }
 
-// Run Init on DOM Content Loaded
-document.addEventListener('DOMContentLoaded', init);
+// Run Init safely depending on document readyState
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
