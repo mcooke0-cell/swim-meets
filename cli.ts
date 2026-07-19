@@ -242,7 +242,7 @@ async function runLocalScraper() {
         date: m.date,
         formattedDate: convertToUKDateFormat(m.date),
         location: m.location,
-        region: m.region,
+        region: (m.region || '').trim().toLowerCase() === 'east midland' ? 'East Midlands' : m.region,
         course: m.course,
         level: m.level,
         meetType: m.meetType,
