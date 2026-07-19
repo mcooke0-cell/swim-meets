@@ -1,32 +1,33 @@
 // State Management
 let rawMeets = [];
 let regions = [];
-let meetTypes = [];
+let months = [];
 
 const state = {
   search: '',
-  selectedRegions: new Set(),
-  selectedMeetTypes: new Set(),
-  holidaysOnly: false
+  selectedRegion: 'all',
+  selectedMonth: 'all'
 };
+
+const MONTH_NAMES = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
 
 // DOM Elements
 const searchInput = document.getElementById('search-input');
 const clearSearchBtn = document.getElementById('clear-search-btn');
-const filterToggleBtn = document.getElementById('filter-toggle-btn');
-const holidayToggleBtn = document.getElementById('holiday-toggle-btn');
-const filtersDrawer = document.getElementById('filters-drawer');
-const activeFilterIndicator = document.getElementById('active-filter-indicator');
-const resetAllBtn = document.getElementById('reset-all-btn');
-const regionChipsContainer = document.getElementById('region-chips-container');
-const meetTypeChipsContainer = document.getElementById('meet-type-chips-container');
+const regionSelect = document.getElementById('region-select');
+const monthSelect = document.getElementById('month-select');
+const resetFiltersBtn = document.getElementById('reset-filters-btn');
 const meetsCountElement = document.getElementById('meets-count');
 const lastUpdatedElement = document.getElementById('last-updated');
 
 const loadingState = document.getElementById('loading-state');
 const errorState = document.getElementById('error-state');
 const emptyState = document.getElementById('empty-state');
-const meetsGrid = document.getElementById('meets-grid');
+const tableContainer = document.getElementById('table-container');
+const meetsTableBody = document.getElementById('meets-table-body');
 const emptyStateResetBtn = document.getElementById('empty-state-reset-btn');
 
 // Initialize Application
@@ -46,15 +47,15 @@ async function init() {
     // Parse Filter Options
     extractFilterOptions(rawMeets);
     
-    // Render Filter Controls
-    renderFilterChips();
+    // Populate dropdown HTML elements
+    populateDropdowns();
     
     // Render Initial List
     renderMeets();
     
     // Transition UI from loading to active
     loadingState.style.display = 'none';
-    meetsGrid.style.display = 'grid';
+    tableContainer.style.display = 'block';
   } catch (err) {
     console.error('Error fetching meets data:', err);
     loadingState.style.display = 'none';
@@ -84,77 +85,75 @@ function updateLastUpdated(isoString) {
   }
 }
 
-// Extract unique regions and types sorted alphabetically
+// Parse month string from UK format DD/MM/YYYY
+function getMeetMonthName(meet) {
+  const dateStr = meet.formattedDate || meet.date;
+  if (!dateStr) return null;
+  
+  // Extract first date if it's a range e.g. "16/07/2026 - 22/07/2026"
+  const datePart = dateStr.split('-')[0].trim();
+  const parts = datePart.split('/');
+  
+  if (parts.length === 3) {
+    const monthIndex = parseInt(parts[1], 10) - 1;
+    if (monthIndex >= 0 && monthIndex < 12) {
+      return MONTH_NAMES[monthIndex];
+    }
+  }
+  
+  // Fallback: Check if raw textual date contains month name
+  const rawLower = datePart.toLowerCase();
+  for (const name of MONTH_NAMES) {
+    if (rawLower.includes(name.toLowerCase().substring(0, 3))) {
+      return name;
+    }
+  }
+  
+  return null;
+}
+
+// Extract unique regions and months sorted alphabetically/chronologically
 function extractFilterOptions(meets) {
   const regionsSet = new Set();
-  const meetTypesSet = new Set();
+  const monthsSet = new Set();
   
   meets.forEach(meet => {
     if (meet.region) regionsSet.add(meet.region);
-    if (meet.meetType) meetTypesSet.add(meet.meetType);
+    
+    const monthName = getMeetMonthName(meet);
+    if (monthName) monthsSet.add(monthName);
   });
   
   regions = Array.from(regionsSet).sort((a, b) => a.localeCompare(b));
-  meetTypes = Array.from(meetTypesSet).sort((a, b) => a.localeCompare(b));
+  
+  // Sort months chronologically according to MONTH_NAMES index
+  months = Array.from(monthsSet).sort((a, b) => {
+    return MONTH_NAMES.indexOf(a) - MONTH_NAMES.indexOf(b);
+  });
 }
 
-// Render dynamic filter chips
-function renderFilterChips() {
-  // Regions
-  regionChipsContainer.innerHTML = '';
-  if (regions.length === 0) {
-    regionChipsContainer.innerHTML = '<span class="loading-chips">No regions available</span>';
-  } else {
-    regions.forEach(region => {
-      const chip = document.createElement('span');
-      chip.className = 'filter-chip';
-      chip.textContent = region;
-      chip.dataset.value = region;
-      chip.addEventListener('click', () => toggleRegion(region, chip));
-      regionChipsContainer.appendChild(chip);
-    });
-  }
+// Populate Select Options
+function populateDropdowns() {
+  // Region Select Options
+  regionSelect.innerHTML = '<option value="all">All Regions</option>';
+  regions.forEach(region => {
+    const option = document.createElement('option');
+    option.value = region;
+    option.textContent = region;
+    regionSelect.appendChild(option);
+  });
 
-  // Meet Types
-  meetTypeChipsContainer.innerHTML = '';
-  if (meetTypes.length === 0) {
-    meetTypeChipsContainer.innerHTML = '<span class="loading-chips">No meet types available</span>';
-  } else {
-    meetTypes.forEach(type => {
-      const chip = document.createElement('span');
-      chip.className = 'filter-chip';
-      chip.textContent = type;
-      chip.dataset.value = type;
-      chip.addEventListener('click', () => toggleMeetType(type, chip));
-      meetTypeChipsContainer.appendChild(chip);
-    });
-  }
+  // Month Select Options
+  monthSelect.innerHTML = '<option value="all">All Months</option>';
+  months.forEach(month => {
+    const option = document.createElement('option');
+    option.value = month;
+    option.textContent = month;
+    monthSelect.appendChild(option);
+  });
 }
 
-// Handle chip selections
-function toggleRegion(region, chipElement) {
-  if (state.selectedRegions.has(region)) {
-    state.selectedRegions.delete(region);
-    chipElement.classList.remove('active');
-  } else {
-    state.selectedRegions.add(region);
-    chipElement.classList.add('active');
-  }
-  renderMeets();
-}
-
-function toggleMeetType(type, chipElement) {
-  if (state.selectedMeetTypes.has(type)) {
-    state.selectedMeetTypes.delete(type);
-    chipElement.classList.remove('active');
-  } else {
-    state.selectedMeetTypes.add(type);
-    chipElement.classList.add('active');
-  }
-  renderMeets();
-}
-
-// Filter and Render Cards
+// Filter and Render Table Rows
 function renderMeets() {
   const query = state.search.toLowerCase().trim();
   
@@ -169,118 +168,72 @@ function renderMeets() {
     }
     
     // 2. Region Filter
-    if (state.selectedRegions.size > 0) {
-      if (!meet.region || !state.selectedRegions.has(meet.region)) return false;
+    if (state.selectedRegion !== 'all') {
+      if (!meet.region || meet.region !== state.selectedRegion) return false;
     }
     
-    // 3. Meet Type Filter
-    if (state.selectedMeetTypes.size > 0) {
-      if (!meet.meetType || !state.selectedMeetTypes.has(meet.meetType)) return false;
-    }
-    
-    // 4. Holidays Filter
-    if (state.holidaysOnly) {
-      if (!meet.isHoliday) return false;
+    // 3. Month Filter
+    if (state.selectedMonth !== 'all') {
+      const monthName = getMeetMonthName(meet);
+      if (!monthName || monthName !== state.selectedMonth) return false;
     }
     
     return true;
   });
   
-  // Update Meta Indicators
+  // Update count indicator
   meetsCountElement.textContent = `${filteredMeets.length} Meet${filteredMeets.length === 1 ? '' : 's'}`;
-  
-  const totalFiltersCount = state.selectedRegions.size + state.selectedMeetTypes.size;
-  if (totalFiltersCount > 0) {
-    activeFilterIndicator.textContent = totalFiltersCount;
-    activeFilterIndicator.style.display = 'flex';
-    filterToggleBtn.classList.add('active');
-  } else {
-    activeFilterIndicator.style.display = 'none';
-    filterToggleBtn.classList.remove('active');
-  }
   
   // Display checks
   if (filteredMeets.length === 0) {
-    meetsGrid.style.display = 'none';
+    tableContainer.style.display = 'none';
     emptyState.style.display = 'flex';
   } else {
     emptyState.style.display = 'none';
-    meetsGrid.style.display = 'grid';
+    tableContainer.style.display = 'block';
     
-    // Build Cards
-    meetsGrid.innerHTML = filteredMeets.map(meet => createMeetCardHTML(meet)).join('');
+    // Build Table Rows
+    meetsTableBody.innerHTML = filteredMeets.map(meet => createTableRowHTML(meet)).join('');
   }
 }
 
-// Card Template Builder
-function createMeetCardHTML(meet) {
-  const isHolidayClass = meet.isHoliday ? 'holiday-card' : '';
-  
-  const tagsHTML = [];
-  if (meet.region) {
-    tagsHTML.push(`<span class="card-tag tag-region">${meet.region}</span>`);
-  }
-  if (meet.meetType) {
-    tagsHTML.push(`<span class="card-tag tag-type">${meet.meetType}</span>`);
-  }
-  if (meet.isHoliday) {
-    tagsHTML.push(`<span class="card-tag tag-holiday">🏖️ Holiday</span>`);
-  }
-  
-  const tagsRow = tagsHTML.length > 0 
-    ? `<div class="card-tags">${tagsHTML.join('')}</div>` 
-    : '';
+// Build table row HTML with attributes for responsive mobile card views
+function createTableRowHTML(meet) {
+  const displayDate = meet.formattedDate || meet.date;
+  const displayLocation = meet.location || 'TBD';
+  const displayRegion = meet.region || 'Unknown';
+  const displayCourse = meet.course || 'TBD';
+  const displayLevel = meet.level || 'TBD';
 
-  const linkHTML = meet.sourceUrl 
-    ? `<a href="${meet.sourceUrl}" target="_blank" rel="noopener noreferrer" class="visit-link">
-         <span>Info</span>
-         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  // Link setup
+  const visitLinkHTML = meet.sourceUrl 
+    ? `<a href="${meet.sourceUrl}" target="_blank" rel="noopener noreferrer" class="visit-link" aria-label="Visit details for ${escapeHTML(meet.name)}">
+         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
            <polyline points="15 3 21 3 21 9"></polyline>
            <line x1="10" y1="14" x2="21" y2="3"></line>
          </svg>
        </a>`
-    : '';
+    : '<span class="text-secondary">-</span>';
 
   return `
-    <article class="meet-card ${isHolidayClass}">
-      <div class="card-header">
-        ${tagsRow}
-        <h2 class="meet-name">${escapeHTML(meet.name)}</h2>
-      </div>
-      
-      <div class="card-details">
-        <div class="detail-item detail-date">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-            <line x1="16" y1="2" x2="16" y2="6"></line>
-            <line x1="8" y1="2" x2="8" y2="6"></line>
-            <line x1="3" y1="10" x2="21" y2="10"></line>
-          </svg>
-          <span>${escapeHTML(meet.formattedDate || meet.date)}</span>
+    <tr>
+      <td class="col-date" data-label="Date">${escapeHTML(displayDate)}</td>
+      <td class="col-meet-name cell-meet-name" data-label="Meet">${escapeHTML(meet.name)}</td>
+      <td data-label="Location">
+        <div class="col-location-info">
+          <span class="location-name">${escapeHTML(displayLocation)}</span>
+          <span class="region-tag">${escapeHTML(displayRegion)}</span>
         </div>
-        
-        <div class="detail-item detail-location">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-            <circle cx="12" cy="10" r="3"></circle>
-          </svg>
-          <span>${escapeHTML(meet.location || 'Unknown Location')}</span>
+      </td>
+      <td data-label="Format">
+        <div class="col-course-info">
+          <span class="course-format">${escapeHTML(displayCourse)}</span>
+          <span class="level-badge">${escapeHTML(displayLevel)}</span>
         </div>
-        
-        <div class="detail-item detail-course">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-          </svg>
-          <span>${escapeHTML(meet.course || 'Format TBD')}</span>
-        </div>
-      </div>
-      
-      <div class="card-footer">
-        <span class="level-badge">${escapeHTML(meet.level || 'License TBD')}</span>
-        ${linkHTML}
-      </div>
-    </article>
+      </td>
+      <td class="text-center" data-label="Info">${visitLinkHTML}</td>
+    </tr>
   `;
 }
 
@@ -314,38 +267,32 @@ clearSearchBtn.addEventListener('click', () => {
   searchInput.focus();
 });
 
-filterToggleBtn.addEventListener('click', () => {
-  const isOpen = filtersDrawer.classList.toggle('open');
-  filterToggleBtn.setAttribute('aria-expanded', isOpen);
+regionSelect.addEventListener('change', (e) => {
+  state.selectedRegion = e.target.value;
+  renderMeets();
 });
 
-holidayToggleBtn.addEventListener('click', () => {
-  state.holidaysOnly = !state.holidaysOnly;
-  holidayToggleBtn.classList.toggle('active', state.holidaysOnly);
+monthSelect.addEventListener('change', (e) => {
+  state.selectedMonth = e.target.value;
   renderMeets();
 });
 
 function resetFilters() {
-  state.selectedRegions.clear();
-  state.selectedMeetTypes.clear();
-  state.holidaysOnly = false;
+  state.search = '';
+  state.selectedRegion = 'all';
+  state.selectedMonth = 'all';
   
-  // Reset DOM states
-  holidayToggleBtn.classList.remove('active');
-  const activeChips = filtersDrawer.querySelectorAll('.filter-chip.active');
-  activeChips.forEach(chip => chip.classList.remove('active'));
+  // Sync inputs
+  searchInput.value = '';
+  clearSearchBtn.style.display = 'none';
+  regionSelect.value = 'all';
+  monthSelect.value = 'all';
   
   renderMeets();
 }
 
-resetAllBtn.addEventListener('click', resetFilters);
-emptyStateResetBtn.addEventListener('click', () => {
-  resetFilters();
-  searchInput.value = '';
-  state.search = '';
-  clearSearchBtn.style.display = 'none';
-  renderMeets();
-});
+resetFiltersBtn.addEventListener('click', resetFilters);
+emptyStateResetBtn.addEventListener('click', resetFilters);
 
 // Run Init
 init();

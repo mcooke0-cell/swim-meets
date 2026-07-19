@@ -25,7 +25,7 @@
           </div>
           <h1>Swim Meet Calendar</h1>
         </div>
-        <p class="subtitle">Find and filter upcoming swimming galas & meets</p>
+        <p class="subtitle">Search and filter licensing swim meets</p>
         <div class="meta-info">
           <span class="badge count-badge" id="meets-count">0 Meets</span>
           <span class="last-updated" id="last-updated">Last updated: Loading...</span>
@@ -43,7 +43,7 @@
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
-          <input type="text" id="search-input" placeholder="Search by meet name, location..." aria-label="Search swim meets">
+          <input type="text" id="search-input" placeholder="Search by name, location or keyword..." aria-label="Search swim meets">
           <button class="clear-search-btn" id="clear-search-btn" style="display: none;" aria-label="Clear search">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -52,48 +52,34 @@
           </button>
         </div>
 
-        <!-- Filter toggles -->
-        <div class="filter-toggles">
-          <button class="toggle-btn" id="filter-toggle-btn">
+        <!-- Dropdown Filters Group -->
+        <div class="filters-dropdown-group">
+          <!-- Region Dropdown -->
+          <div class="select-wrapper">
+            <label for="region-select">Region</label>
+            <select id="region-select" class="filter-select">
+              <option value="all">All Regions</option>
+              <!-- Dynamically populated -->
+            </select>
+          </div>
+
+          <!-- Month Dropdown -->
+          <div class="select-wrapper">
+            <label for="month-select">Month</label>
+            <select id="month-select" class="filter-select">
+              <option value="all">All Months</option>
+              <!-- Dynamically populated -->
+            </select>
+          </div>
+
+          <!-- Reset Button -->
+          <button class="reset-filters-btn" id="reset-filters-btn" aria-label="Reset all filters">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+              <path d="M23 4v6h-6"></path>
+              <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
             </svg>
-            <span>Filters</span>
-            <span class="active-filter-indicator" id="active-filter-indicator" style="display: none;">0</span>
+            <span>Reset</span>
           </button>
-          
-          <button class="quick-toggle-btn" id="holiday-toggle-btn">
-            <span class="toggle-switch"></span>
-            <span>School Holidays Only</span>
-          </button>
-        </div>
-
-        <!-- Collapsible Filters Drawer -->
-        <div class="filters-drawer" id="filters-drawer">
-          <div class="drawer-header">
-            <h3>Refine Swim Meets</h3>
-            <button class="reset-all-btn" id="reset-all-btn">Reset All</button>
-          </div>
-          
-          <div class="drawer-body">
-            <!-- Region Filter -->
-            <div class="filter-group">
-              <label>Regions</label>
-              <div class="filter-chips" id="region-chips-container">
-                <!-- Dynamically populated -->
-                <span class="loading-chips">Loading...</span>
-              </div>
-            </div>
-
-            <!-- Meet Type Filter -->
-            <div class="filter-group">
-              <label>Meet Types</label>
-              <div class="filter-chips" id="meet-type-chips-container">
-                <!-- Dynamically populated -->
-                <span class="loading-chips">Loading...</span>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -102,7 +88,7 @@
         <!-- Loading Indicator -->
         <div class="loading-state" id="loading-state">
           <div class="spinner"></div>
-          <p>Fetching swim calendar...</p>
+          <p>Loading swim calendar...</p>
         </div>
 
         <!-- Error State -->
@@ -121,13 +107,26 @@
             <circle cx="12" cy="12" r="10"></circle>
             <line x1="8" y1="12" x2="16" y2="12"></line>
           </svg>
-          <p>No meets match your search criteria.</p>
+          <p>No meets match your search or filter criteria.</p>
           <button class="clear-filters-action" id="empty-state-reset-btn">Clear All Filters</button>
         </div>
 
-        <!-- Main Meets Grid -->
-        <div class="meets-grid" id="meets-grid" style="display: none;">
-          <!-- Dynamically populated -->
+        <!-- Meets Table View -->
+        <div class="table-container" id="table-container" style="display: none;">
+          <table class="meets-table">
+            <thead>
+              <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Meet Name</th>
+                <th scope="col">Location & Region</th>
+                <th scope="col">Course / Level</th>
+                <th scope="col" class="text-center">Link</th>
+              </tr>
+            </thead>
+            <tbody id="meets-table-body">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
         </div>
       </section>
     </main>
