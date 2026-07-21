@@ -130,15 +130,18 @@ export function isSchoolHoliday(date: Date, terms: Term[], halfTerms: DateRange[
     return res;
   };
 
-  // 1. Check Half Terms (including prior weekend if half-term starts on a Monday)
+  // 1. Check Half Terms (including prior weekend if starting Monday, following weekend if ending Friday)
   for (const ht of halfTerms) {
     const start = new Date(ht.start.getFullYear(), ht.start.getMonth(), ht.start.getDate());
     const end = new Date(ht.end.getFullYear(), ht.end.getMonth(), ht.end.getDate());
     
     // If half-term starts on a Monday (getDay() === 1), consider the weekend prior (Saturday & Sunday) as holiday
     const effectiveStart = start.getDay() === 1 ? addDays(start, -2) : start;
+
+    // If half-term ends on a Friday (getDay() === 5), consider the weekend immediately after (Saturday & Sunday) as holiday
+    const effectiveEnd = end.getDay() === 5 ? addDays(end, 2) : end;
     
-    if (d >= effectiveStart && d <= end) {
+    if (d >= effectiveStart && d <= effectiveEnd) {
       return true;
     }
   }
@@ -165,7 +168,10 @@ export function isSchoolHoliday(date: Date, terms: Term[], halfTerms: DateRange[
     // If holidayStart is a Monday (getDay() === 1), include the weekend prior (Saturday & Sunday)
     const effectiveHolidayStart = holidayStart.getDay() === 1 ? addDays(holidayStart, -2) : holidayStart;
 
-    if (d >= effectiveHolidayStart && d <= holidayEnd) {
+    // If holidayEnd is a Friday (getDay() === 5), include the weekend immediately after (Saturday & Sunday)
+    const effectiveHolidayEnd = holidayEnd.getDay() === 5 ? addDays(holidayEnd, 2) : holidayEnd;
+
+    if (d >= effectiveHolidayStart && d <= effectiveHolidayEnd) {
       return true;
     }
   }

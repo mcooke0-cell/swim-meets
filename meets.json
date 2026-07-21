@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-21T16:01:40.957Z",
+  "lastUpdated": "2026-07-21T17:19:23.244Z",
   "meetsCount": 296,
   "meets": [
     {
@@ -2324,7 +2324,7 @@
       "course": "Short Course (25m)",
       "level": "Level 3",
       "meetType": "Open Meet",
-      "isHoliday": false,
+      "isHoliday": true,
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88101&page=8&region=P&level=P&month=P&year=P"
     },
     {
@@ -2337,7 +2337,7 @@
       "course": "Short Course (25m)",
       "level": "Level 3",
       "meetType": "Open Meet",
-      "isHoliday": false,
+      "isHoliday": true,
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88718&page=8&region=P&level=P&month=P&year=P"
     },
     {
@@ -2350,7 +2350,7 @@
       "course": "Short Course (25m)",
       "level": "Level 2",
       "meetType": "Open Meet",
-      "isHoliday": false,
+      "isHoliday": true,
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=87866&page=8&region=P&level=P&month=P&year=P"
     },
     {
@@ -2363,7 +2363,7 @@
       "course": "Short Course (25m)",
       "level": "Level 3",
       "meetType": "Open Meet",
-      "isHoliday": false,
+      "isHoliday": true,
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88612&page=8&region=P&level=P&month=P&year=P"
     },
     {
@@ -2376,7 +2376,7 @@
       "course": "Short Course (25m)",
       "level": "Unknown",
       "meetType": "Unknown",
-      "isHoliday": false,
+      "isHoliday": true,
       "sourceUrl": "https://calendar.google.com/calendar/ical/88e25b5e901f73664ee5db21cd9c994e899294a60bdb007aefef12875d0dbfa1@group.calendar.google.com/public/basic.ics"
     },
     {
@@ -2389,7 +2389,7 @@
       "course": "Short Course (25m)",
       "level": "Level 3",
       "meetType": "Open Meet",
-      "isHoliday": false,
+      "isHoliday": true,
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88630&page=8&region=P&level=P&month=P&year=P"
     },
     {
@@ -2402,7 +2402,7 @@
       "course": "Short Course (25m)",
       "level": "Level 4",
       "meetType": "Open Meet",
-      "isHoliday": false,
+      "isHoliday": true,
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88949&page=8&region=P&level=P&month=P&year=P"
     },
     {
@@ -2415,7 +2415,7 @@
       "course": "Short Course (25m)",
       "level": "Level 4",
       "meetType": "Open Meet",
-      "isHoliday": false,
+      "isHoliday": true,
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88833&page=8&region=P&level=P&month=P&year=P"
     },
     {
