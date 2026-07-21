@@ -16,29 +16,7 @@ const MONTH_NAMES = [
   "July", "August", "September", "October", "November", "December"
 ];
 
-// Locations to highlight in the table view (case-insensitive substring match)
-// Feel free to add/remove names in this list.
-const HIGHLIGHTED_LOCATIONS = [
-  "Millfield",
-  "Street",
-  "Bodmin",
-  "Penzance",
-  "Penznance", // Spelling fallback
-  "Plymouth",
-  "Tiverton",
-  "Bristol",
-  "Newport",
-  "Swansea",
-  "Exeter",
-  "Taunton",
-  "Weston"
-];
 
-function shouldHighlightMeet(meet) {
-  if (!meet.location) return false;
-  const locLower = meet.location.toLowerCase();
-  return HIGHLIGHTED_LOCATIONS.some(hl => locLower.includes(hl.toLowerCase()));
-}
 
 function getCourseAbbreviation(course) {
   if (!course) return 'TBD';
@@ -435,7 +413,7 @@ function createTableRowHTML(meet) {
     ? '<span class="holiday-badge">🏖️ Holiday</span>' 
     : '';
 
-  const highlightClass = shouldHighlightMeet(meet) ? 'highlighted-meet' : '';
+  const highlightClass = '';
 
   return `
     <tr class="${highlightClass}">

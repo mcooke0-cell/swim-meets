@@ -458,18 +458,7 @@ body {
   background-color: rgba(255, 255, 255, 0.02);
 }
 
-/* Highlighted Meets Desktop Styling */
-.meets-table tbody tr.highlighted-meet td {
-  background-color: rgba(245, 158, 11, 0.035); /* warm amber tint */
-}
 
-.meets-table tbody tr.highlighted-meet td:first-child {
-  box-shadow: inset 4px 0 0 #fbbf24; /* golden left bar */
-}
-
-.meets-table tbody tr.highlighted-meet:hover td {
-  background-color: rgba(245, 158, 11, 0.07);
-}
 
 .meets-table tbody tr:last-child td {
   border-bottom: none;
@@ -666,17 +655,7 @@ body {
     background: linear-gradient(to bottom, var(--accent-blue), var(--accent-purple));
   }
 
-  .meets-table tbody tr.highlighted-meet::before {
-    background: linear-gradient(to bottom, #f59e0b, #d97706); /* golden highlight */
-  }
 
-  .meets-table tbody tr.highlighted-meet {
-    background-color: rgba(245, 158, 11, 0.04) !important;
-  }
-
-  .meets-table tbody tr.highlighted-meet:hover {
-    background-color: rgba(245, 158, 11, 0.07) !important;
-  }
   
   .meets-table tbody tr:hover {
     transform: translateY(-2px);
