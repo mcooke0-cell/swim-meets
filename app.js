@@ -76,6 +76,12 @@ async function init() {
     
     rawMeets = data.meets || [];
     
+    // Pre-calculate search string and month name for efficiency
+    rawMeets.forEach(meet => {
+      meet._monthName = getMeetMonthName(meet);
+      meet._searchStr = `${meet.name || ''} ${meet.location || ''} ${meet.region || ''}`.toLowerCase();
+    });
+    
     // Set Metadata
     updateLastUpdated(data.lastUpdated);
     
@@ -183,9 +189,7 @@ function extractFilterOptions(meets) {
   meets.forEach(meet => {
     if (meet.region) regionsSet.add(meet.region);
     if (meet.meetType) meetTypesSet.add(meet.meetType);
-    
-    const monthName = getMeetMonthName(meet);
-    if (monthName) monthsSet.add(monthName);
+    if (meet._monthName) monthsSet.add(meet._monthName);
   });
   
   regions = Array.from(regionsSet).sort((a, b) => a.localeCompare(b));
@@ -344,11 +348,8 @@ function renderMeets() {
   // Filter Array
   const filteredMeets = rawMeets.filter(meet => {
     // 1. Search Query
-    if (query) {
-      const nameMatch = meet.name && meet.name.toLowerCase().includes(query);
-      const locMatch = meet.location && meet.location.toLowerCase().includes(query);
-      const regionMatch = meet.region && meet.region.toLowerCase().includes(query);
-      if (!nameMatch && !locMatch && !regionMatch) return false;
+    if (query && !meet._searchStr.includes(query)) {
+      return false;
     }
     
     // 2. Region Filter
@@ -363,8 +364,7 @@ function renderMeets() {
     
     // 4. Month Filter
     if (state.selectedMonths.size > 0) {
-      const monthName = getMeetMonthName(meet);
-      if (!monthName || !state.selectedMonths.has(monthName)) return false;
+      if (!meet._monthName || !state.selectedMonths.has(meet._monthName)) return false;
     }
     
     return true;
