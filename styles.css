@@ -510,9 +510,6 @@ body {
   color: var(--text-secondary);
 }
 
-.course-mobile {
-  display: none;
-}
 
 .level-badge {
   display: inline-block;
@@ -727,13 +724,7 @@ body {
     color: var(--text-secondary);
   }
 
-  .course-desktop {
-    display: none !important;
-  }
 
-  .course-mobile {
-    display: inline !important;
-  }
 
   /* High contrast typography for readability on mobile screens */
   .meets-table td.cell-meet-name {

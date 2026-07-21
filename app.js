@@ -18,11 +18,11 @@ const MONTH_NAMES = [
 
 
 
-function getCourseAbbreviation(course) {
+function getCourseLength(course) {
   if (!course) return 'TBD';
   const cLower = course.toLowerCase();
-  if (cLower.includes('short course') || cLower.includes('25m')) return 'SC';
-  if (cLower.includes('long course') || cLower.includes('50m')) return 'LC';
+  if (cLower.includes('50m') || cLower.includes('long course')) return '50m';
+  if (cLower.includes('25m') || cLower.includes('short course')) return '25m';
   return course;
 }
 
@@ -432,10 +432,7 @@ function createTableRowHTML(meet) {
       </td>
       <td data-label="Format">
         <div class="col-course-info">
-          <span class="course-format">
-            <span class="course-desktop">${escapeHTML(displayCourse)}</span>
-            <span class="course-mobile">${escapeHTML(getCourseAbbreviation(displayCourse))}</span>
-          </span>
+          <span class="course-format">${escapeHTML(getCourseLength(displayCourse))}</span>
           <span class="level-badge">${escapeHTML(displayLevel)}</span>
         </div>
       </td>
