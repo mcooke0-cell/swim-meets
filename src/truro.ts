@@ -123,27 +123,63 @@ export async function fetchTruroTermDates(): Promise<{ terms: Term[]; halfTerms:
 export function isSchoolHoliday(date: Date, terms: Term[], halfTerms: DateRange[]): boolean {
   // Normalize date to midnight (00:00:00) for comparison
   const d = new Date(date.getFullYear(), date.getMonth(), date.getDate());
-  
-  // 1. Check if the date falls within any half-term holiday range
+
+  const addDays = (baseDate: Date, days: number) => {
+    const res = new Date(baseDate.getTime());
+    res.setDate(res.getDate() + days);
+    return res;
+  };
+
+  // 1. Check Half Terms (including prior weekend if half-term starts on a Monday)
   for (const ht of halfTerms) {
     const start = new Date(ht.start.getFullYear(), ht.start.getMonth(), ht.start.getDate());
     const end = new Date(ht.end.getFullYear(), ht.end.getMonth(), ht.end.getDate());
-    if (d >= start && d <= end) {
+    
+    // If half-term starts on a Monday (getDay() === 1), consider the weekend prior (Saturday & Sunday) as holiday
+    const effectiveStart = start.getDay() === 1 ? addDays(start, -2) : start;
+    
+    if (d >= effectiveStart && d <= end) {
       return true;
     }
   }
-  
-  // 2. Check if the date falls within any active term
-  let inAnyTerm = false;
-  for (const term of terms) {
-    const start = new Date(term.start.getFullYear(), term.start.getMonth(), term.start.getDate());
-    const end = new Date(term.end.getFullYear(), term.end.getMonth(), term.end.getDate());
-    if (d >= start && d <= end) {
-      inAnyTerm = true;
-      break;
+
+  // 2. Check Major Holiday periods between and after/before terms
+  const sortedTerms = [...terms].sort((a, b) => a.start.getTime() - b.start.getTime());
+
+  // Check if date falls in the holiday period BEFORE the first term
+  if (sortedTerms.length > 0) {
+    const firstTermStart = new Date(sortedTerms[0].start.getFullYear(), sortedTerms[0].start.getMonth(), sortedTerms[0].start.getDate());
+    if (d < firstTermStart) {
+      return true;
     }
   }
-  
-  // If it's not in any term, it's a holiday (Summer, Christmas, or Easter holiday)
-  return !inAnyTerm;
+
+  // Check gaps between terms
+  for (let i = 0; i < sortedTerms.length - 1; i++) {
+    const currentTermEnd = new Date(sortedTerms[i].end.getFullYear(), sortedTerms[i].end.getMonth(), sortedTerms[i].end.getDate());
+    const nextTermStart = new Date(sortedTerms[i + 1].start.getFullYear(), sortedTerms[i + 1].start.getMonth(), sortedTerms[i + 1].start.getDate());
+
+    const holidayStart = addDays(currentTermEnd, 1);
+    const holidayEnd = addDays(nextTermStart, -1);
+
+    // If holidayStart is a Monday (getDay() === 1), include the weekend prior (Saturday & Sunday)
+    const effectiveHolidayStart = holidayStart.getDay() === 1 ? addDays(holidayStart, -2) : holidayStart;
+
+    if (d >= effectiveHolidayStart && d <= holidayEnd) {
+      return true;
+    }
+  }
+
+  // Check holiday AFTER the last term
+  if (sortedTerms.length > 0) {
+    const lastTermEnd = new Date(sortedTerms[sortedTerms.length - 1].end.getFullYear(), sortedTerms[sortedTerms.length - 1].end.getMonth(), sortedTerms[sortedTerms.length - 1].end.getDate());
+    const holidayStart = addDays(lastTermEnd, 1);
+    const effectiveHolidayStart = holidayStart.getDay() === 1 ? addDays(holidayStart, -2) : holidayStart;
+
+    if (d >= effectiveHolidayStart) {
+      return true;
+    }
+  }
+
+  return false;
 }
