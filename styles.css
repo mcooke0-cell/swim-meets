@@ -14,6 +14,39 @@
   --accent-blue: #3b82f6;
   --accent-purple: #8b5cf6;
   --accent-teal: #14b8a6;
+
+  /* Theme variables for elements */
+  --bg-secondary-focus: rgba(19, 27, 46, 0.8);
+  --date-color: #60a5fa;
+
+  --badge-blue-text: #60a5fa;
+  --badge-blue-bg: rgba(59, 130, 246, 0.15);
+  --badge-blue-border: rgba(59, 130, 246, 0.3);
+
+  --region-text: #2dd4bf;
+  --region-bg: rgba(20, 184, 166, 0.12);
+  --region-border: rgba(20, 184, 166, 0.2);
+
+  --level-bg: rgba(255, 255, 255, 0.04);
+  --level-border: rgba(255, 255, 255, 0.05);
+
+  --type-text: #a78bfa;
+  --type-bg: rgba(139, 92, 246, 0.12);
+  --type-border: rgba(139, 92, 246, 0.2);
+
+  --holiday-text: #fbbf24;
+  --holiday-bg: rgba(245, 158, 11, 0.15);
+  --holiday-border: rgba(245, 158, 11, 0.3);
+
+  /* Mobile solid badge variables */
+  --mobile-region-bg: #0f766e;
+  --mobile-region-text: #ccfbf1;
+  --mobile-level-bg: #334155;
+  --mobile-level-text: #f1f5f9;
+  --mobile-type-bg: #475569;
+  --mobile-type-text: #f8fafc;
+  --mobile-holiday-bg: #78350f;
+  --mobile-holiday-text: #fef3c7;
   
   --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   
@@ -27,6 +60,56 @@
   --radius-md: 12px;
   --radius-lg: 20px;
   --radius-full: 9999px;
+}
+
+/* Light Theme Variables */
+html[data-theme="light"] {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f1f5f9;
+  --border-color: #e2e8f0;
+  --border-focus: #3b82f6;
+  
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+
+  --bg-secondary-focus: rgba(255, 255, 255, 0.95);
+  --date-color: #2563eb;
+
+  --badge-blue-text: #1d4ed8;
+  --badge-blue-bg: rgba(59, 130, 246, 0.08);
+  --badge-blue-border: rgba(59, 130, 246, 0.2);
+
+  --region-text: #0d9488;
+  --region-bg: rgba(13, 148, 136, 0.08);
+  --region-border: rgba(13, 148, 136, 0.2);
+
+  --level-bg: rgba(15, 23, 42, 0.04);
+  --level-border: rgba(15, 23, 42, 0.08);
+
+  --type-text: #6d28d9;
+  --type-bg: rgba(109, 40, 217, 0.08);
+  --type-border: rgba(109, 40, 217, 0.2);
+
+  --holiday-text: #b45309;
+  --holiday-bg: rgba(180, 83, 9, 0.08);
+  --holiday-border: rgba(180, 83, 9, 0.2);
+
+  /* Mobile solid badge variables */
+  --mobile-region-bg: #ccfbf1;
+  --mobile-region-text: #0f766e;
+  --mobile-level-bg: #e2e8f0;
+  --mobile-level-text: #334155;
+  --mobile-type-bg: #f1f5f9;
+  --mobile-type-text: #475569;
+  --mobile-holiday-bg: #fef3c7;
+  --mobile-holiday-text: #78350f;
+
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 4px 20px rgba(15, 23, 42, 0.08);
+  --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.06);
 }
 
 * {
@@ -90,9 +173,9 @@ body {
 }
 
 .count-badge {
-  background-color: rgba(59, 130, 246, 0.15);
-  color: #60a5fa;
-  border: 1px solid rgba(59, 130, 246, 0.3);
+  background-color: var(--badge-blue-bg);
+  color: var(--badge-blue-text);
+  border: 1px solid var(--badge-blue-border);
 }
 
 .last-updated {
@@ -230,7 +313,7 @@ body {
 
 .select-trigger:focus {
   border-color: var(--border-focus);
-  background-color: rgba(19, 27, 46, 0.8);
+  background-color: var(--bg-secondary-focus);
 }
 
 .arrow-icon {
@@ -282,7 +365,7 @@ body {
 }
 
 .option-item:hover {
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: var(--bg-card-hover);
   color: var(--text-primary);
 }
 
@@ -444,7 +527,7 @@ body {
 
 .meets-table td {
   padding: 18px 20px;
-  border-bottom: 1px solid rgba(43, 57, 94, 0.4);
+  border-bottom: 1px solid var(--border-color);
   font-size: 15px;
   color: var(--text-primary);
   vertical-align: middle;
@@ -455,7 +538,7 @@ body {
 }
 
 .meets-table tbody tr:hover {
-  background-color: rgba(255, 255, 255, 0.02);
+  background-color: var(--bg-card-hover);
 }
 
 
@@ -467,7 +550,7 @@ body {
 /* Cell-specific styling */
 .col-date {
   font-weight: 600;
-  color: #60a5fa;
+  color: var(--date-color);
   white-space: nowrap;
 }
 
@@ -494,9 +577,9 @@ body {
   text-transform: uppercase;
   padding: 1px 6px;
   border-radius: 4px;
-  background-color: rgba(20, 184, 166, 0.12);
-  color: #2dd4bf;
-  border: 1px solid rgba(20, 184, 166, 0.2);
+  background-color: var(--region-bg);
+  color: var(--region-text);
+  border: 1px solid var(--region-border);
   width: fit-content;
 }
 
@@ -516,10 +599,10 @@ body {
   font-size: 11px;
   font-weight: 600;
   color: var(--text-muted);
-  background-color: rgba(255, 255, 255, 0.04);
+  background-color: var(--level-bg);
   padding: 1px 6px;
   border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--level-border);
   width: fit-content;
 }
 
@@ -530,9 +613,9 @@ body {
   text-transform: uppercase;
   padding: 1px 6px;
   border-radius: 4px;
-  background-color: rgba(139, 92, 246, 0.12);
-  color: #a78bfa;
-  border: 1px solid rgba(139, 92, 246, 0.2);
+  background-color: var(--type-bg);
+  color: var(--type-text);
+  border: 1px solid var(--type-border);
   width: fit-content;
 }
 
@@ -541,9 +624,9 @@ body {
   font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
-  background-color: rgba(245, 158, 11, 0.15);
-  color: #fbbf24;
-  border: 1px solid rgba(245, 158, 11, 0.3);
+  background-color: var(--holiday-bg);
+  color: var(--holiday-text);
+  border: 1px solid var(--holiday-border);
   padding: 2px 6px;
   border-radius: 4px;
   margin-left: 8px;
@@ -630,8 +713,8 @@ body {
   }
   
   .meets-table tbody tr {
-    background-color: #151e36; /* slightly lighter card blue for definition */
-    border: 1px solid #334155; /* distinct border slate color */
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
     padding: 8px 40px 8px 14px; /* space on the right for absolute link icon */
     box-shadow: var(--shadow-sm);
@@ -728,16 +811,16 @@ body {
 
   /* High contrast typography for readability on mobile screens */
   .meets-table td.cell-meet-name {
-    color: #ffffff !important;
+    color: var(--text-primary) !important;
   }
 
   .location-name, .course-format {
-    color: #e2e8f0 !important; /* brighter text for readability */
+    color: var(--text-secondary) !important; /* brighter text for readability */
     font-weight: 500;
   }
 
   .col-date {
-    color: #60a5fa !important;
+    color: var(--date-color) !important;
   }
 
   /* Micro badges with solid, high-contrast backgrounds on mobile */
@@ -746,8 +829,8 @@ body {
     padding: 2px 5px !important;
     line-height: 1.2 !important;
     border-radius: 3px !important;
-    background-color: #0f766e !important; /* solid teal-700 */
-    color: #ccfbf1 !important; /* teal-100 */
+    background-color: var(--mobile-region-bg) !important;
+    color: var(--mobile-region-text) !important;
     border: none !important;
     font-weight: 700 !important;
   }
@@ -757,8 +840,8 @@ body {
     padding: 2px 5px !important;
     line-height: 1.2 !important;
     border-radius: 3px !important;
-    background-color: #334155 !important; /* solid slate-700 */
-    color: #f1f5f9 !important; /* slate-100 */
+    background-color: var(--mobile-level-bg) !important;
+    color: var(--mobile-level-text) !important;
     border: none !important;
     font-weight: 600 !important;
   }
@@ -768,8 +851,8 @@ body {
     padding: 2px 5px !important;
     line-height: 1.2 !important;
     border-radius: 3px !important;
-    background-color: #475569 !important; /* solid slate-600 */
-    color: #f8fafc !important; /* slate-50 */
+    background-color: var(--mobile-type-bg) !important;
+    color: var(--mobile-type-text) !important;
     border: none !important;
     font-weight: 700 !important;
   }
@@ -779,24 +862,10 @@ body {
     padding: 2px 5px !important;
     line-height: 1.2 !important;
     border-radius: 3px !important;
-    background-color: #78350f !important; /* solid amber-900 */
-    color: #fef3c7 !important; /* amber-100 */
+    background-color: var(--mobile-holiday-bg) !important;
+    color: var(--mobile-holiday-text) !important;
     border: none !important;
     font-weight: 700 !important;
-  }
-
-  /* Distinct card boundaries and search controls on mobile */
-  .search-input {
-    color: #ffffff !important;
-  }
-  .search-input::placeholder {
-    color: #94a3b8 !important;
-  }
-
-  .custom-select-trigger {
-    background-color: #16203d !important;
-    border: 1px solid #334155 !important;
-    color: #ffffff !important;
   }
   
   .meets-table td.text-center {
@@ -853,4 +922,44 @@ body {
   .reset-filters-btn {
     flex-shrink: 0;
   }
+}
+
+/* Theme Toggle Button styling */
+.theme-toggle-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast), transform 0.15s ease;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.theme-toggle-btn:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-focus);
+  transform: scale(1.05);
+}
+
+.theme-toggle-btn:active {
+  transform: scale(0.95);
+}
+
+.theme-toggle-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+html[data-theme="light"] .sun-icon {
+  display: none;
+}
+
+html:not([data-theme="light"]) .moon-icon {
+  display: none;
 }
