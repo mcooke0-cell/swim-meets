@@ -89,8 +89,8 @@ async function init() {
   setupEventListeners();
 
   try {
-    // Fetch local JSON data
-    const response = await fetch('./meets.json');
+    // Fetch local JSON data (bypassing browser cache)
+    const response = await fetch('./meets.json?v=' + Date.now());
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
