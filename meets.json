@@ -1,33 +1,7 @@
 {
-  "lastUpdated": "2026-07-25T01:28:47.611Z",
-  "meetsCount": 313,
+  "lastUpdated": "2026-07-27T01:50:09.738Z",
+  "meetsCount": 310,
   "meets": [
-    {
-      "id": "rochford-and-districts-sc-july-800m-meet-26thjul-2026",
-      "name": "Rochford and Districts SC July 800m Meet",
-      "date": "26thJul 2026",
-      "formattedDate": "26/07/2026",
-      "location": "Rochford",
-      "region": "East",
-      "course": "Short Course (25m)",
-      "level": "Level 4",
-      "meetType": "Open Meet",
-      "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88450&page=1&region=P&level=P&month=P&year=P"
-    },
-    {
-      "id": "ware-swimming-club-open-meet-26thjul-2026",
-      "name": "Ware Swimming Club Open Meet",
-      "date": "26thJul 2026",
-      "formattedDate": "26/07/2026",
-      "location": "Ware",
-      "region": "East",
-      "course": "Short Course (25m)",
-      "level": "Level 4",
-      "meetType": "Open Meet",
-      "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88793&page=1&region=P&level=P&month=P&year=P"
-    },
     {
       "id": "swimeng-swim-england-national-summer-meet-2026-27thjul-1staug-2026",
       "name": "Swim England National Summer Meet 2026",
@@ -39,19 +13,6 @@
       "level": "Level 1",
       "meetType": "National",
       "isHoliday": true
-    },
-    {
-      "id": "hoylake-masters-time-trial-2026-27thjul-2026",
-      "name": "Hoylake Masters Time Trial 2026",
-      "date": "27thJul 2026",
-      "formattedDate": "27/07/2026",
-      "location": "West Kirby",
-      "region": "North West",
-      "course": "Short Course (25m)",
-      "level": "Level 4",
-      "meetType": "Time Trial",
-      "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89004&page=1&region=P&level=P&month=P&year=P"
     },
     {
       "id": "swim-wales-summer-championships-2026-29thjul-2026",
@@ -506,7 +467,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88096&page=3&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88096&page=2&region=P&level=P&month=P&year=P"
     },
     {
       "id": "norwich-swan-no-frills-meet-2026-19thsep-2026",
@@ -1130,7 +1091,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88950&page=5&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88950&page=4&region=P&level=P&month=P&year=P"
     },
     {
       "id": "swim-england-east-region-para-swimming-meet-2026-27thsep-2026",
@@ -1221,7 +1182,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88528&page=5&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88528&page=4&region=P&level=P&month=P&year=P"
     },
     {
       "id": "exeter-city-sprint-meet-2026-27thsep-2026",
@@ -1585,7 +1546,7 @@
       "level": "Level 3",
       "meetType": "County",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=87958&page=6&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=87958&page=5&region=P&level=P&month=P&year=P"
     },
     {
       "id": "gloucester-city-sc-level-2-autumn-open-meet-3rdoct-2026",
@@ -1598,7 +1559,7 @@
       "level": "Level 2",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88953&page=6&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88953&page=5&region=P&level=P&month=P&year=P"
     },
     {
       "id": "coventry-district-asc-october-meet-2026-3rdoct-2026",
@@ -1948,7 +1909,7 @@
       "level": "Level 2",
       "meetType": "Open Meet",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=87550&page=8&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=87550&page=7&region=P&level=P&month=P&year=P"
     },
     {
       "id": "flitwick-open-2026-17thoct-2026",
@@ -2000,7 +1961,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88790&page=8&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88790&page=7&region=P&level=P&month=P&year=P"
     },
     {
       "id": "yorkshire-sa-winter-competitions-2026-17thoct-2026",
@@ -2403,7 +2364,7 @@
       "level": "Level 4",
       "meetType": "Open Meet",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88611&page=9&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88611&page=8&region=P&level=P&month=P&year=P"
     },
     {
       "id": "herts-aquatics-1500-meet-31stoct-2026",
@@ -2728,7 +2689,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88759&page=10&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88759&page=9&region=P&level=P&month=P&year=P"
     },
     {
       "id": "city-of-norwich-sc-november-mini-meet-2026-14thnov-2026",
@@ -3027,7 +2988,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88993&page=11&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88993&page=10&region=P&level=P&month=P&year=P"
     },
     {
       "id": "tsc-bsc-ddsc-csc-winter-invitation-meet-2026-21stnov-2026",
@@ -3443,7 +3404,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88679&page=12&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88679&page=11&region=P&level=P&month=P&year=P"
     },
     {
       "id": "salisbury-durrington-tidworth-joint-club-champs26-30thnov-2026",
@@ -3456,7 +3417,7 @@
       "level": "Level 4",
       "meetType": "Club Champs",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88453&page=12&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88453&page=11&region=P&level=P&month=P&year=P"
     },
     {
       "id": "paignton-s-c-middle-distance-events-2nddec-2026",
@@ -3806,7 +3767,7 @@
       "level": "Level 4",
       "meetType": "Club Champs",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88907&page=13&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88907&page=12&region=P&level=P&month=P&year=P"
     },
     {
       "id": "city-of-leeds-xmas-cracker-meet-18thdec-2026",
@@ -3819,7 +3780,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=87903&page=13&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=87903&page=12&region=P&level=P&month=P&year=P"
     },
     {
       "id": "harrogate-district-sc-janus-meet-2027-2ndjan-2027",
