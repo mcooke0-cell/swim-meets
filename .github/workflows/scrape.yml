@@ -6,6 +6,9 @@ on:
     - cron: '0 0 */2 * *'
   workflow_dispatch:
     # Allows manual trigger from the GitHub UI
+  push:
+    branches:
+      - main
 
 permissions:
   contents: write # Needed to commit and push meets.json back to the repo
@@ -29,10 +32,6 @@ jobs:
 
       - name: Run Scraper
         run: npm run scrape:local
-        env:
-          # If Google Sheets updates are configured, SPREADSHEET_ID can be set here.
-          # Otherwise, it runs and skips Sheets update, generating only meets.json.
-          SPREADSHEET_ID: ${{ secrets.SPREADSHEET_ID }}
 
       - name: Commit and Push Data Changes
         run: |

@@ -1,8 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { SwimmingScraper } from "./src/scraper";
-import { SwimMeet, ScraperConfig } from "./src/types";
-import { updateGoogleSheet } from "./src/sheets";
+import { ScraperConfig } from "./src/types";
 import { fetchTruroTermDates, isSchoolHoliday } from "./src/truro";
 
 // Configuration for local crawling
@@ -88,10 +87,6 @@ function convertToUKDateFormat(dateStr: string): string {
   return dateStr;
 }
 
-
-
-
-
 // Helper to parse the start date of any range or single date for sorting purposes
 function getStartDate(dateStr: string): Date {
   if (!dateStr || dateStr.toLowerCase().includes('ongoing') || dateStr.toLowerCase().includes('tbd')) {
@@ -154,11 +149,6 @@ function getStartDate(dateStr: string): Date {
   return startDateObj || endDateObj || new Date(9999, 11, 31);
 }
 
-
-
-
-
-
 async function runLocalScraper() {
   console.log("=================================================");
   console.log("      LOCAL SWIM CALENDAR SCAPER CLI INITIALIZED ");
@@ -176,7 +166,6 @@ async function runLocalScraper() {
     ]);
 
     const rawMeets = scResult.meets;
-
 
     // Filter meets:
     // 1) Remove where meet type = League, Gala, County, County Championship, Club or Club Champs AND region is not South West
@@ -260,49 +249,6 @@ async function runLocalScraper() {
     const outputPath = path.join(process.cwd(), 'meets.json');
     fs.writeFileSync(outputPath, JSON.stringify(outputPayload, null, 2), 'utf8');
     console.log(`[JSON] Saved ${meetsData.length} meets to ${outputPath} successfully!`);
-
-    // 2. Google Sheets Sync (Optional fallback)
-    const credentialsPath = path.join(process.cwd(), 'credentials.json');
-    const hasCredentials = fs.existsSync(credentialsPath);
-    let spreadsheetId = process.env.SPREADSHEET_ID || '';
-    const sheetsConfigPath = path.join(process.cwd(), 'sheets_config.json');
-    
-    if (!spreadsheetId && fs.existsSync(sheetsConfigPath)) {
-      try {
-        const configData = JSON.parse(fs.readFileSync(sheetsConfigPath, 'utf8'));
-        spreadsheetId = configData.spreadsheetId || '';
-      } catch (e) {
-        console.warn("Failed to parse sheets_config.json:", e);
-      }
-    }
-
-    if (hasCredentials && spreadsheetId) {
-      console.log("[Sheets] Credentials and Spreadsheet ID detected. Starting Google Sheets update...");
-      try {
-        const meetsHeaders = ['Meet Name', 'Date(s)', 'Course', 'Level', 'Location', 'Region', 'Meet Type', 'School Holiday'];
-        const meetsRows = meets.map(m => {
-          const startDate = getStartDate(m.date);
-          const isHoliday = isSchoolHoliday(startDate, truroDates.terms, truroDates.halfTerms);
-          return [
-            m.name,
-            convertToUKDateFormat(m.date),
-            m.course,
-            m.level,
-            m.location,
-            m.region,
-            m.meetType,
-            isHoliday ? 'Yes' : 'No'
-          ];
-        });
-        console.log(`[Sheets] Overwriting 'Meets' tab with ${meetsRows.length} rows...`);
-        await updateGoogleSheet(spreadsheetId, 'Meets', meetsHeaders, meetsRows);
-        console.log("[Sheets] Google Sheets update completed successfully! ✨");
-      } catch (sheetsErr) {
-        console.error("❌ Failed to update Google Sheets:", sheetsErr);
-      }
-    } else {
-      console.log("[Sheets] Skipping Google Sheets update (credentials.json or SPREADSHEET_ID not configured).");
-    }
 
     const duration = ((Date.now() - startTime) / 1000).toFixed(2);
     console.log(`\nLocal run accomplished successfully in ${duration}s! ✨`);
