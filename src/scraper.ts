@@ -1343,7 +1343,7 @@ export class SwimmingScraper {
           const monthNum = parseInt(match[2], 10);
           const dayNum = parseInt(match[3], 10);
 
-          const monthStr = MONTH_INDEX_TO_ABBREV[monthNum - 1] || MONTH_INDEX_TO_ABBREV[monthNum] || 'Jan';
+          const monthStr = MONTH_INDEX_TO_ABBREV[monthNum] || 'Jan';
           const suffix = (d: number) => {
             if (d >= 11 && d <= 13) return d + 'th';
             switch (d % 10) {
