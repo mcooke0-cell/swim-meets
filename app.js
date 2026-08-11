@@ -413,10 +413,10 @@ function createTableRowHTML(meet) {
     ? '<span class="holiday-badge">🏖️ Holiday</span>' 
     : '';
 
-  const highlightClass = '';
+
 
   return `
-    <tr class="${highlightClass}">
+    <tr>
       <td class="col-date" data-label="Date">${escapeHTML(displayDate)}</td>
       <td class="col-meet-name cell-meet-name" data-label="Meet">
         <div class="meet-name-wrapper">

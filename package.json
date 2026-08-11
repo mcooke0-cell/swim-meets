@@ -1,11 +1,11 @@
 {
-  "name": "react-example",
+  "name": "swim-meets",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "main": "dist/cli.cjs",
   "engines": {
-    "node": "22.x"
+    "node": ">=22"
   },
   "scripts": {
     "dev": "tsx cli.ts",

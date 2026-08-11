@@ -3,11 +3,11 @@ import * as path from 'path';
 import { SwimmingScraper } from "./src/scraper";
 import { ScraperConfig } from "./src/types";
 import { fetchTruroTermDates, isSchoolHoliday } from "./src/truro";
+import { MONTH_ABBREV_TO_PAD, MONTH_ABBREV_TO_INDEX } from "./src/constants";
 
 // Configuration for local crawling
 const config: ScraperConfig = {
-  maxPages: 50,
-  parseMode: 'cheerio'
+  maxPages: 50
 };
 
 // Helper to parse individual date string components
@@ -35,11 +35,7 @@ function parseSingleDate(part: string, defaultYear: string): { day: string; mont
   if (textMatch) {
     const day = textMatch[1].padStart(2, '0');
     const monthName = textMatch[2].substring(0, 3).toLowerCase();
-    const monthsMap: { [key: string]: string } = {
-      jan: '01', feb: '02', mar: '03', apr: '04', may: '05', jun: '06',
-      jul: '07', aug: '08', sep: '09', oct: '10', nov: '11', dec: '12'
-    };
-    const month = monthsMap[monthName] || '01';
+    const month = MONTH_ABBREV_TO_PAD[monthName] || '01';
     const year = textMatch[3] || defaultYear;
     return { day, month, year };
   }
@@ -95,11 +91,7 @@ function getStartDate(dateStr: string): Date {
 
   const clean = dateStr.replace(/–/g, '-').replace(/—/g, '-').trim();
   
-  const months: { [key: string]: number } = {
-    january: 0, february: 1, march: 2, april: 3, may: 4, june: 5,
-    july: 6, august: 7, september: 8, october: 9, november: 10, december: 11,
-    jan: 0, feb: 1, mar: 2, apr: 3, jun: 5, jul: 6, aug: 7, sep: 8, oct: 9, nov: 10, dec: 11
-  };
+  const months = MONTH_ABBREV_TO_INDEX;
 
   const yearMatch = clean.match(/\b(20\d{2})\b/);
   const year = yearMatch ? parseInt(yearMatch[1], 10) : 2026;
@@ -160,12 +152,12 @@ async function runLocalScraper() {
   try {
     console.log("[Crawl] Requesting licensed swim meets and school term dates concurrently...");
     
-    const [scResult, truroDates] = await Promise.all([
+    const [{ meets: rawMeets }, truroDates] = await Promise.all([
       scraper.scrapeAll(),
       fetchTruroTermDates()
     ]);
 
-    const rawMeets = scResult.meets;
+
 
     // Filter meets:
     // 1) Remove where meet type = League, Gala, County, County Championship, Club or Club Champs AND region is not South West

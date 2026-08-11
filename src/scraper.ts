@@ -1,13 +1,11 @@
 import * as cheerio from 'cheerio';
-import { SwimMeet, ScrapeLog, ScraperConfig } from './types';
+import { SwimMeet, ScraperConfig } from './types';
+import { MONTH_ABBREV_TO_INDEX, MONTH_INDEX_TO_ABBREV } from './constants';
 
 export class SwimmingScraper {
   private config: ScraperConfig = {
-    maxPages: 3,
-    parseMode: 'cheerio'
+    maxPages: 3
   };
-
-
 
   constructor(config?: Partial<ScraperConfig>) {
     if (config) {
@@ -16,20 +14,33 @@ export class SwimmingScraper {
   }
 
   // Fetch HTML page with realistic headers and optional timeout
-  private async fetchPage(url: string): Promise<string> {
-    const response = await fetch(url, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
-        'Accept-Language': 'en-GB,en-US;q=0.9,en;q=0.8'
-      },
-      signal: AbortSignal.timeout(15000) // 15s timeout
-    });
+  private async fetchPage(url: string, retries = 2): Promise<string> {
+    for (let attempt = 0; attempt <= retries; attempt++) {
+      try {
+        const response = await fetch(url, {
+          headers: {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+            'Accept-Language': 'en-GB,en-US;q=0.9,en;q=0.8'
+          },
+          signal: AbortSignal.timeout(15000)
+        });
 
-    if (!response.ok) {
-      throw new Error(`Failed to fetch page: HTTP status ${response.status}`);
+        if (!response.ok) {
+          throw new Error(`Failed to fetch page: HTTP status ${response.status}`);
+        }
+        return await response.text();
+      } catch (err) {
+        if (attempt < retries) {
+          const delay = 1000 * (attempt + 1);
+          console.warn(`[Scraper] Fetch attempt ${attempt + 1} failed for ${url}, retrying in ${delay}ms...`);
+          await new Promise(resolve => setTimeout(resolve, delay));
+        } else {
+          throw err;
+        }
+      }
     }
-    return await response.text();
+    throw new Error(`Failed to fetch ${url} after ${retries + 1} attempts`);
   }
 
   // Clean meet name - drop the licence number appearing at the end
@@ -62,27 +73,13 @@ export class SwimmingScraper {
     const year = yearMatch ? parseInt(yearMatch[1], 10) : new Date().getFullYear();
 
     // Find month
-    const MONTHS_MAP: { [key: string]: number } = {
-      jan: 0, january: 0,
-      feb: 1, february: 1,
-      mar: 2, march: 2,
-      apr: 3, april: 3,
-      may: 4,
-      jun: 5, june: 5,
-      jul: 6, july: 6,
-      aug: 7, august: 7,
-      sep: 8, september: 8,
-      oct: 9, october: 9,
-      nov: 10, november: 10,
-      dec: 11, december: 11
-    };
-    const MONTHS_KEYS = Object.keys(MONTHS_MAP).sort((a, b) => b.length - a.length);
+    const MONTHS_KEYS = Object.keys(MONTH_ABBREV_TO_INDEX).sort((a, b) => b.length - a.length);
 
     let monthIdx = -1;
     const lastPartLower = lastPart.toLowerCase();
     for (const key of MONTHS_KEYS) {
       if (lastPartLower.includes(key)) {
-        monthIdx = MONTHS_MAP[key];
+        monthIdx = MONTH_ABBREV_TO_INDEX[key];
         break;
       }
     }
@@ -91,7 +88,7 @@ export class SwimmingScraper {
       const cleanStrLower = cleanStr.toLowerCase();
       for (const key of MONTHS_KEYS) {
         if (cleanStrLower.includes(key)) {
-          monthIdx = MONTHS_MAP[key];
+          monthIdx = MONTH_ABBREV_TO_INDEX[key];
           break;
         }
       }
@@ -536,19 +533,17 @@ export class SwimmingScraper {
           level: finalLevel,
           meetType: finalMeetType,
           scrapedAt: new Date().toISOString()
-        } as any);
+        });
 
         // Keep temporary link on object for scraper pipeline details fetching
         if (sourceUrl) {
-          (meets[meets.length - 1] as any).sourceUrl = sourceUrl;
+          meets[meets.length - 1].sourceUrl = sourceUrl;
         }
       });
     });
 
     return meets;
   }
-
-
 
   public async fetchAboutPageNationalEvents(): Promise<SwimMeet[]> {
     const urls = [
@@ -660,7 +655,7 @@ export class SwimmingScraper {
           level,
           meetType: 'National',
           scrapedAt: new Date().toISOString()
-        } as any);
+        });
 
       } catch (err) {
         console.error(`Error processing about page ${url}:`, err);
@@ -1159,7 +1154,8 @@ export class SwimmingScraper {
       /\bmeetings\b/i,
       /nasl/i,
       /open\s+water/i,
-      /para/i
+      /para/i,
+      /SE\s+SWR/i
     ];
 
     return excludePatterns.some(pattern => pattern.test(s));
@@ -1178,7 +1174,7 @@ export class SwimmingScraper {
   }
 
   private formatIcsDates(start: Date, end: Date | null): string {
-    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const months = MONTH_INDEX_TO_ABBREV;
 
     const suffix = (day: number) => {
       if (day >= 11 && day <= 13) return day + 'th';
@@ -1272,17 +1268,13 @@ export class SwimmingScraper {
     };
   }
 
-
-
   private parseAboutPageDates(dateStr: string): string {
     if (!dateStr) return 'Ongoing/TBD';
 
-    const monthsMap: { [key: string]: string } = {
-      'january': 'Jan', 'february': 'Feb', 'march': 'Mar', 'april': 'Apr', 'may': 'May', 'june': 'Jun',
-      'july': 'Jul', 'august': 'Aug', 'september': 'Sep', 'october': 'Oct', 'november': 'Nov', 'december': 'Dec',
-      'jan': 'Jan', 'feb': 'Feb', 'mar': 'Mar', 'apr': 'Apr', 'jun': 'Jun', 'jul': 'Jul', 'aug': 'Aug',
-      'sep': 'Sep', 'oct': 'Oct', 'nov': 'Nov', 'dec': 'Dec'
-    };
+    const monthsMap: Record<string, string> = {};
+    for (const [key, idx] of Object.entries(MONTH_ABBREV_TO_INDEX)) {
+      monthsMap[key] = MONTH_INDEX_TO_ABBREV[idx];
+    }
 
     let cleanStr = dateStr.replace(/\s+/g, ' ').replace(/–/g, '-').replace(/—/g, '-').trim();
 
@@ -1336,17 +1328,149 @@ export class SwimmingScraper {
     return cleanStr;
   }
 
+  public async fetchSwimWalesEvents(): Promise<SwimMeet[]> {
+    const url = 'https://SwimWales.JustGo.com/WidgetService.mvc/ExecuteWidgetCommandAlt';
+    const meets: SwimMeet[] = [];
 
+    try {
+      console.log(`[Scraper] Retrieving Swim Wales events from JustGo API...`);
+
+      const parseJustGoDate = (dateObj: any): string => {
+        if (!dateObj || !dateObj.Date) return 'Ongoing/TBD';
+        const match = dateObj.Date.match(/Date\((\d{4}),\s*(\d{1,2}),\s*(\d{1,2})\)/);
+        if (match) {
+          const year = match[1];
+          const monthNum = parseInt(match[2], 10);
+          const dayNum = parseInt(match[3], 10);
+
+          const monthStr = MONTH_INDEX_TO_ABBREV[monthNum - 1] || MONTH_INDEX_TO_ABBREV[monthNum] || 'Jan';
+          const suffix = (d: number) => {
+            if (d >= 11 && d <= 13) return d + 'th';
+            switch (d % 10) {
+              case 1: return d + 'st';
+              case 2: return d + 'nd';
+              case 3: return d + 'rd';
+              default: return d + 'th';
+            }
+          };
+          return `${suffix(dayNum)} ${monthStr} ${year}`;
+        }
+        return 'Ongoing/TBD';
+      };
+
+      let page = 1;
+      while (true) {
+        const commandObj = [{
+          Id: 1,
+          Service: 'GDE',
+          Method: 'FetchObjectsPublic',
+          Arguments: ['Event', JSON.stringify({ Method: 'FindEvents', PageNumber: page, pageNumber: page })]
+        }];
+
+        const res = await fetch(url, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+          },
+          body: 'commands=' + encodeURIComponent(JSON.stringify(commandObj)),
+          signal: AbortSignal.timeout(15000)
+        });
+
+        if (!res.ok) {
+          console.warn(`[Scraper] Swim Wales API returned HTTP ${res.status}`);
+          break;
+        }
+
+        const text = await res.text();
+        const parsed = JSON.parse(text);
+        if (!parsed[0] || !parsed[0].Result || !parsed[0].Result.Result || !parsed[0].Result.Result.Data) {
+          break;
+        }
+
+        const rawEvents = parsed[0].Result.Result.Data as any[];
+        if (rawEvents.length === 0) break;
+
+        for (const item of rawEvents) {
+          const name = (item.EventName || '').trim();
+          if (!name) continue;
+
+          const category = (item.EventCategory || '').toLowerCase();
+          const nameLower = name.toLowerCase();
+          // Exclude non-meet sessions (induction, meetings, workshops, courses, training, etc.)
+          if (category.includes('session') || category.includes('course') || category.includes('meeting') || category.includes('training') ||
+              nameLower.includes('induction') || nameLower.includes('workshop') || nameLower.includes('webinar') || nameLower.includes('teaching') || nameLower.includes('learn to swim')) {
+            continue;
+          }
+
+          const startDateStr = parseJustGoDate(item.Starts);
+          const endDateStr = parseJustGoDate(item.Ends);
+
+          let date = startDateStr;
+          if (startDateStr !== endDateStr && startDateStr !== 'Ongoing/TBD' && endDateStr !== 'Ongoing/TBD') {
+            const startParts = startDateStr.split(' ');
+            const endParts = endDateStr.split(' ');
+            if (startParts[2] === endParts[2] && startParts[1] === endParts[1]) {
+              date = `${startParts[0]} - ${endParts[0]} ${endParts[1]} ${endParts[2]}`;
+            } else {
+              date = `${startDateStr} - ${endDateStr}`;
+            }
+          }
+
+          let location = 'Unknown Venue';
+          if (item.Address && item.Address.Town) {
+            const town = item.Address.Town.trim();
+            location = town.charAt(0).toUpperCase() + town.slice(1).toLowerCase();
+          } else if (item.Location && item.Location !== 'Virtual' && !item.Location.endsWith('.jpg') && !item.Location.endsWith('.png')) {
+            location = item.Location;
+          }
+
+          let course = 'Unknown';
+          let level = 'Unknown';
+          const textToAnalyze = `${name} ${item.EventCategory || ''}`.toLowerCase();
+          if (textToAnalyze.includes('short course') || textToAnalyze.includes('25m')) {
+            course = 'Short Course (25m)';
+            level = 'Level 2';
+          } else if (textToAnalyze.includes('long course') || textToAnalyze.includes('50m')) {
+            course = 'Long Course (50m)';
+            level = 'Level 1';
+          }
+
+          const id = `swimwales-${name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${date.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`
+            .replace(/--+/g, '-')
+            .replace(/(^-|-$)+/g, '');
+
+          meets.push({
+            id,
+            name,
+            date,
+            location,
+            region: 'Wales',
+            course,
+            level,
+            meetType: item.EventCategory?.includes('National') ? 'National' : (item.EventCategory || 'Open Meet'),
+            sourceUrl: item.Directlink || 'https://www.swimwales.org/events/',
+            scrapedAt: new Date().toISOString()
+          });
+        }
+
+        page++;
+      }
+
+      console.log(`[Scraper] Retrieved ${meets.length} events from Swim Wales.`);
+    } catch (err) {
+      console.error('Error fetching Swim Wales events:', err);
+    }
+
+    return meets;
+  }
 
   // Orchestrate scraping process across multiple directories and pagination pages
-  public async scrapeAll(): Promise<{ meets: SwimMeet[]; log: ScrapeLog }> {
+  public async scrapeAll(): Promise<{ meets: SwimMeet[] }> {
     const startTime = Date.now();
     let totalPages = 0;
     const allMeets: SwimMeet[] = [];
     const baseUri = 'https://www.swimmingresults.org/licensed_meets/';
-
-    let scrapeMethod: 'cheerio' = 'cheerio';
-    let scrapeError: string | undefined;
 
     try {
       // Step 1: Fetch first page
@@ -1375,7 +1499,7 @@ export class SwimmingScraper {
       // Helper to fetch Swimming Results pagination pages in polite chunks
       const fetchPageChunked = async (urls: string[]): Promise<SwimMeet[]> => {
         const results: SwimMeet[] = [];
-        const chunkSize = 5;
+        const chunkSize = 8;
         for (let i = 0; i < urls.length; i += chunkSize) {
           const chunk = urls.slice(i, i + chunkSize);
           const pages = await Promise.all(chunk.map(async (url) => {
@@ -1406,7 +1530,8 @@ export class SwimmingScraper {
         scottishMeets,
         aquaticsMeets,
         calendarMeets,
-        mastersMeets
+        mastersMeets,
+        welshMeets
       ] = await Promise.all([
         fetchPageChunked(pageUrls),
         (async () => {
@@ -1463,6 +1588,17 @@ export class SwimmingScraper {
             console.error("Error fetching Masters Swimming events:", err);
             return [];
           }
+        })(),
+        (async () => {
+          try {
+            console.log("[Scraper] Fetching Swim Wales events...");
+            const meets = await this.fetchSwimWalesEvents();
+            console.log(`[Scraper] Retrieved ${meets.length} events from Swim Wales.`);
+            return meets;
+          } catch (err) {
+            console.error("Error fetching Swim Wales events:", err);
+            return [];
+          }
         })()
       ]);
 
@@ -1472,11 +1608,11 @@ export class SwimmingScraper {
         ...scottishMeets,
         ...aquaticsMeets,
         ...calendarMeets,
-        ...mastersMeets
+        ...mastersMeets,
+        ...welshMeets
       );
 
-    } catch (err: any) {
-      scrapeError = err.message || String(err);
+    } catch (err) {
       console.error('Core scraper execution failed:', err);
     }
 
@@ -1492,19 +1628,19 @@ export class SwimmingScraper {
     // Identify meets needing a fetch
     const meetsToFetch = finalMeets.filter(m =>
       (!m.location || m.location === 'Unknown Venue' || m.location === 'TBD' || m.location === 'Unknown') &&
-      (m as any).sourceUrl && (m as any).sourceUrl.startsWith('http') &&
-      !(m as any).sourceUrl.includes('calendar.google.com') &&
-      !(m as any).sourceUrl.includes('.ics')
+      m.sourceUrl && m.sourceUrl.startsWith('http') &&
+      !m.sourceUrl.includes('calendar.google.com') &&
+      !m.sourceUrl.includes('.ics')
     );
 
     console.log(`[Scraper] Found ${meetsToFetch.length} meets needing location fetch. Fetching all items in parallel chunks...`);
 
-    const detailConcurrency = 8;
+    const detailConcurrency = 10;
 
     for (let i = 0; i < meetsToFetch.length; i += detailConcurrency) {
       const chunk = meetsToFetch.slice(i, i + detailConcurrency);
       await Promise.all(chunk.map(async (meet) => {
-        const detailUrl = (meet as any).sourceUrl;
+        const detailUrl = meet.sourceUrl;
         if (detailUrl) {
           console.log(`[Details API] Fetching meet details page for town/city: ${detailUrl}`);
           const townCity = await this.fetchTownCity(detailUrl);
@@ -1518,19 +1654,6 @@ export class SwimmingScraper {
       await new Promise(resolve => setTimeout(resolve, 200));
     }
 
-    const durationMs = Date.now() - startTime;
-
-    const log: ScrapeLog = {
-      timestamp: new Date().toISOString(),
-      success: !scrapeError && finalMeets.length > 0,
-      pagesScraped: totalPages,
-      itemsFound: finalMeets.length,
-      durationMs,
-      method: scrapeMethod,
-      error: scrapeError
-    };
-
-    return { meets: finalMeets, log };
+    return { meets: finalMeets };
   }
 }
-
