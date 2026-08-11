@@ -484,20 +484,9 @@ function createTableRowHTML(meet) {
 
   const googleCalUrl = generateGoogleCalendarUrl(meet);
 
-  // Link setup
-  const visitLinkHTML = meet.sourceUrl 
-    ? `<a href="${meet.sourceUrl}" target="_blank" rel="noopener noreferrer" class="visit-link" title="Official meet details" aria-label="Visit details for ${escapeHTML(meet.name)}">
-         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-           <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-           <polyline points="15 3 21 3 21 9"></polyline>
-           <line x1="10" y1="14" x2="21" y2="3"></line>
-         </svg>
-       </a>`
-    : '';
-
   const calendarLinkHTML = `
-    <a href="${escapeHTML(googleCalUrl)}" target="_blank" rel="noopener noreferrer" class="gcal-btn" title="Add event to Google Calendar (triggers Swim flare)" aria-label="Add ${escapeHTML(meet.name)} to Google Calendar">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <a href="${escapeHTML(googleCalUrl)}" target="_blank" rel="noopener noreferrer" class="gcal-icon-btn" title="Add to Google Calendar" aria-label="Add ${escapeHTML(meet.name)} to Google Calendar">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
         <line x1="16" y1="2" x2="16" y2="6"></line>
         <line x1="8" y1="2" x2="8" y2="6"></line>
@@ -505,7 +494,6 @@ function createTableRowHTML(meet) {
         <line x1="12" y1="14" x2="12" y2="18"></line>
         <line x1="10" y1="16" x2="14" y2="16"></line>
       </svg>
-      <span>+ Calendar</span>
     </a>
   `;
 
@@ -537,11 +525,8 @@ function createTableRowHTML(meet) {
       <td data-label="Type">
         <span class="type-tag">${escapeHTML(meet.meetType || 'Other')}</span>
       </td>
-      <td class="text-center col-actions" data-label="Actions">
-        <div class="actions-wrapper">
-          ${calendarLinkHTML}
-          ${visitLinkHTML}
-        </div>
+      <td class="text-center col-actions" data-label="Calendar">
+        ${calendarLinkHTML}
       </td>
     </tr>
   `;
