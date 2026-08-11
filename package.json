@@ -18,7 +18,8 @@
     "lint": "tsc --noEmit"
   },
   "dependencies": {
-    "cheerio": "^1.2.0"
+    "cheerio": "^1.2.0",
+    "puppeteer-core": "^25.6.0"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",

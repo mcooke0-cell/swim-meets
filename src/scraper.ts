@@ -789,7 +789,7 @@ export class SwimmingScraper {
             if (matchRange) {
               dateStr = `${matchRange[1]} ${matchRange[2]} ${matchRange[3]} - ${matchRange[4]} ${matchRange[5]} ${matchRange[6]}`;
             } else {
-              const cleanTextDates = bodyText.match(new RegExp("(\\d{1,2})(?:st|nd|rd|th)?\\s*-\\s*(\\d{1,2})(?:st|nd|rd|th)?\\s+([A-Za-z]{3,9})\\s+(20\\d{2})", "i"));
+              const cleanTextDates = bodyText.match(new RegExp("(\\d{1,2})(?:st|nd|rd|th)?\\s*-\\s*(\\d{1,2})(?:st|nd|rd|th)?\\s+([A-Za-z]{3,9})\\s+(20\d{2})", "i"));
               if (cleanTextDates) {
                 dateStr = `${cleanTextDates[1]}-${cleanTextDates[2]} ${cleanTextDates[3]} ${cleanTextDates[4]}`;
               } else {
@@ -1465,6 +1465,119 @@ export class SwimmingScraper {
     return meets;
   }
 
+  public async fetchApexEvents(): Promise<SwimMeet[]> {
+    const url = 'https://apexsports.ae/competition-calendar/';
+    const meets: SwimMeet[] = [];
+
+    try {
+      console.log(`[Scraper] Fetching Apex Sports competition calendar from ${url}...`);
+      let html = '';
+
+      // 1. Try puppeteer-core with firefox if available to bypass Cloudflare
+      try {
+        const puppeteer = await import('puppeteer-core');
+        const browser = await puppeteer.default.launch({
+          browser: 'firefox',
+          executablePath: '/usr/bin/firefox',
+          headless: true,
+          args: ['--headless']
+        });
+        const page = await browser.newPage();
+        await page.goto(url, { waitUntil: 'networkidle2', timeout: 25000 });
+        html = await page.content();
+        await browser.close();
+      } catch (puppeteerErr: any) {
+        console.warn(`[Scraper] Puppeteer fetch for Apex Sports failed: ${puppeteerErr.message || puppeteerErr}, falling back to direct fetch`);
+      }
+
+      // 2. Direct fetch fallback if puppeteer didn't produce HTML
+      if (!html || html.includes('Just a moment')) {
+        const res = await fetch(url, {
+          headers: {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+          },
+          signal: AbortSignal.timeout(15000)
+        });
+        if (res.ok) {
+          html = await res.text();
+        }
+      }
+
+      if (!html || html.includes('Just a moment')) {
+        console.warn(`[Scraper] Unable to bypass Cloudflare for Apex Sports calendar.`);
+        return [];
+      }
+
+      const $ = cheerio.load(html);
+
+      const parseApexDate = (rawDate: string): string => {
+        if (!rawDate) return 'Ongoing/TBD';
+        let clean = rawDate
+          .replace(/\s+/g, ' ')
+          .replace(/^(?:Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday),\s*/i, '')
+          .trim();
+
+        const multiDayMatch = clean.match(/(\d{1,2})(?:st|nd|rd|th)?,\s*(\d{1,2})(?:st|nd|rd|th)?\s*&\s*(\d{1,2})(?:st|nd|rd|th)?\s+([A-Za-z]+)\s+(20\d{2})/i);
+        if (multiDayMatch) {
+          clean = `${multiDayMatch[1]} - ${multiDayMatch[3]} ${multiDayMatch[4]} ${multiDayMatch[5]}`;
+        }
+
+        return this.parseAboutPageDates(clean);
+      };
+
+      $('tr').each((_, tr) => {
+        const cells = $(tr).find('td, th').map((__, cell) => $(cell).text().trim().replace(/\s+/g, ' ')).get();
+        if (cells.length < 3) return;
+
+        const fullRowText = cells.join(' ');
+        // Filter rule: include ONLY meets with "international" in description / text
+        if (!fullRowText.toLowerCase().includes('international')) {
+          return;
+        }
+
+        const name = (cells[1] || '').trim();
+        if (!name || name.toLowerCase() === 'competition') return;
+
+        const rawDate = (cells[2] || '').trim();
+        const poolSize = (cells[4] || cells[3] || '').toLowerCase();
+        const venue = (cells[5] || 'Abu Dhabi').trim();
+
+        const formattedDate = parseApexDate(rawDate);
+
+        let course = 'Unknown';
+        if (poolSize.includes('50m') || name.toLowerCase().includes('long course')) {
+          course = 'Long Course (50m)';
+        } else if (poolSize.includes('25m') || name.toLowerCase().includes('short course')) {
+          course = 'Short Course (25m)';
+        }
+
+        const id = `apex-${name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${formattedDate.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`
+          .replace(/--+/g, '-')
+          .replace(/(^-|-$)+/g, '');
+
+        meets.push({
+          id,
+          name,
+          date: formattedDate,
+          location: venue || 'Abu Dhabi',
+          region: 'International',
+          course,
+          level: 'International',
+          meetType: 'International',
+          sourceUrl: url,
+          scrapedAt: new Date().toISOString()
+        });
+      });
+
+      console.log(`[Scraper] Retrieved ${meets.length} international meets from Apex Sports.`);
+    } catch (err) {
+      console.error('Error fetching Apex Sports events:', err);
+    }
+
+    return meets;
+  }
+
   // Orchestrate scraping process across multiple directories and pagination pages
   public async scrapeAll(): Promise<{ meets: SwimMeet[] }> {
     const startTime = Date.now();
@@ -1531,7 +1644,8 @@ export class SwimmingScraper {
         aquaticsMeets,
         calendarMeets,
         mastersMeets,
-        welshMeets
+        welshMeets,
+        apexMeets
       ] = await Promise.all([
         fetchPageChunked(pageUrls),
         (async () => {
@@ -1599,6 +1713,17 @@ export class SwimmingScraper {
             console.error("Error fetching Swim Wales events:", err);
             return [];
           }
+        })(),
+        (async () => {
+          try {
+            console.log("[Scraper] Fetching Apex Sports events...");
+            const meets = await this.fetchApexEvents();
+            console.log(`[Scraper] Retrieved ${meets.length} events from Apex Sports.`);
+            return meets;
+          } catch (err) {
+            console.error("Error fetching Apex Sports events:", err);
+            return [];
+          }
         })()
       ]);
 
@@ -1609,7 +1734,8 @@ export class SwimmingScraper {
         ...aquaticsMeets,
         ...calendarMeets,
         ...mastersMeets,
-        ...welshMeets
+        ...welshMeets,
+        ...apexMeets
       );
 
     } catch (err) {

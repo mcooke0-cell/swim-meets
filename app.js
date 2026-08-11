@@ -202,8 +202,8 @@ function extractFilterOptions(meets) {
 }
 
 function setDefaultFilters() {
-  // 1. Default Regions: select South West, National, GB, England, Scotland, Wales
-  const defaultRegionsToSelect = ['south west', 'national', 'gb', 'england', 'scotland', 'wales'];
+  // 1. Default Regions: select South West, National, GB, England, Scotland, Wales, International
+  const defaultRegionsToSelect = ['south west', 'national', 'gb', 'england', 'scotland', 'wales', 'international'];
   regions.forEach(r => {
     if (defaultRegionsToSelect.includes(r.toLowerCase().trim())) {
       state.selectedRegions.add(r);
