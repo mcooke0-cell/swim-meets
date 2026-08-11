@@ -1,4 +1,5 @@
 import * as cheerio from 'cheerio';
+import { MONTH_ABBREV_TO_INDEX } from './constants';
 
 export interface DateRange {
   start: Date;
@@ -18,22 +19,7 @@ function parseDateStr(str: string, year: number): Date {
   const day = parseInt(parts[0], 10);
   const monthName = parts[1].replace(/[^A-Za-z]/g, '').toLowerCase();
   
-  const months: { [key: string]: number } = {
-    january: 0, jan: 0,
-    february: 1, feb: 1,
-    march: 2, mar: 2,
-    april: 3, apr: 3,
-    may: 4,
-    june: 5, jun: 5,
-    july: 6, jul: 6,
-    august: 7, aug: 7,
-    september: 8, sep: 8,
-    october: 9, oct: 9,
-    november: 10, nov: 10,
-    december: 11, dec: 11
-  };
-  
-  const month = months[monthName];
+  const month = MONTH_ABBREV_TO_INDEX[monthName];
   if (month === undefined) {
     throw new Error(`Unknown month "${monthName}" in date string: "${str}"`);
   }

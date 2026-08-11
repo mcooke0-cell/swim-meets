@@ -2,28 +2,17 @@ export interface SwimMeet {
   id: string;
   name: string;
   date: string;
+  formattedDate?: string;
   location: string;
-  region: string;
-  course: string; // e.g. "Short Course (25m)", "Long Course (50m)"
-  level: string; // e.g. "Level 1", "Level 2", etc.
-  meetType: string; // e.g. "Open Meet", "Club Champs"
+  region: string; // e.g. "South West", "London", "North East", "Wales", "Scotland", "GB"
+  course: string; // e.g. "Short Course (25m)", "Long Course (50m)", "Unknown"
+  level: string;  // e.g. "Level 1", "Level 2", "Level 3", "Level 4", "Unknown"
+  meetType: string; // e.g. "Open Meet", "County Championship", "National", "Masters", "Unknown"
+  isHoliday?: boolean;
   scrapedAt: string;
   sourceUrl?: string;
 }
 
-
-export interface ScrapeLog {
-  timestamp: string;
-  success: boolean;
-  pagesScraped: number;
-  itemsFound: number;
-  durationMs: number;
-  method: 'cheerio';
-  error?: string;
-}
-
 export interface ScraperConfig {
   maxPages: number;
-  parseMode: 'cheerio';
 }
-
