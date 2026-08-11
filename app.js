@@ -390,6 +390,90 @@ function renderMeets() {
   }
 }
 
+// Parse dates into Google Calendar format (YYYYMMDD/YYYYMMDD with exclusive end date)
+function parseDatesForGoogleCal(rawDateStr, formattedDate) {
+  let startDate = null;
+  let endDate = null;
+
+  if (formattedDate) {
+    const parts = formattedDate.split('-').map(s => s.trim());
+    const parseDDMMYYYY = (str) => {
+      const m = str.match(/(\d{1,2})\/(\d{1,2})\/(\d{4})/);
+      if (m) {
+        return new Date(parseInt(m[3], 10), parseInt(m[2], 10) - 1, parseInt(m[1], 10));
+      }
+      return null;
+    };
+
+    if (parts.length === 2) {
+      startDate = parseDDMMYYYY(parts[0]);
+      endDate = parseDDMMYYYY(parts[1]);
+    } else if (parts.length === 1) {
+      startDate = parseDDMMYYYY(parts[0]);
+      endDate = startDate;
+    }
+  }
+
+  if (!startDate || isNaN(startDate.getTime())) {
+    startDate = getStartDate(rawDateStr);
+  }
+  if (!endDate || isNaN(endDate.getTime())) {
+    endDate = getStartDate(rawDateStr);
+  }
+
+  if (!startDate || isNaN(startDate.getTime())) {
+    startDate = new Date();
+  }
+  if (!endDate || isNaN(endDate.getTime()) || endDate < startDate) {
+    endDate = startDate;
+  }
+
+  // Exclusive end date for all-day Google Calendar template
+  const exclusiveEnd = new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate() + 1);
+
+  const formatYYYYMMDD = (d) => {
+    const y = d.getFullYear();
+    const m = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    return `${y}${m}${day}`;
+  };
+
+  return {
+    start: formatYYYYMMDD(startDate),
+    end: formatYYYYMMDD(exclusiveEnd)
+  };
+}
+
+// Generate Google Calendar Link ensuring Swim flare is triggered
+function generateGoogleCalendarUrl(meet) {
+  let title = meet.name || 'Swim Meet';
+  if (!/swim/i.test(title)) {
+    title = `Swim Meet: ${title}`;
+  }
+
+  const dateRange = parseDatesForGoogleCal(meet.date, meet.formattedDate);
+  const locationStr = [meet.location, meet.region].filter(b => b && b !== 'Unknown' && b !== 'Unknown Venue' && b !== 'TBD').join(', ') || 'UK';
+
+  const detailsText = [
+    `🏊 ${meet.name}`,
+    `📍 Venue: ${meet.location || 'TBD'} (${meet.region || 'UK'})`,
+    `🏊 Format: ${getCourseLength(meet.course)} | ${meet.level || 'TBD'}`,
+    `🏷️ Meet Type: ${meet.meetType || 'Open Meet'}`,
+    meet.sourceUrl ? `🔗 Details: ${meet.sourceUrl}` : ''
+  ].filter(Boolean).join('\n');
+
+  const baseUrl = 'https://calendar.google.com/calendar/render';
+  const params = new URLSearchParams({
+    action: 'TEMPLATE',
+    text: title,
+    dates: `${dateRange.start}/${dateRange.end}`,
+    details: detailsText,
+    location: locationStr
+  });
+
+  return `${baseUrl}?${params.toString()}`;
+}
+
 // Build table row HTML with attributes for responsive mobile card views
 function createTableRowHTML(meet) {
   const displayDate = meet.formattedDate || meet.date;
@@ -398,22 +482,36 @@ function createTableRowHTML(meet) {
   const displayCourse = meet.course || 'TBD';
   const displayLevel = meet.level || 'TBD';
 
+  const googleCalUrl = generateGoogleCalendarUrl(meet);
+
   // Link setup
   const visitLinkHTML = meet.sourceUrl 
-    ? `<a href="${meet.sourceUrl}" target="_blank" rel="noopener noreferrer" class="visit-link" aria-label="Visit details for ${escapeHTML(meet.name)}">
+    ? `<a href="${meet.sourceUrl}" target="_blank" rel="noopener noreferrer" class="visit-link" title="Official meet details" aria-label="Visit details for ${escapeHTML(meet.name)}">
          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
            <polyline points="15 3 21 3 21 9"></polyline>
            <line x1="10" y1="14" x2="21" y2="3"></line>
          </svg>
        </a>`
-    : '<span class="text-secondary">-</span>';
+    : '';
+
+  const calendarLinkHTML = `
+    <a href="${escapeHTML(googleCalUrl)}" target="_blank" rel="noopener noreferrer" class="gcal-btn" title="Add event to Google Calendar (triggers Swim flare)" aria-label="Add ${escapeHTML(meet.name)} to Google Calendar">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+        <line x1="16" y1="2" x2="16" y2="6"></line>
+        <line x1="8" y1="2" x2="8" y2="6"></line>
+        <line x1="3" y1="10" x2="21" y2="10"></line>
+        <line x1="12" y1="14" x2="12" y2="18"></line>
+        <line x1="10" y1="16" x2="14" y2="16"></line>
+      </svg>
+      <span>+ Calendar</span>
+    </a>
+  `;
 
   const holidayBadgeHTML = meet.isHoliday 
     ? '<span class="holiday-badge">🏖️ Holiday</span>' 
     : '';
-
-
 
   return `
     <tr>
@@ -439,7 +537,12 @@ function createTableRowHTML(meet) {
       <td data-label="Type">
         <span class="type-tag">${escapeHTML(meet.meetType || 'Other')}</span>
       </td>
-      <td class="text-center" data-label="Info">${visitLinkHTML}</td>
+      <td class="text-center col-actions" data-label="Actions">
+        <div class="actions-wrapper">
+          ${calendarLinkHTML}
+          ${visitLinkHTML}
+        </div>
+      </td>
     </tr>
   `;
 }
