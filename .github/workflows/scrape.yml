@@ -36,11 +36,11 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           
-          # Check if meets.json has changed
-          if git diff --name-only | grep -q "meets.json"; then
+          if [ -n "$(git status --porcelain meets.json)" ]; then
             echo "Changes detected in meets.json. Committing..."
             git add meets.json
             git commit -m "chore: auto-update meets calendar data [skip ci]"
+            git pull --rebase origin main || true
             git push
           else
             echo "No changes in meets.json. Skipping commit."
