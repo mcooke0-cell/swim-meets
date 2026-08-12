@@ -1060,14 +1060,13 @@ export class SwimmingScraper {
     // 1. Normalize Meet Types across all sources (e.g., set meetType to 'Masters' if name contains 'masters')
     this.normalizeMeetTypes(allMeets);
 
-    // 2. Initial deduplication by exact ID
+    // 2. De-duplicate meets based on generated meet name hashes / IDs
     const uniqueMeetsMap = new Map<string, SwimMeet>();
     allMeets.forEach(m => {
       uniqueMeetsMap.set(m.id, m);
     });
 
-    // 3. Smart fuzzy deduplication (overlapping dates, name similarity, location compatibility; favoring swimming.org)
-    const dedupedMeets = this.deduplicateMeets(Array.from(uniqueMeetsMap.values()));
+    const dedupedMeets = Array.from(uniqueMeetsMap.values());
     const finalMeets = this.filterOlderThanToday(dedupedMeets);
 
     // Identify meets needing a fetch
@@ -1109,150 +1108,5 @@ export class SwimmingScraper {
         m.meetType = 'Masters';
       }
     });
-  }
-
-  // Tokenize meet name into core keywords for fuzzy matching
-  private extractCoreTokens(name: string): string[] {
-    if (!name) return [];
-    const cleaned = name
-      .toLowerCase()
-      .replace(/\b(202\d|203\d)\b/g, '')
-      .replace(/\b\d+(th|st|nd|rd)\b/g, '')
-      .replace(/[^a-z0-9\s]/g, ' ')
-      .replace(/\s+/g, ' ')
-      .trim();
-
-    const noiseWords = new Set([
-      'meet', 'open', 'championship', 'championships', 'champs', 'gala', 'annual',
-      'short', 'course', 'long', 'level', 'lvl', 'l1', 'l2', 'l3', 'l4', 'sc', 'lc',
-      '25m', '50m', 'swimming', 'club', 'asa', 'se', 'sesw', 'sw', 'gb', 'uk',
-      '1st', '2nd', '3rd', '4th', '5th'
-    ]);
-
-    const tokens = cleaned
-      .split(/\s+/)
-      .filter(t => t.length > 1 && !noiseWords.has(t));
-
-    return Array.from(new Set(tokens)).sort();
-  }
-
-  // Parse start date from meet object for proximity checking
-  private getMeetStartDate(meet: SwimMeet): Date | null {
-    if (meet.formattedDate) {
-      const parts = meet.formattedDate.split('-')[0].trim();
-      const match = parts.match(/(\d{1,2})\/(\d{1,2})\/(\d{4})/);
-      if (match) {
-        return new Date(parseInt(match[3], 10), parseInt(match[2], 10) - 1, parseInt(match[1], 10));
-      }
-    }
-    return this.getEventEndDate(meet.date);
-  }
-
-  // Smart deduplication prioritizing swimming.org sourced entries
-  public deduplicateMeets(meets: SwimMeet[]): SwimMeet[] {
-    const result: SwimMeet[] = [];
-
-    const getSourcePriority = (m: SwimMeet): number => {
-      const url = (m.sourceUrl || '').toLowerCase();
-      if (url.includes('swimming.org')) return 3; // Highest priority for swimming.org
-      if (url.includes('swimmingresults.org') || url.includes('justgo.com') || url.includes('aquaticsgb.com') || url.includes('scotswim')) return 2;
-      return 1; // Lowest priority for iCal/generic
-    };
-
-    for (const current of meets) {
-      const currentTokens = this.extractCoreTokens(current.name);
-      const currentStartDate = this.getMeetStartDate(current);
-
-      let duplicateIndex = -1;
-
-      for (let i = 0; i < result.length; i++) {
-        const existing = result[i];
-        const existingTokens = this.extractCoreTokens(existing.name);
-        const existingStartDate = this.getMeetStartDate(existing);
-
-        // 1. Check Date Match / Proximity (within 2 days in same year/month)
-        let datesOverlap = false;
-        if (currentStartDate && existingStartDate) {
-          const diffDays = Math.abs(currentStartDate.getTime() - existingStartDate.getTime()) / (1000 * 60 * 60 * 24);
-          if (diffDays <= 2) {
-            datesOverlap = true;
-          }
-        } else if (current.formattedDate && existing.formattedDate && current.formattedDate === existing.formattedDate) {
-          datesOverlap = true;
-        }
-
-        if (!datesOverlap) continue;
-
-        // 2. Check Region Match / Compatibility
-        if (current.region && existing.region &&
-            current.region !== 'Unknown' && existing.region !== 'Unknown' &&
-            current.region.toLowerCase() !== existing.region.toLowerCase()) {
-          continue;
-        }
-
-        // 3. Check Name Similarity
-        let namesMatch = false;
-        const currentTokenStr = currentTokens.join(' ');
-        const existingTokenStr = existingTokens.join(' ');
-
-        if (currentTokenStr && existingTokenStr && currentTokenStr === existingTokenStr) {
-          namesMatch = true;
-        } else if (currentTokens.length >= 2 && existingTokens.length >= 2) {
-          const intersection = currentTokens.filter(t => existingTokens.includes(t));
-          const union = new Set([...currentTokens, ...existingTokens]);
-          const jaccard = intersection.length / union.size;
-
-          if (jaccard >= 0.6 || (intersection.length >= 2 && (intersection.length === currentTokens.length || intersection.length === existingTokens.length))) {
-            namesMatch = true;
-          }
-        } else if (currentTokens.length === 1 && existingTokens.length === 1 && currentTokens[0] === existingTokens[0]) {
-          namesMatch = true;
-        }
-
-        if (datesOverlap && namesMatch) {
-          duplicateIndex = i;
-          break;
-        }
-      }
-
-      if (duplicateIndex !== -1) {
-        const existing = result[duplicateIndex];
-        const currentPriority = getSourcePriority(current);
-        const existingPriority = getSourcePriority(existing);
-
-        if (currentPriority > existingPriority) {
-          // Replace existing with current (swimming.org favored), enrich location/course/level if existing had better info
-          if ((!current.location || current.location === 'Unknown Venue' || current.location === 'TBD' || current.location.length < existing.location.length) &&
-              existing.location && existing.location !== 'Unknown Venue' && existing.location !== 'TBD') {
-            current.location = existing.location;
-          }
-          if ((!current.course || current.course === 'Unknown') && existing.course && existing.course !== 'Unknown') {
-            current.course = existing.course;
-          }
-          if ((!current.level || current.level === 'Unknown') && existing.level && existing.level !== 'Unknown') {
-            current.level = existing.level;
-          }
-          result[duplicateIndex] = current;
-          console.log(`[Dedup] Replaced "${existing.name}" (${existing.id}) with higher priority swimming.org entry "${current.name}" (${current.id})`);
-        } else {
-          // Keep existing, enrich existing with current info if better
-          if ((!existing.location || existing.location === 'Unknown Venue' || existing.location === 'TBD' || existing.location.length < current.location.length) &&
-              current.location && current.location !== 'Unknown Venue' && current.location !== 'TBD') {
-            existing.location = current.location;
-          }
-          if ((!existing.course || existing.course === 'Unknown') && current.course && current.course !== 'Unknown') {
-            existing.course = current.course;
-          }
-          if ((!existing.level || existing.level === 'Unknown') && current.level && current.level !== 'Unknown') {
-            existing.level = current.level;
-          }
-          console.log(`[Dedup] Kept existing priority entry "${existing.name}" (${existing.id}), skipped duplicate "${current.name}" (${current.id})`);
-        }
-      } else {
-        result.push(current);
-      }
-    }
-
-    return result;
   }
 }
