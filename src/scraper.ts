@@ -1403,6 +1403,11 @@ export class SwimmingScraper {
             continue;
           }
 
+          // Filter Swim Wales events: remove anything that doesn't contain championship, and remove poolside accreditation
+          if (!nameLower.includes('championship') || nameLower.includes('poolside accreditation')) {
+            continue;
+          }
+
           const startDateStr = parseJustGoDate(item.Starts);
           const endDateStr = parseJustGoDate(item.Ends);
 

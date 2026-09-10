@@ -163,6 +163,7 @@ async function runLocalScraper() {
     // 1) Remove where meet type = League, Gala, County, County Championship, Club or Club Champs AND region is not South West
     // 2) Remove where meet type = Disability
     // 3) Remove where meet name contains "open water" (case-insensitive)
+    // 4) Swim Wales: remove anything that doesn't contain championship, or contains poolside accreditation in the name
     const meets = rawMeets.filter(m => {
       const nameLower = (m.name || '').toLowerCase();
       if (nameLower.includes('open water')) {
@@ -171,6 +172,12 @@ async function runLocalScraper() {
 
       const meetTypeLower = (m.meetType || '').toLowerCase();
       const regionLower = (m.region || '').toLowerCase();
+
+      if (m.id?.startsWith('swimwales-') || regionLower === 'wales') {
+        if (!nameLower.includes('championship') || nameLower.includes('poolside accreditation')) {
+          return false;
+        }
+      }
 
       const targetMeetTypes = ['league', 'gala', 'county', 'county championship', 'club', 'club champs'];
       if (targetMeetTypes.includes(meetTypeLower) && regionLower !== 'south west') {

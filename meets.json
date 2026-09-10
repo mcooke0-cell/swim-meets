@@ -1,20 +1,7 @@
 {
   "lastUpdated": "2026-09-09T01:57:15.212Z",
-  "meetsCount": 480,
+  "meetsCount": 446,
   "meets": [
-    {
-      "id": "swimwales-swim-wales-annual-passes-2026-27-season-4th-sep-2026-4th-oct-2026",
-      "name": "Swim Wales Annual Passes 2026/27 season",
-      "date": "4th Sep 2026 - 4th Oct 2026",
-      "formattedDate": "04/09/2026 - 04/10/2026",
-      "location": "Unknown Venue",
-      "region": "Wales",
-      "course": "Unknown",
-      "level": "Unknown",
-      "meetType": "Meets & Competition",
-      "isHoliday": false,
-      "sourceUrl": "https://SwimWales.JustGo.com/workbench/public/Events?ref=6599C1A2B6DCE869B01AF43114AA779324B505FF"
-    },
     {
       "id": "portsmouth-northsea-club-champs-2026-sc-l4-meet-11thsep-2026",
       "name": "Portsmouth Northsea Club Champs 2026 SC L4 Meet",
@@ -495,19 +482,6 @@
       "meetType": "Open Meet",
       "isHoliday": false,
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=87980&page=2&region=P&level=P&month=P&year=P"
-    },
-    {
-      "id": "swimwales-swim-conwy-invitational-2026-19th-20th-sep-2026",
-      "name": "Swim Conwy Invitational 2026",
-      "date": "19th - 20th Sep 2026",
-      "formattedDate": "19/09/2026 - 20/09/2026",
-      "location": "Llandudno",
-      "region": "Wales",
-      "course": "Unknown",
-      "level": "Unknown",
-      "meetType": "Meets & Competition",
-      "isHoliday": false,
-      "sourceUrl": "https://SwimWales.JustGo.com/workbench/public/Events?ref=EF13172FEDBE878C5852D1329D098C2D7B7DF58E"
     },
     {
       "id": "coventry-sc-sprint-meet-13-and-over-2026-19thsep-2026",
@@ -1082,32 +1056,6 @@
       "sourceUrl": "https://SwimWales.JustGo.com/workbench/public/Events?ref=918BAB1380E705C90106BB1C6C17C7A6871E3238"
     },
     {
-      "id": "swimwales-rct-september-splash-sc-season-opener-26th-27th-sep-2026",
-      "name": "RCT September Splash SC  Season Opener",
-      "date": "26th - 27th Sep 2026",
-      "formattedDate": "26/09/2026 - 27/09/2026",
-      "location": "Newport",
-      "region": "Wales",
-      "course": "Unknown",
-      "level": "Unknown",
-      "meetType": "Meets & Competition",
-      "isHoliday": false,
-      "sourceUrl": "https://SwimWales.JustGo.com/workbench/public/Events?ref=FD5605668587F22126FD35CA22C98EAAEC8429E9"
-    },
-    {
-      "id": "rct-september-splash-sc-season-opener-26thsep-2026",
-      "name": "RCT September Splash SC Season Opener",
-      "date": "26thSep 2026",
-      "formattedDate": "26/09/2026",
-      "location": "Newport",
-      "region": "Wales",
-      "course": "Short Course (25m)",
-      "level": "Level 3",
-      "meetType": "Open Meet",
-      "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89234&page=5&region=P&level=P&month=P&year=P"
-    },
-    {
       "id": "braintree-and-bocking-sc-season-starter-2026-27thsep-2026",
       "name": "Braintree and Bocking SC Season Starter 2026",
       "date": "27thSep 2026",
@@ -1654,32 +1602,6 @@
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88953&page=7&region=P&level=P&month=P&year=P"
     },
     {
-      "id": "swimwales-llanelli-swimming-club-autumn-meet-3rd-4th-oct-2026",
-      "name": "Llanelli Swimming Club Autumn Meet",
-      "date": "3rd - 4th Oct 2026",
-      "formattedDate": "03/10/2026 - 04/10/2026",
-      "location": "Llanelli",
-      "region": "Wales",
-      "course": "Unknown",
-      "level": "Unknown",
-      "meetType": "Meets & Competition",
-      "isHoliday": false,
-      "sourceUrl": "https://SwimWales.JustGo.com/workbench/public/Events?ref=02464E0040383F8D27CCA0C9BEF465430E3FCC56"
-    },
-    {
-      "id": "llanelli-swimming-club-autumn-meet-3rdoct-2026",
-      "name": "Llanelli Swimming Club Autumn Meet",
-      "date": "3rdOct 2026",
-      "formattedDate": "03/10/2026",
-      "location": "Llanelli",
-      "region": "Wales",
-      "course": "Short Course (25m)",
-      "level": "Level 3",
-      "meetType": "Open Meet",
-      "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89235&page=7&region=P&level=P&month=P&year=P"
-    },
-    {
       "id": "coventry-district-asc-october-meet-2026-3rdoct-2026",
       "name": "Coventry & District ASC October Meet 2026",
       "date": "3rdOct 2026",
@@ -1807,19 +1729,6 @@
       "meetType": "Open Meet",
       "isHoliday": false,
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88889&page=8&region=P&level=P&month=P&year=P"
-    },
-    {
-      "id": "masters-37th-annual-arfon-gala",
-      "name": "37th Annual Arfon Gala",
-      "date": "4 Oct 2026",
-      "formattedDate": "04/10/2026",
-      "location": "Llandudno",
-      "region": "Wales",
-      "course": "Short Course",
-      "level": "Masters",
-      "meetType": "Masters",
-      "isHoliday": false,
-      "sourceUrl": "https://www.swimming.org/calendar/all/37th-annual-arfon-gala/"
     },
     {
       "id": "bradford-on-avon-asc-club-championships-ld-2026-7thoct-2026",
@@ -2511,110 +2420,6 @@
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88908&page=12&region=P&level=P&month=P&year=P"
     },
     {
-      "id": "swimwales-greater-gwent-fast-water-open-meet-2026-17th-18th-oct-2026",
-      "name": "Greater Gwent Fast Water Open Meet 2026",
-      "date": "17th - 18th Oct 2026",
-      "formattedDate": "17/10/2026 - 18/10/2026",
-      "location": "Newport",
-      "region": "Wales",
-      "course": "Unknown",
-      "level": "Unknown",
-      "meetType": "Meet License Under Review",
-      "isHoliday": true,
-      "sourceUrl": "https://SwimWales.JustGo.com/workbench/public/Events?ref=8DD5660603915671DDF22AF41E81744CA6F26147"
-    },
-    {
-      "id": "swimwales-neath-swimming-club-level-2-short-course-open-meet-17th-18th-oct-2026",
-      "name": "Neath Swimming Club - Level 2 -Short Course Open Meet",
-      "date": "17th - 18th Oct 2026",
-      "formattedDate": "17/10/2026 - 18/10/2026",
-      "location": "Swansea",
-      "region": "Wales",
-      "course": "Short Course (25m)",
-      "level": "Level 2",
-      "meetType": "Meets & Competition",
-      "isHoliday": true,
-      "sourceUrl": "https://SwimWales.JustGo.com/workbench/public/Events?ref=9875AB7C7490E040EAC52468E8DE60D0FF27AA72"
-    },
-    {
-      "id": "swimwales-neath-swimming-club-level-3-short-course-open-meet-17th-18th-oct-2026",
-      "name": "Neath Swimming Club - Level 3 - Short Course Open Meet",
-      "date": "17th - 18th Oct 2026",
-      "formattedDate": "17/10/2026 - 18/10/2026",
-      "location": "Swansea",
-      "region": "Wales",
-      "course": "Short Course (25m)",
-      "level": "Level 2",
-      "meetType": "Meets & Competition",
-      "isHoliday": true,
-      "sourceUrl": "https://SwimWales.JustGo.com/workbench/public/Events?ref=63DA662C8B2A992D66F080D95503D744EDC7A14F"
-    },
-    {
-      "id": "swimwales-swim-conwy-l2-autumn-meet-2026-17th-18th-oct-2026",
-      "name": "Swim Conwy L2 Autumn Meet 2026",
-      "date": "17th - 18th Oct 2026",
-      "formattedDate": "17/10/2026 - 18/10/2026",
-      "location": "Llandudno",
-      "region": "Wales",
-      "course": "Unknown",
-      "level": "Unknown",
-      "meetType": "Meets & Competition",
-      "isHoliday": true,
-      "sourceUrl": "https://SwimWales.JustGo.com/workbench/public/Events?ref=7E2D60BB9BA0599315BCD79D66F754563DD6E6A3"
-    },
-    {
-      "id": "greater-gwent-fast-water-open-meet-2026-17thoct-2026",
-      "name": "Greater Gwent Fast Water Open Meet 2026",
-      "date": "17thOct 2026",
-      "formattedDate": "17/10/2026",
-      "location": "Newport",
-      "region": "Wales",
-      "course": "Short Course (25m)",
-      "level": "Level 2",
-      "meetType": "Open Meet",
-      "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=87985&page=11&region=P&level=P&month=P&year=P"
-    },
-    {
-      "id": "neath-swimming-club-l2-short-course-open-meet-17thoct-2026",
-      "name": "Neath Swimming Club - L2 -Short Course Open Meet",
-      "date": "17thOct 2026",
-      "formattedDate": "17/10/2026",
-      "location": "Swansea",
-      "region": "Wales",
-      "course": "Short Course (25m)",
-      "level": "Level 2",
-      "meetType": "Open Meet",
-      "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89237&page=11&region=P&level=P&month=P&year=P"
-    },
-    {
-      "id": "swim-conwy-l2-autumn-meet-2026-17thoct-2026",
-      "name": "Swim Conwy L2 Autumn Meet 2026",
-      "date": "17thOct 2026",
-      "formattedDate": "17/10/2026",
-      "location": "Llandudno",
-      "region": "Wales",
-      "course": "Short Course (25m)",
-      "level": "Level 2",
-      "meetType": "Open Meet",
-      "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89236&page=12&region=P&level=P&month=P&year=P"
-    },
-    {
-      "id": "neath-swimming-club-l3-short-course-open-meet-17thoct-2026",
-      "name": "Neath Swimming Club - L3 -Short Course Open Meet",
-      "date": "17thOct 2026",
-      "formattedDate": "17/10/2026",
-      "location": "Swansea",
-      "region": "Wales",
-      "course": "Short Course (25m)",
-      "level": "Level 3",
-      "meetType": "Open Meet",
-      "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89238&page=11&region=P&level=P&month=P&year=P"
-    },
-    {
       "id": "city-of-birmingham-sc-winter-meet-17thoct-2026",
       "name": "City of Birmingham SC Winter Meet",
       "date": "17thOct 2026",
@@ -2914,32 +2719,6 @@
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88901&page=12&region=P&level=P&month=P&year=P"
     },
     {
-      "id": "swimwales-hasc-halloween-meet-2026-24th-oct-2026",
-      "name": "HASC Halloween Meet 2026",
-      "date": "24th Oct 2026",
-      "formattedDate": "24/10/2026",
-      "location": "Holywell",
-      "region": "Wales",
-      "course": "Unknown",
-      "level": "Unknown",
-      "meetType": "Meets & Competition",
-      "isHoliday": true,
-      "sourceUrl": "https://SwimWales.JustGo.com/workbench/public/Events?ref=934E77F6E6901A1089EFB080986ACCDFB75CD17B"
-    },
-    {
-      "id": "hasc-halloween-meet-2026-24thoct-2026",
-      "name": "HASC Halloween Meet 2026",
-      "date": "24thOct 2026",
-      "formattedDate": "24/10/2026",
-      "location": "Flintshire",
-      "region": "Wales",
-      "course": "Short Course (25m)",
-      "level": "Level 3",
-      "meetType": "Open Meet",
-      "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89239&page=12&region=P&level=P&month=P&year=P"
-    },
-    {
       "id": "chase-roebuck-autumn-meet-2025-24thoct-2026",
       "name": "Chase Roebuck Autumn Meet 2025",
       "date": "24thOct 2026",
@@ -3174,32 +2953,6 @@
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89091&page=13&region=P&level=P&month=P&year=P"
     },
     {
-      "id": "swimwales-city-of-swansea-aquatics-spooky-splash-2026-31st-oct-2026-1st-nov-2026",
-      "name": "City of Swansea Aquatics Spooky Splash 2026",
-      "date": "31st Oct 2026 - 1st Nov 2026",
-      "formattedDate": "31/10/2026 - 01/11/2026",
-      "location": "Llanelli",
-      "region": "Wales",
-      "course": "Unknown",
-      "level": "Unknown",
-      "meetType": "Meets & Competition",
-      "isHoliday": true,
-      "sourceUrl": "https://SwimWales.JustGo.com/workbench/public/Events?ref=C7C6CCDB3E05E755FD8FEC433C942EFFFE390F33"
-    },
-    {
-      "id": "city-of-swansea-aquatics-spook-splash-2026-31stoct-2026",
-      "name": "City of Swansea Aquatics Spook Splash 2026",
-      "date": "31stOct 2026",
-      "formattedDate": "31/10/2026",
-      "location": "Llanelli",
-      "region": "Wales",
-      "course": "Short Course (25m)",
-      "level": "Level 3",
-      "meetType": "Open Meet",
-      "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89241&page=13&region=P&level=P&month=P&year=P"
-    },
-    {
       "id": "stourbridge-sc-storm-force-31stoct-2026",
       "name": "Stourbridge SC Storm Force",
       "date": "31stOct 2026",
@@ -3263,32 +3016,6 @@
       "meetType": "Club",
       "isHoliday": true,
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89539&page=13&region=P&level=P&month=P&year=P"
-    },
-    {
-      "id": "swimwales-wrexham-bonfire-meet-2026-125th-anniversary-year-1st-nov-2026",
-      "name": "Wrexham Bonfire Meet 2026 - 125th Anniversary Year",
-      "date": "1st Nov 2026",
-      "formattedDate": "01/11/2026",
-      "location": "Unknown Venue",
-      "region": "Wales",
-      "course": "Unknown",
-      "level": "Unknown",
-      "meetType": "Meets & Competition",
-      "isHoliday": true,
-      "sourceUrl": "https://SwimWales.JustGo.com/workbench/public/Events?ref=B04D9FF11402EAC8E112C4CDB1A2FFA9E35A3190"
-    },
-    {
-      "id": "wrexham-bonfire-meet-2026-125th-anniversary-year-1stnov-2026",
-      "name": "Wrexham Bonfire Meet 2026 - 125th Anniversary Year",
-      "date": "1stNov 2026",
-      "formattedDate": "01/11/2026",
-      "location": "Wrexham",
-      "region": "Wales",
-      "course": "Short Course (25m)",
-      "level": "Level 3",
-      "meetType": "Open Meet",
-      "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89242&page=13&region=P&level=P&month=P&year=P"
     },
     {
       "id": "bradford-on-avon-asc-club-championships-ld-2026-4thnov-2026",
@@ -3629,19 +3356,6 @@
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89197&page=14&region=P&level=P&month=P&year=P"
     },
     {
-      "id": "wrexham-bonfire-meet-2026-125th-anniversary-year-8thnov-2026",
-      "name": "Wrexham Bonfire Meet 2026 - 125th Anniversary Year",
-      "date": "8thNov 2026",
-      "formattedDate": "08/11/2026",
-      "location": "Wrexham",
-      "region": "Wales",
-      "course": "Short Course (25m)",
-      "level": "Level 3",
-      "meetType": "Open Meet",
-      "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=87986&page=14&region=P&level=P&month=P&year=P"
-    },
-    {
       "id": "torquay-leander-sc-club-championships-9thnov-2026",
       "name": "Torquay Leander SC Club Championships",
       "date": "9thNov 2026",
@@ -3941,32 +3655,6 @@
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88964&page=15&region=P&level=P&month=P&year=P"
     },
     {
-      "id": "swimwales-amman-valley-mid-distance-development-meet-2026-15th-nov-2026",
-      "name": "Amman Valley Mid-Distance Development Meet 2026",
-      "date": "15th Nov 2026",
-      "formattedDate": "15/11/2026",
-      "location": "Carmarthen",
-      "region": "Wales",
-      "course": "Unknown",
-      "level": "Unknown",
-      "meetType": "Meets & Competition",
-      "isHoliday": false,
-      "sourceUrl": "https://SwimWales.JustGo.com/workbench/public/Events?ref=462F08EEED3AA0B0AFE9A22393376E631C44A527"
-    },
-    {
-      "id": "amman-valley-mid-distance-development-meet-2026-15thnov-2026",
-      "name": "Amman Valley Mid-Distance Development Meet 2026",
-      "date": "15thNov 2026",
-      "formattedDate": "15/11/2026",
-      "location": "Carmarthen",
-      "region": "Wales",
-      "course": "Short Course (25m)",
-      "level": "Level 3",
-      "meetType": "Open Meet",
-      "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89246&page=15&region=P&level=P&month=P&year=P"
-    },
-    {
       "id": "torquay-leander-sc-club-championships-19thnov-2026",
       "name": "Torquay Leander SC Club Championships",
       "date": "19thNov 2026",
@@ -4043,32 +3731,6 @@
       "meetType": "Club Champs",
       "isHoliday": false,
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=87631&page=16&region=P&level=P&month=P&year=P"
-    },
-    {
-      "id": "swimwales-welsh-capital-open-meet-level-3-long-course-20th-21st-nov-2026",
-      "name": "Welsh Capital Open Meet - Level 3 Long Course",
-      "date": "20th - 21st Nov 2026",
-      "formattedDate": "20/11/2026 - 21/11/2026",
-      "location": "Cardiff",
-      "region": "Wales",
-      "course": "Long Course (50m)",
-      "level": "Level 1",
-      "meetType": "Meets & Competition",
-      "isHoliday": false,
-      "sourceUrl": "https://SwimWales.JustGo.com/workbench/public/Events?ref=B167171165C864E018C9DD2126EBA07047A062AB"
-    },
-    {
-      "id": "welsh-capital-open-meet-level-3-long-course-20thnov-2026",
-      "name": "Welsh Capital Open Meet - Level 3 Long Course",
-      "date": "20thNov 2026",
-      "formattedDate": "20/11/2026",
-      "location": "Cardiff",
-      "region": "Wales",
-      "course": "Long Course (50m)",
-      "level": "Level 3",
-      "meetType": "Open Meet",
-      "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89247&page=16&region=P&level=P&month=P&year=P"
     },
     {
       "id": "bbsc-bssc-christmas-cracker-2026-21stnov-2026",
@@ -4825,19 +4487,6 @@
       "sourceUrl": "https://SwimWales.JustGo.com/workbench/public/Events?ref=F73D0481FF09A307F0775996CC7931E2569ABF00"
     },
     {
-      "id": "swimwales-john-sharp-invitational-meet-28th-29th-nov-2026",
-      "name": "John Sharp Invitational Meet",
-      "date": "28th - 29th Nov 2026",
-      "formattedDate": "28/11/2026 - 29/11/2026",
-      "location": "Llandudno",
-      "region": "Wales",
-      "course": "Unknown",
-      "level": "Unknown",
-      "meetType": "Meets & Competition",
-      "isHoliday": false,
-      "sourceUrl": "https://SwimWales.JustGo.com/workbench/public/Events?ref=125FDC3E3754B0AA9CB1C3410DC6F5A334A20BE7"
-    },
-    {
       "id": "cheadle-and-district-asc-cheadle-district-68-28thnov-2026",
       "name": "Cheadle and District ASC Cheadle District 68",
       "date": "28thNov 2026",
@@ -5202,32 +4851,6 @@
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89142&page=19&region=P&level=P&month=P&year=P"
     },
     {
-      "id": "swimwales-chirk-christmas-cracker-2026-6th-dec-2026",
-      "name": "Chirk Christmas Cracker 2026",
-      "date": "6th Dec 2026",
-      "formattedDate": "06/12/2026",
-      "location": "Unknown Venue",
-      "region": "Wales",
-      "course": "Unknown",
-      "level": "Unknown",
-      "meetType": "Meets & Competition",
-      "isHoliday": false,
-      "sourceUrl": "https://SwimWales.JustGo.com/workbench/public/Events?ref=5399478AB242EBBA27750B70772A45C79691835B"
-    },
-    {
-      "id": "chirk-christmas-cracker-2026-6thdec-2026",
-      "name": "Chirk Christmas Cracker 2026",
-      "date": "6thDec 2026",
-      "formattedDate": "06/12/2026",
-      "location": "Wrexham",
-      "region": "Wales",
-      "course": "Short Course (25m)",
-      "level": "Level 3",
-      "meetType": "Open Meet",
-      "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88556&page=19&region=P&level=P&month=P&year=P"
-    },
-    {
       "id": "bebington-sc-qualifier-meet-2026-9thdec-2026",
       "name": "Bebington SC Qualifier Meet 2026",
       "date": "9thDec 2026",
@@ -5565,19 +5188,6 @@
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89315&page=20&region=P&level=P&month=P&year=P"
     },
     {
-      "id": "swimwales-poolside-accreditation-winter-championships-2026-17th-20th-dec-2026",
-      "name": "Poolside Accreditation | Winter Championships 2026",
-      "date": "17th - 20th Dec 2026",
-      "formattedDate": "17/12/2026 - 20/12/2026",
-      "location": "Unknown Venue",
-      "region": "Wales",
-      "course": "Unknown",
-      "level": "Unknown",
-      "meetType": "Meets & Competition",
-      "isHoliday": true,
-      "sourceUrl": "https://SwimWales.JustGo.com/workbench/public/Events?ref=E2E5B336467FAA906066FF1421B1E4FECBFF8E34"
-    },
-    {
       "id": "swimwales-swim-wales-winter-championships-2026-17th-20th-dec-2026",
       "name": "Swim Wales Winter Championships 2026",
       "date": "17th - 20th Dec 2026",
@@ -5810,45 +5420,6 @@
       "meetType": "County Championship",
       "isHoliday": false,
       "sourceUrl": "https://calendar.google.com/calendar/ical/88e25b5e901f73664ee5db21cd9c994e899294a60bdb007aefef12875d0dbfa1@group.calendar.google.com/public/basic.ics"
-    },
-    {
-      "id": "swimwales-swim-wales-regional-racing-series-east-29th-31st-jan-2027",
-      "name": "Swim Wales Regional Racing Series - East",
-      "date": "29th - 31st Jan 2027",
-      "formattedDate": "29/01/2027 - 31/01/2027",
-      "location": "Cardiff",
-      "region": "Wales",
-      "course": "Unknown",
-      "level": "Unknown",
-      "meetType": "Meets & Competition",
-      "isHoliday": false,
-      "sourceUrl": "https://SwimWales.JustGo.com/workbench/public/Events?ref=FBB62E85ABC3A3538377769B6F1F3FF36F116E2F"
-    },
-    {
-      "id": "swimwales-swim-wales-regional-racing-series-north-29th-31st-jan-2027",
-      "name": "Swim Wales Regional Racing Series - North",
-      "date": "29th - 31st Jan 2027",
-      "formattedDate": "29/01/2027 - 31/01/2027",
-      "location": "Liverpool",
-      "region": "Wales",
-      "course": "Unknown",
-      "level": "Unknown",
-      "meetType": "Meets & Competition",
-      "isHoliday": false,
-      "sourceUrl": "https://SwimWales.JustGo.com/workbench/public/Events?ref=52DD1B0B5E4C41060C94197CA16DECC169C1B85D"
-    },
-    {
-      "id": "swimwales-swim-wales-regional-racing-series-west-29th-31st-jan-2027",
-      "name": "Swim Wales Regional Racing Series - West",
-      "date": "29th - 31st Jan 2027",
-      "formattedDate": "29/01/2027 - 31/01/2027",
-      "location": "Swansea",
-      "region": "Wales",
-      "course": "Unknown",
-      "level": "Unknown",
-      "meetType": "Meets & Competition",
-      "isHoliday": false,
-      "sourceUrl": "https://SwimWales.JustGo.com/workbench/public/Events?ref=2BCD1BB340140DA56EE457E7EFEC74B106C4C480"
     },
     {
       "id": "romford-town-sc-non-county-qualifier-meet-2027-30thjan-2027",
@@ -6200,19 +5771,6 @@
       "meetType": "Masters",
       "isHoliday": false,
       "sourceUrl": "https://www.swimming.org/calendar/all/northumberland-durham-county-masters-championships-2027/"
-    },
-    {
-      "id": "swimwales-swim-wales-development-meet-2027-17th-18th-jul-2027",
-      "name": "Swim Wales Development Meet 2027",
-      "date": "17th - 18th Jul 2027",
-      "formattedDate": "17/07/2027 - 18/07/2027",
-      "location": "Swansea",
-      "region": "Wales",
-      "course": "Unknown",
-      "level": "Unknown",
-      "meetType": "Meets & Competition",
-      "isHoliday": true,
-      "sourceUrl": "https://SwimWales.JustGo.com/workbench/public/Events?ref=A7078FD36D5914CAF0DE7B8A788ABD7D8914594C"
     },
     {
       "id": "swimwales-swim-wales-summer-championships-2027-28th-jul-2027-1st-aug-2027",
