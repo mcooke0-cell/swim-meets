@@ -178,7 +178,9 @@ async function runLocalScraper() {
           !nameLower.includes('championship') ||
           nameLower.includes('poolside accreditation') ||
           nameLower.includes('club championship') ||
-          nameLower.includes('club champ')
+          nameLower.includes('club champ') ||
+          nameLower.includes('closed championship') ||
+          nameLower.includes('closed champ')
         ) {
           return false;
         }
@@ -196,8 +198,43 @@ async function runLocalScraper() {
       return true;
     });
 
+    // 5) Deduplicate Swim Wales (JustGo) events against swimming.org / swimmingresults.org events:
+    // Where duplicates are spotted, only keep the swimming.org data.
+    const dedupedMeets = meets.filter(m => {
+      if (!m.id?.startsWith('swimwales-')) {
+        return true;
+      }
+      const wDate = getStartDate(m.date);
+      const wNameLower = (m.name || '').toLowerCase().replace(/short course/g, 'sc');
+
+      const hasDuplicate = meets.some(other => {
+        if (other.id?.startsWith('swimwales-')) return false;
+        const otherDate = getStartDate(other.date);
+        if (Math.abs(wDate.getTime() - otherDate.getTime()) > 86400000 * 2) {
+          return false;
+        }
+        const otherNameLower = (other.name || '').toLowerCase().replace(/short course/g, 'sc');
+        const otherRegionLower = (other.region || '').toLowerCase();
+
+        const bothWalesRelated = (otherNameLower.includes('wales') || otherRegionLower === 'wales');
+        if (!bothWalesRelated) return false;
+
+        if (wNameLower.includes('north') && otherNameLower.includes('north')) return true;
+        if (wNameLower.includes('west') && otherNameLower.includes('west')) return true;
+        if (
+          (wNameLower.includes('east') && (otherNameLower.includes('east') || otherNameLower.includes('south east'))) ||
+          (wNameLower.includes('south east') && otherNameLower.includes('east'))
+        ) return true;
+        if (wNameLower.includes('winter') && otherNameLower.includes('winter')) return true;
+
+        return false;
+      });
+
+      return !hasDuplicate;
+    });
+
     // Sort meets: first by date, then region, meet type, course, level, meet name
-    meets.sort((a, b) => {
+    dedupedMeets.sort((a, b) => {
       const dateA = getStartDate(a.date).getTime();
       const dateB = getStartDate(b.date).getTime();
       if (dateA !== dateB) return dateA - dateB;
@@ -223,10 +260,10 @@ async function runLocalScraper() {
       return nameA.localeCompare(nameB);
     });
 
-    console.log(`[Parse] Found ${meets.length} meets.`);
+    console.log(`[Parse] Found ${dedupedMeets.length} meets.`);
 
     // 1. Generate meets.json output
-    const meetsData = meets.map(m => {
+    const meetsData = dedupedMeets.map(m => {
       const startDate = getStartDate(m.date);
       const isHoliday = isSchoolHoliday(startDate, truroDates.terms, truroDates.halfTerms);
       return {

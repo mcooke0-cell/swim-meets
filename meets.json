@@ -1,20 +1,7 @@
 {
   "lastUpdated": "2026-09-27T02:17:41.697Z",
-  "meetsCount": 442,
+  "meetsCount": 437,
   "meets": [
-    {
-      "id": "swimwales-pembrokeshire-county-2026-closed-championships-26th-27th-sep-2026",
-      "name": "Pembrokeshire County 2026 Closed Championships",
-      "date": "26th - 27th Sep 2026",
-      "formattedDate": "26/09/2026 - 27/09/2026",
-      "location": "Haverfordwest",
-      "region": "Wales",
-      "course": "Unknown",
-      "level": "Unknown",
-      "meetType": "Meets & Competition",
-      "isHoliday": false,
-      "sourceUrl": "https://SwimWales.JustGo.com/workbench/public/Events?ref=918BAB1380E705C90106BB1C6C17C7A6871E3238"
-    },
     {
       "id": "ical-ncd-newquay-sprint-meet-27th-sep-2026",
       "name": "NCD & Newquay Sprint Meet",
@@ -2119,45 +2106,6 @@
       "meetType": "Regional",
       "isHoliday": false,
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89170&page=8&region=P&level=P&month=P&year=P"
-    },
-    {
-      "id": "swimwales-swim-wales-regional-short-course-championships-2026-east-6th-8th-nov-2026",
-      "name": "Swim Wales Regional Short Course Championships 2026 - East",
-      "date": "6th - 8th Nov 2026",
-      "formattedDate": "06/11/2026 - 08/11/2026",
-      "location": "Newport",
-      "region": "Wales",
-      "course": "Short Course (25m)",
-      "level": "Level 2",
-      "meetType": "Meets & Competition",
-      "isHoliday": false,
-      "sourceUrl": "https://SwimWales.JustGo.com/workbench/public/Events?ref=846F13BEEDE48D8A4C981FA21DB44D97B2B6C1BA"
-    },
-    {
-      "id": "swimwales-swim-wales-regional-short-course-championships-2026-north-6th-8th-nov-2026",
-      "name": "Swim Wales Regional Short Course Championships 2026 - North",
-      "date": "6th - 8th Nov 2026",
-      "formattedDate": "06/11/2026 - 08/11/2026",
-      "location": "Llandudno",
-      "region": "Wales",
-      "course": "Short Course (25m)",
-      "level": "Level 2",
-      "meetType": "Meets & Competition",
-      "isHoliday": false,
-      "sourceUrl": "https://SwimWales.JustGo.com/workbench/public/Events?ref=6F4D875A2EA9FCBC17181FA0E6B55CB736ED88F8"
-    },
-    {
-      "id": "swimwales-swim-wales-regional-short-course-championships-2026-west-6th-8th-nov-2026",
-      "name": "Swim Wales Regional Short Course Championships 2026 - West",
-      "date": "6th - 8th Nov 2026",
-      "formattedDate": "06/11/2026 - 08/11/2026",
-      "location": "Haverfordwest",
-      "region": "Wales",
-      "course": "Short Course (25m)",
-      "level": "Level 2",
-      "meetType": "Meets & Competition",
-      "isHoliday": false,
-      "sourceUrl": "https://SwimWales.JustGo.com/workbench/public/Events?ref=836CF2A58DA9C80144BA969ADAB4DAAE4DBE327A"
     },
     {
       "id": "swim-wales-regional-sc-championships-north-6thnov-2026",
@@ -4718,19 +4666,6 @@
       "meetType": "Open Meet",
       "isHoliday": false,
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89315&page=17&region=P&level=P&month=P&year=P"
-    },
-    {
-      "id": "swimwales-swim-wales-winter-championships-2026-17th-20th-dec-2026",
-      "name": "Swim Wales Winter Championships 2026",
-      "date": "17th - 20th Dec 2026",
-      "formattedDate": "17/12/2026 - 20/12/2026",
-      "location": "Swansea",
-      "region": "Wales",
-      "course": "Unknown",
-      "level": "Unknown",
-      "meetType": "Meets & Competition",
-      "isHoliday": true,
-      "sourceUrl": "https://SwimWales.JustGo.com/workbench/public/Events?ref=4593DE2F1B1202D733DFCF06AD06BB5E4CBC0817"
     },
     {
       "id": "swim-wales-winter-championships-2026-17thdec-2026",
