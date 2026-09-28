@@ -28,7 +28,7 @@ function parseSingleDate(part: string, defaultYear: string): { day: string; mont
   }
 
   // Try textual format: e.g. "1stJul 2026", "27 July 2026", "1stJul", "27 July"
-  const cleanText = clean.replace(/(\d+)(st|nd|rd|th)/gi, '$1');
+  const cleanText = clean.replace(/(\d+)(st|nd|rd|th)/gi, '$1 ');
   
   // Match "DD Month YYYY" or "DD Month"
   const textMatch = cleanText.match(/^(\d{1,2})\s*([A-Za-z]+)(?:\s+(\d{4}))?$/);
@@ -105,7 +105,7 @@ function getStartDate(dateStr: string): Date {
   }
 
   const parsePart = (part: string, defaultMonth?: number): Date | null => {
-    const norm = part.replace(/(\d+)(st|nd|rd|th)/gi, '$1').replace(/\s+/g, ' ').trim();
+    const norm = part.replace(/(\d+)(st|nd|rd|th)/gi, '$1 ').replace(/\s+/g, ' ').trim();
     
     const numMatch = norm.match(/^(\d{1,2})\/(\d{1,2})(?:\/(\d{2,4}))?$/);
     if (numMatch) {
@@ -198,34 +198,110 @@ async function runLocalScraper() {
       return true;
     });
 
-    // 5) Deduplicate Swim Wales (JustGo) events against swimming.org / swimmingresults.org events:
-    // Where duplicates are spotted, only keep the swimming.org data.
+    // 5) Deduplicate external calendars (Swim Wales JustGo, Scottish Swimming, and Cornwall iCal)
+    // against swimming.org / swimmingresults.org events:
+    // Where duplicates are spotted, always retain the swimming.org / swimmingresults.org data.
+    const isExternalMeet = (meet: { id?: string }) => {
+      const id = meet.id || '';
+      return id.startsWith('swimwales-') || id.startsWith('scotswim-') || id.startsWith('ical-');
+    };
+
+    const normalizeEventName = (str: string) => {
+      return (str || '').toLowerCase()
+        .replace(/short course/g, 'sc')
+        .replace(/long course/g, 'lc')
+        .replace(/carn brea[, &]+helston/g, 'cbhsc')
+        .replace(/carn brea/g, 'cbhsc')
+        .replace(/[^a-z0-9]/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+    };
+
     const dedupedMeets = meets.filter(m => {
-      if (!m.id?.startsWith('swimwales-')) {
+      if (!isExternalMeet(m)) {
         return true;
       }
-      const wDate = getStartDate(m.date);
-      const wNameLower = (m.name || '').toLowerCase().replace(/short course/g, 'sc');
+
+      const mDate = getStartDate(m.date);
+      const mNameNorm = normalizeEventName(m.name);
+      const mLocationNorm = normalizeEventName(m.location);
+      const mRegionLower = (m.region || '').toLowerCase();
 
       const hasDuplicate = meets.some(other => {
-        if (other.id?.startsWith('swimwales-')) return false;
-        const otherDate = getStartDate(other.date);
-        if (Math.abs(wDate.getTime() - otherDate.getTime()) > 86400000 * 2) {
+        if (other.id === m.id || isExternalMeet(other)) {
           return false;
         }
-        const otherNameLower = (other.name || '').toLowerCase().replace(/short course/g, 'sc');
+
+        const otherDate = getStartDate(other.date);
+        const diffDays = Math.abs(mDate.getTime() - otherDate.getTime()) / (1000 * 60 * 60 * 24);
+        if (diffDays > 2) {
+          return false;
+        }
+
+        const otherNameNorm = normalizeEventName(other.name);
+        const otherLocationNorm = normalizeEventName(other.location);
         const otherRegionLower = (other.region || '').toLowerCase();
 
-        const bothWalesRelated = (otherNameLower.includes('wales') || otherRegionLower === 'wales');
-        if (!bothWalesRelated) return false;
+        // 1. Wales (JustGo vs swimming.org)
+        if (m.id?.startsWith('swimwales-')) {
+          const bothWales = (mNameNorm.includes('wales') || mRegionLower === 'wales') &&
+                            (otherNameNorm.includes('wales') || otherRegionLower === 'wales');
+          if (bothWales) {
+            if (mNameNorm.includes('north') && otherNameNorm.includes('north')) return true;
+            if (mNameNorm.includes('west') && otherNameNorm.includes('west')) return true;
+            if (
+              (mNameNorm.includes('east') && (otherNameNorm.includes('east') || otherNameNorm.includes('south east'))) ||
+              (mNameNorm.includes('south east') && otherNameNorm.includes('east'))
+            ) return true;
+            if (mNameNorm.includes('winter') && otherNameNorm.includes('winter')) return true;
+            if (mNameNorm.includes('masters') && otherNameNorm.includes('masters')) return true;
+            if (mNameNorm.includes('national') && otherNameNorm.includes('national')) return true;
+          }
+        }
 
-        if (wNameLower.includes('north') && otherNameLower.includes('north')) return true;
-        if (wNameLower.includes('west') && otherNameLower.includes('west')) return true;
-        if (
-          (wNameLower.includes('east') && (otherNameLower.includes('east') || otherNameLower.includes('south east'))) ||
-          (wNameLower.includes('south east') && otherNameLower.includes('east'))
-        ) return true;
-        if (wNameLower.includes('winter') && otherNameLower.includes('winter')) return true;
+        // 2. Scotland (Scottish Swimming vs swimming.org)
+        if (m.id?.startsWith('scotswim-')) {
+          const bothScot = (mNameNorm.includes('scot') || mRegionLower === 'scotland') &&
+                           (otherNameNorm.includes('scot') || otherRegionLower === 'scotland');
+          if (bothScot) {
+            if (mNameNorm.includes('sc') && otherNameNorm.includes('sc')) return true;
+            if (mNameNorm.includes('age group') && otherNameNorm.includes('age group')) return true;
+            if (mNameNorm.includes('league') && otherNameNorm.includes('league')) return true;
+            if (mNameNorm.includes('national') && otherNameNorm.includes('national')) return true;
+            if (mNameNorm.includes('championship') && otherNameNorm.includes('championship')) return true;
+          }
+        }
+
+        // 3. Cornwall (Google Calendar iCal vs swimming.org)
+        if (m.id?.startsWith('ical-')) {
+          // CBHSC / Carn Brea
+          if (mNameNorm.includes('cbhsc') && otherNameNorm.includes('cbhsc')) {
+            return true;
+          }
+          // NCD / Newquay
+          if (
+            (mNameNorm.includes('newquay') || mNameNorm.includes('ncd')) &&
+            (otherNameNorm.includes('newquay') || otherNameNorm.includes('ncd'))
+          ) {
+            return true;
+          }
+          // Cornwall County Championships / CCASA
+          if (
+            (mNameNorm.includes('cornwall') || mNameNorm.includes('ccasa')) &&
+            (otherNameNorm.includes('cornwall') || otherNameNorm.includes('ccasa'))
+          ) {
+            return true;
+          }
+          // Same Cornwall venue / town and matching meet type/event
+          const cornwallTowns = ['bodmin', 'penzance', 'truro', 'redruth', 'helston', 'newquay', 'st austell', 'bude', 'saltash'];
+          const sharedTown = cornwallTowns.find(t => mLocationNorm.includes(t) && otherLocationNorm.includes(t));
+          if (sharedTown) {
+            if (mNameNorm.includes('open') && otherNameNorm.includes('open')) return true;
+            if (mNameNorm.includes('invitational') && otherNameNorm.includes('invitational')) return true;
+            if (mNameNorm.includes('sprint') && otherNameNorm.includes('sprint')) return true;
+            if (mNameNorm.includes('championship') && otherNameNorm.includes('championship')) return true;
+          }
+        }
 
         return false;
       });

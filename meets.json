@@ -1,6 +1,6 @@
 {
   "lastUpdated": "2026-09-27T02:17:41.697Z",
-  "meetsCount": 437,
+  "meetsCount": 435,
   "meets": [
     {
       "id": "ical-ncd-newquay-sprint-meet-27th-sep-2026",
@@ -404,19 +404,6 @@
       "meetType": "Open Meet",
       "isHoliday": false,
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88953&page=2&region=P&level=P&month=P&year=P"
-    },
-    {
-      "id": "ical-cbhsc-open-meet-3rd-oct-4th-oct-2026",
-      "name": "CBHSC Open Meet",
-      "date": "3rd Oct - 4th Oct 2026",
-      "formattedDate": "03/10/2026 - 04/10/2026",
-      "location": "Bodmin Leisure Centre, Lostwithiel Rd, Bodmin PL31 1DE, UK",
-      "region": "South West",
-      "course": "Unknown",
-      "level": "Level 3",
-      "meetType": "Open Meet",
-      "isHoliday": false,
-      "sourceUrl": "https://calendar.google.com/calendar/ical/88e25b5e901f73664ee5db21cd9c994e899294a60bdb007aefef12875d0dbfa1@group.calendar.google.com/public/basic.ics"
     },
     {
       "id": "coventry-district-asc-october-meet-2026-3rdoct-2026",
@@ -3874,19 +3861,6 @@
       "meetType": "Club Champs",
       "isHoliday": false,
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89581&page=14&region=P&level=P&month=P&year=P"
-    },
-    {
-      "id": "ical-cbhsc-invitational-meet-29th-nov-2026",
-      "name": "CBHSC Invitational Meet",
-      "date": "29th Nov 2026",
-      "formattedDate": "29/11/2026",
-      "location": "Bodmin Leisure Centre, Lostwithiel Rd, Bodmin PL31 1DE, UK",
-      "region": "South West",
-      "course": "Unknown",
-      "level": "Level 3",
-      "meetType": "Unknown",
-      "isHoliday": false,
-      "sourceUrl": "https://calendar.google.com/calendar/ical/88e25b5e901f73664ee5db21cd9c994e899294a60bdb007aefef12875d0dbfa1@group.calendar.google.com/public/basic.ics"
     },
     {
       "id": "salisbury-durrington-tidworth-joint-club-champs26-30thnov-2026",
