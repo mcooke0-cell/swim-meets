@@ -174,7 +174,12 @@ async function runLocalScraper() {
       const regionLower = (m.region || '').toLowerCase();
 
       if (m.id?.startsWith('swimwales-') || regionLower === 'wales') {
-        if (!nameLower.includes('championship') || nameLower.includes('poolside accreditation')) {
+        if (
+          !nameLower.includes('championship') ||
+          nameLower.includes('poolside accreditation') ||
+          nameLower.includes('club championship') ||
+          nameLower.includes('club champ')
+        ) {
           return false;
         }
       }

@@ -1403,8 +1403,13 @@ export class SwimmingScraper {
             continue;
           }
 
-          // Filter Swim Wales events: remove anything that doesn't contain championship, and remove poolside accreditation
-          if (!nameLower.includes('championship') || nameLower.includes('poolside accreditation')) {
+          // Filter Swim Wales events: remove anything that doesn't contain championship, and remove poolside accreditation or club championships
+          if (
+            !nameLower.includes('championship') ||
+            nameLower.includes('poolside accreditation') ||
+            nameLower.includes('club championship') ||
+            nameLower.includes('club champ')
+          ) {
             continue;
           }
 

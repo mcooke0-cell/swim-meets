@@ -3,49 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Swim Meet Calendar</title>
+  <title>UK Swim Meets &amp; Calendar</title>
+  <meta name="description" content="Search and discover licensed UK swimming meets, championships, and school holiday dates.">
   <!-- Google Fonts: Outfit -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=2.2">
+  <link rel="stylesheet" href="styles.css?v=3.0">
 </head>
 <body>
   <div class="app-container">
+    <!-- Header / Brand Section -->
+    <header class="app-header">
+      <div class="header-brand">
+        <div class="brand-badge-icon" aria-hidden="true">
+          <span class="brand-emoji">🏊</span>
+        </div>
+        <div class="brand-text">
+          <h1 class="app-title">UK Swim Meets</h1>
+          <p class="app-subtitle">Licensed meets, championships &amp; school holiday calendar</p>
+        </div>
+      </div>
+      <div class="header-meta">
+        <div class="live-status-pill">
+          <span class="live-dot" aria-hidden="true"></span>
+          <span>Live Calendar</span>
+        </div>
+        <span class="meta-divider" aria-hidden="true">•</span>
+        <span class="last-updated" id="last-updated">Last updated: Loading...</span>
+      </div>
+    </header>
+
     <!-- Main Content Area -->
     <main class="app-main">
       <!-- Search and Filter Controls -->
-      <section class="controls-section">
+      <section class="controls-section" aria-label="Search and filter meets">
         <!-- Search and Meta Info Row -->
         <div class="search-row">
           <div class="search-wrapper">
-            <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <circle cx="11" cy="11" r="8"></circle>
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
-            <input type="text" id="search-input" placeholder="Search by name, location or keyword..." aria-label="Search swim meets">
+            <input type="text" id="search-input" placeholder="Search by meet name, venue, city or keyword..." aria-label="Search swim meets">
             <button class="clear-search-btn" id="clear-search-btn" style="display: none;" aria-label="Clear search">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <line x1="18" y1="6" x2="6" y2="18"></line>
                 <line x1="6" y1="6" x2="18" y2="18"></line>
               </svg>
             </button>
           </div>
           <div class="meta-info">
-            <span class="badge count-badge" id="meets-count">0 Meets</span>
-            <span class="last-updated" id="last-updated">Last updated: Loading...</span>
+            <span class="count-badge" id="meets-count">0 Meets</span>
           </div>
         </div>
 
-        <!-- Dropdown Filters Group -->
+        <!-- Dropdown Filters Group (Region, Meet Type, Reset) -->
         <div class="filters-dropdown-group">
           <!-- Region Dropdown -->
           <div class="select-wrapper">
             <span class="select-label">Region</span>
             <div class="custom-select" id="region-custom-select">
-              <button type="button" class="select-trigger" id="region-trigger" aria-haspopup="listbox" aria-expanded="false">
+              <button type="button" class="select-trigger" id="region-trigger" aria-haspopup="listbox" aria-expanded="false" aria-label="Filter by region">
                 <span class="trigger-text">All Regions</span>
-                <span class="arrow-icon"></span>
+                <span class="arrow-icon" aria-hidden="true"></span>
               </button>
               <div class="options-container" id="region-options" role="listbox">
                 <!-- Checkboxes populated dynamically -->
@@ -57,9 +78,9 @@
           <div class="select-wrapper">
             <span class="select-label">Meet Type</span>
             <div class="custom-select" id="meet-type-custom-select">
-              <button type="button" class="select-trigger" id="meet-type-trigger" aria-haspopup="listbox" aria-expanded="false">
+              <button type="button" class="select-trigger" id="meet-type-trigger" aria-haspopup="listbox" aria-expanded="false" aria-label="Filter by meet type">
                 <span class="trigger-text">All Meet Types</span>
-                <span class="arrow-icon"></span>
+                <span class="arrow-icon" aria-hidden="true"></span>
               </button>
               <div class="options-container" id="meet-type-options" role="listbox">
                 <!-- Checkboxes populated dynamically -->
@@ -67,42 +88,30 @@
             </div>
           </div>
 
-          <!-- Month Dropdown -->
-          <div class="select-wrapper">
-            <span class="select-label">Month</span>
-            <div class="custom-select" id="month-custom-select">
-              <button type="button" class="select-trigger" id="month-trigger" aria-haspopup="listbox" aria-expanded="false">
-                <span class="trigger-text">All Months</span>
-                <span class="arrow-icon"></span>
-              </button>
-              <div class="options-container" id="month-options" role="listbox">
-                <!-- Checkboxes populated dynamically -->
-              </div>
-            </div>
-          </div>
-
           <!-- Reset Button -->
-          <button class="reset-filters-btn" id="reset-filters-btn" aria-label="Reset all filters">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M23 4v6h-6"></path>
-              <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
-            </svg>
-            <span>Reset</span>
-          </button>
+          <div class="reset-wrapper">
+            <button class="reset-filters-btn" id="reset-filters-btn" type="button" aria-label="Reset all filters">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M23 4v6h-6"></path>
+                <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+              </svg>
+              <span>Reset Filters</span>
+            </button>
+          </div>
         </div>
       </section>
 
       <!-- Meets List Section -->
-      <section class="meets-section">
+      <section class="meets-section" aria-label="Meets list">
         <!-- Loading Indicator -->
         <div class="loading-state" id="loading-state">
-          <div class="spinner"></div>
+          <div class="spinner" aria-hidden="true"></div>
           <p>Loading swim calendar...</p>
         </div>
 
         <!-- Error State -->
         <div class="error-state" id="error-state" style="display: none;">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <circle cx="12" cy="12" r="10"></circle>
             <line x1="12" y1="8" x2="12" y2="12"></line>
             <line x1="12" y1="16" x2="12.01" y2="16"></line>
@@ -112,12 +121,16 @@
 
         <!-- Empty State -->
         <div class="empty-state" id="empty-state" style="display: none;">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <line x1="8" y1="12" x2="16" y2="12"></line>
-          </svg>
-          <p>No meets match your search or filter criteria.</p>
-          <button class="clear-filters-action" id="empty-state-reset-btn">Clear All Filters</button>
+          <div class="empty-icon-wrap" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </div>
+          <h3>No meets match your criteria</h3>
+          <p>Try searching for a different keyword or resetting your region and meet type filters.</p>
+          <button class="clear-filters-action" id="empty-state-reset-btn" type="button">Reset All Filters</button>
         </div>
 
         <!-- Meets Table View -->
@@ -125,12 +138,12 @@
           <table class="meets-table">
             <thead>
               <tr>
-                <th scope="col">Date</th>
-                <th scope="col">Meet Name</th>
-                <th scope="col">Location & Region</th>
-                <th scope="col">Course / Level</th>
-                <th scope="col">Meet Type</th>
-                <th scope="col" class="text-center">Calendar</th>
+                <th scope="col" class="th-date">Date</th>
+                <th scope="col" class="th-meet">Meet Name</th>
+                <th scope="col" class="th-location">Location &amp; Region</th>
+                <th scope="col" class="th-course">Course / Level</th>
+                <th scope="col" class="th-type">Meet Type</th>
+                <th scope="col" class="th-action text-center">Calendar</th>
               </tr>
             </thead>
             <tbody id="meets-table-body">
@@ -141,8 +154,12 @@
       </section>
     </main>
 
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>Swim meet data automatically aggregated from official UK swimming governing bodies &amp; licensed calendars.</p>
+    </footer>
   </div>
 
-  <script src="app.js?v=2.2"></script>
+  <script src="app.js?v=3.0"></script>
 </body>
 </html>

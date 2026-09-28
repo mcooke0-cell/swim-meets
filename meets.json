@@ -1,20 +1,7 @@
 {
   "lastUpdated": "2026-09-27T02:17:41.697Z",
-  "meetsCount": 443,
+  "meetsCount": 442,
   "meets": [
-    {
-      "id": "swimwales-neath-asc-club-championships-2026-24th-28th-sep-2026",
-      "name": "Neath ASC – Club Championships 2026",
-      "date": "24th - 28th Sep 2026",
-      "formattedDate": "24/09/2026 - 28/09/2026",
-      "location": "Unknown Venue",
-      "region": "Wales",
-      "course": "Unknown",
-      "level": "Unknown",
-      "meetType": "Meets & Competition",
-      "isHoliday": false,
-      "sourceUrl": "https://SwimWales.JustGo.com/workbench/public/Events?ref=EB4AE6800286AD341857F209D73CC309D8905339"
-    },
     {
       "id": "swimwales-pembrokeshire-county-2026-closed-championships-26th-27th-sep-2026",
       "name": "Pembrokeshire County 2026 Closed Championships",

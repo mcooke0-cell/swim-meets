@@ -2,21 +2,12 @@
 let rawMeets = [];
 let regions = [];
 let meetTypes = [];
-let months = [];
 
 const state = {
   search: '',
   selectedRegions: new Set(),
-  selectedMeetTypes: new Set(),
-  selectedMonths: new Set()
+  selectedMeetTypes: new Set()
 };
-
-const MONTH_NAMES = [
-  "January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December"
-];
-
-
 
 function getCourseLength(course) {
   if (!course) return 'TBD';
@@ -26,11 +17,24 @@ function getCourseLength(course) {
   return course;
 }
 
+// Helper to assign distinct CSS class for meet types
+function getMeetTypeClass(meetType) {
+  if (!meetType) return 'type-other';
+  const tLower = meetType.toLowerCase();
+  if (tLower.includes('national')) return 'type-national';
+  if (tLower.includes('regional')) return 'type-regional';
+  if (tLower.includes('county') || tLower.includes('championship')) return 'type-championship';
+  if (tLower.includes('open')) return 'type-open';
+  if (tLower.includes('masters')) return 'type-masters';
+  if (tLower.includes('club')) return 'type-club';
+  if (tLower.includes('league') || tLower.includes('gala')) return 'type-league';
+  return 'type-other';
+}
+
 // DOM Elements
 let searchInput, clearSearchBtn, resetFiltersBtn;
 let regionCustomSelect, regionTrigger, regionOptions;
 let meetTypeCustomSelect, meetTypeTrigger, meetTypeOptions;
-let monthCustomSelect, monthTrigger, monthOptions;
 let meetsCountElement, lastUpdatedElement, loadingState, errorState, emptyState;
 let tableContainer, meetsTableBody, emptyStateResetBtn;
 
@@ -59,10 +63,6 @@ async function init() {
   meetTypeTrigger = document.getElementById('meet-type-trigger');
   meetTypeOptions = document.getElementById('meet-type-options');
 
-  monthCustomSelect = document.getElementById('month-custom-select');
-  monthTrigger = document.getElementById('month-trigger');
-  monthOptions = document.getElementById('month-options');
-
   // Set up Event Listeners
   setupEventListeners();
 
@@ -76,10 +76,9 @@ async function init() {
     
     rawMeets = data.meets || [];
     
-    // Pre-calculate search string and month name for efficiency
+    // Pre-calculate search string for efficiency
     rawMeets.forEach(meet => {
-      meet._monthName = getMeetMonthName(meet);
-      meet._searchStr = `${meet.name || ''} ${meet.location || ''} ${meet.region || ''}`.toLowerCase();
+      meet._searchStr = `${meet.name || ''} ${meet.location || ''} ${meet.region || ''} ${meet.meetType || ''}`.toLowerCase();
     });
     
     // Set Metadata
@@ -88,7 +87,7 @@ async function init() {
     // Parse Filter Options
     extractFilterOptions(rawMeets);
     
-    // Set default selections
+    // Set default selections: default regions & ALL meet types
     setDefaultFilters();
     
     // Populate dropdown HTML elements
@@ -111,33 +110,32 @@ async function init() {
 function getStartDate(dateString) {
   if (!dateString) return new Date();
   
-  // Format matches "24 Jan 2026" or "24-25 Jan 2026" or "24 Jan - 1 Feb 2026"
   const cleanStr = dateString.split('-')[0].trim();
-  
-  // Parse month and year from string if split didn't contain month
   const parts = cleanStr.split(/\s+/);
   if (parts.length === 1 && !isNaN(Date.parse(cleanStr))) {
     return new Date(cleanStr);
   }
   
-  // Try directly parsing
   const parsed = Date.parse(cleanStr);
   if (!isNaN(parsed)) return new Date(parsed);
   
-  // Attempt to scan for a year and a month name in the original full string
+  const MONTH_NAMES = [
+    "jan", "feb", "mar", "apr", "may", "jun",
+    "jul", "aug", "sep", "oct", "nov", "dec"
+  ];
+
   let year = new Date().getFullYear();
   const yearMatch = dateString.match(/\b(202\d)\b/);
   if (yearMatch) year = parseInt(yearMatch[1], 10);
   
   let monthIndex = new Date().getMonth();
   for (let i = 0; i < MONTH_NAMES.length; i++) {
-    if (dateString.toLowerCase().includes(MONTH_NAMES[i].toLowerCase().substring(0, 3))) {
+    if (dateString.toLowerCase().includes(MONTH_NAMES[i])) {
       monthIndex = i;
       break;
     }
   }
   
-  // Day parsing
   let day = 1;
   const dayMatch = parts[0] ? parts[0].match(/\d+/) : null;
   if (dayMatch) day = parseInt(dayMatch[0], 10);
@@ -145,63 +143,24 @@ function getStartDate(dateString) {
   return new Date(year, monthIndex, day);
 }
 
-// Determine Month Name for a meet
-function getMeetMonthName(meet) {
-  if (!meet.date) return null;
-  
-  // First, extract the date part (before any year boundary or range)
-  const datePart = meet.date.trim();
-  
-  // Look for full month names
-  for (const name of MONTH_NAMES) {
-    const reg = new RegExp(`\\b${name}\\b`, 'i');
-    if (reg.test(datePart)) {
-      return name;
-    }
-  }
-  
-  // Try parsing Date
-  const parsedDate = getStartDate(meet.date);
-  if (parsedDate && !isNaN(parsedDate.getTime())) {
-    const monthIndex = parsedDate.getMonth();
-    if (monthIndex >= 0 && monthIndex < 12) {
-      return MONTH_NAMES[monthIndex];
-    }
-  }
-  
-  // Fallback: Check if raw textual date contains month name abbreviation
-  const rawLower = datePart.toLowerCase();
-  for (const name of MONTH_NAMES) {
-    if (rawLower.includes(name.toLowerCase().substring(0, 3))) {
-      return name;
-    }
-  }
-  
-  return null;
-}
-
-// Extract unique regions, meet types, and months sorted
+// Extract unique regions and meet types sorted
 function extractFilterOptions(meets) {
   const regionsSet = new Set();
   const meetTypesSet = new Set();
-  const monthsSet = new Set();
   
   meets.forEach(meet => {
     if (meet.region) regionsSet.add(meet.region);
     if (meet.meetType) meetTypesSet.add(meet.meetType);
-    if (meet._monthName) monthsSet.add(meet._monthName);
   });
   
   regions = Array.from(regionsSet).sort((a, b) => a.localeCompare(b));
   meetTypes = Array.from(meetTypesSet).sort((a, b) => a.localeCompare(b));
-  
-  // Sort months chronologically according to MONTH_NAMES index
-  months = Array.from(monthsSet).sort((a, b) => {
-    return MONTH_NAMES.indexOf(a) - MONTH_NAMES.indexOf(b);
-  });
 }
 
 function setDefaultFilters() {
+  state.selectedRegions.clear();
+  state.selectedMeetTypes.clear();
+
   // 1. Default Regions: select South West, National, GB, England, Scotland, Wales
   const defaultRegionsToSelect = ['south west', 'national', 'gb', 'england', 'scotland', 'wales'];
   regions.forEach(r => {
@@ -210,129 +169,139 @@ function setDefaultFilters() {
     }
   });
 
-  // 2. Default Meet Types: exclude Club Champs and League
-  const meetTypesToExclude = ['club champs', 'league'];
+  // 2. Default Meet Types: select ALL meet types
   meetTypes.forEach(t => {
-    const tLower = t.toLowerCase().trim();
-    const shouldExclude = meetTypesToExclude.some(exclude => tLower.includes(exclude));
-    if (!shouldExclude) {
-      state.selectedMeetTypes.add(t);
+    state.selectedMeetTypes.add(t);
+  });
+}
+
+// Populate Custom Dropdown Lists with Quick Actions
+function populateDropdowns() {
+  // 1. Regions Dropdown
+  populateSingleDropdown(
+    regionOptions,
+    regionTrigger,
+    regions,
+    state.selectedRegions,
+    'Region',
+    'Regions'
+  );
+
+  // 2. Meet Types Dropdown
+  populateSingleDropdown(
+    meetTypeOptions,
+    meetTypeTrigger,
+    meetTypes,
+    state.selectedMeetTypes,
+    'Meet Type',
+    'Meet Types'
+  );
+}
+
+function populateSingleDropdown(container, trigger, items, selectedSet, singularLabel, pluralLabel) {
+  if (!container) return;
+  container.innerHTML = '';
+
+  // Quick Action Bar: Select All / Clear All
+  const actionsBar = document.createElement('div');
+  actionsBar.className = 'options-actions-bar';
+
+  const selectAllBtn = document.createElement('button');
+  selectAllBtn.type = 'button';
+  selectAllBtn.className = 'opt-action-btn';
+  selectAllBtn.textContent = 'Select All';
+  selectAllBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    items.forEach(item => selectedSet.add(item));
+    syncCheckboxesInContainer(container, selectedSet);
+    updateTriggerText(trigger, selectedSet, items.length, singularLabel, pluralLabel);
+    renderMeets();
+  });
+
+  const divider = document.createElement('span');
+  divider.className = 'opt-action-divider';
+  divider.textContent = '|';
+
+  const clearAllBtn = document.createElement('button');
+  clearAllBtn.type = 'button';
+  clearAllBtn.className = 'opt-action-btn';
+  clearAllBtn.textContent = 'Clear All';
+  clearAllBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    selectedSet.clear();
+    syncCheckboxesInContainer(container, selectedSet);
+    updateTriggerText(trigger, selectedSet, items.length, singularLabel, pluralLabel);
+    renderMeets();
+  });
+
+  actionsBar.appendChild(selectAllBtn);
+  actionsBar.appendChild(divider);
+  actionsBar.appendChild(clearAllBtn);
+  container.appendChild(actionsBar);
+
+  // List Container for scrollable items
+  const itemsList = document.createElement('div');
+  itemsList.className = 'options-scroll-list';
+
+  items.forEach(item => {
+    const label = document.createElement('label');
+    label.className = 'option-item';
+    
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.value = item;
+    
+    if (selectedSet.has(item)) {
+      checkbox.checked = true;
+      label.classList.add('checked');
+    }
+    
+    checkbox.addEventListener('change', () => {
+      if (checkbox.checked) {
+        selectedSet.add(item);
+        label.classList.add('checked');
+      } else {
+        selectedSet.delete(item);
+        label.classList.remove('checked');
+      }
+      updateTriggerText(trigger, selectedSet, items.length, singularLabel, pluralLabel);
+      renderMeets();
+    });
+    
+    label.appendChild(checkbox);
+    label.appendChild(document.createTextNode(item));
+    itemsList.appendChild(label);
+  });
+
+  container.appendChild(itemsList);
+
+  // Update initial trigger text
+  updateTriggerText(trigger, selectedSet, items.length, singularLabel, pluralLabel);
+}
+
+function syncCheckboxesInContainer(container, selectedSet) {
+  if (!container) return;
+  const checkboxes = container.querySelectorAll('input[type="checkbox"]');
+  checkboxes.forEach(cb => {
+    cb.checked = selectedSet.has(cb.value);
+    const label = cb.closest('.option-item');
+    if (label) {
+      if (cb.checked) {
+        label.classList.add('checked');
+      } else {
+        label.classList.remove('checked');
+      }
     }
   });
 }
 
-// Populate Custom Dropdown Lists
-function populateDropdowns() {
-  // 1. Regions
-  if (regionOptions) {
-    regionOptions.innerHTML = '';
-    regions.forEach(region => {
-      const label = document.createElement('label');
-      label.className = 'option-item';
-      
-      const checkbox = document.createElement('input');
-      checkbox.type = 'checkbox';
-      checkbox.value = region;
-      
-      if (state.selectedRegions.has(region)) {
-        checkbox.checked = true;
-        label.classList.add('checked');
-      }
-      
-      checkbox.addEventListener('change', () => {
-        if (checkbox.checked) {
-          state.selectedRegions.add(region);
-          label.classList.add('checked');
-        } else {
-          state.selectedRegions.delete(region);
-          label.classList.remove('checked');
-        }
-        updateTriggerText(regionTrigger, state.selectedRegions, 'Region', 'Regions');
-        renderMeets();
-      });
-      
-      label.appendChild(checkbox);
-      label.appendChild(document.createTextNode(region));
-      regionOptions.appendChild(label);
-    });
-  }
-
-  // 2. Meet Types
-  if (meetTypeOptions) {
-    meetTypeOptions.innerHTML = '';
-    meetTypes.forEach(type => {
-      const label = document.createElement('label');
-      label.className = 'option-item';
-      
-      const checkbox = document.createElement('input');
-      checkbox.type = 'checkbox';
-      checkbox.value = type;
-      
-      if (state.selectedMeetTypes.has(type)) {
-        checkbox.checked = true;
-        label.classList.add('checked');
-      }
-      
-      checkbox.addEventListener('change', () => {
-        if (checkbox.checked) {
-          state.selectedMeetTypes.add(type);
-          label.classList.add('checked');
-        } else {
-          state.selectedMeetTypes.delete(type);
-          label.classList.remove('checked');
-        }
-        updateTriggerText(meetTypeTrigger, state.selectedMeetTypes, 'Meet Type', 'Meet Types');
-        renderMeets();
-      });
-      
-      label.appendChild(checkbox);
-      label.appendChild(document.createTextNode(type));
-      meetTypeOptions.appendChild(label);
-    });
-  }
-
-  // 3. Months
-  if (monthOptions) {
-    monthOptions.innerHTML = '';
-    months.forEach(month => {
-      const label = document.createElement('label');
-      label.className = 'option-item';
-      
-      const checkbox = document.createElement('input');
-      checkbox.type = 'checkbox';
-      checkbox.value = month;
-      
-      checkbox.addEventListener('change', () => {
-        if (checkbox.checked) {
-          state.selectedMonths.add(month);
-          label.classList.add('checked');
-        } else {
-          state.selectedMonths.delete(month);
-          label.classList.remove('checked');
-        }
-        updateTriggerText(monthTrigger, state.selectedMonths, 'Month', 'Months');
-        renderMeets();
-      });
-      
-      label.appendChild(checkbox);
-      label.appendChild(document.createTextNode(month));
-      monthOptions.appendChild(label);
-    });
-  }
-
-  // Initialize trigger text representations
-  updateTriggerText(regionTrigger, state.selectedRegions, 'Region', 'Regions');
-  updateTriggerText(meetTypeTrigger, state.selectedMeetTypes, 'Meet Type', 'Meet Types');
-  updateTriggerText(monthTrigger, state.selectedMonths, 'Month', 'Months');
-}
-
 // Update the label text displayed on custom select triggers
-function updateTriggerText(triggerElement, selectedSet, singularLabel, pluralLabel) {
+function updateTriggerText(triggerElement, selectedSet, totalCount, singularLabel, pluralLabel) {
   if (!triggerElement) return;
   const textSpan = triggerElement.querySelector('.trigger-text');
   if (!textSpan) return;
 
-  if (selectedSet.size === 0) {
+  if (selectedSet.size === 0 || (totalCount > 0 && selectedSet.size === totalCount)) {
     textSpan.textContent = `All ${pluralLabel}`;
   } else if (selectedSet.size === 1) {
     textSpan.textContent = Array.from(selectedSet)[0];
@@ -352,19 +321,14 @@ function renderMeets() {
       return false;
     }
     
-    // 2. Region Filter
-    if (state.selectedRegions.size > 0) {
+    // 2. Region Filter: if active and not selecting all, check match
+    if (state.selectedRegions.size > 0 && state.selectedRegions.size < regions.length) {
       if (!meet.region || !state.selectedRegions.has(meet.region)) return false;
     }
 
-    // 3. Meet Type Filter
-    if (state.selectedMeetTypes.size > 0) {
+    // 3. Meet Type Filter: if active and not selecting all, check match
+    if (state.selectedMeetTypes.size > 0 && state.selectedMeetTypes.size < meetTypes.length) {
       if (!meet.meetType || !state.selectedMeetTypes.has(meet.meetType)) return false;
-    }
-    
-    // 4. Month Filter
-    if (state.selectedMonths.size > 0) {
-      if (!meet._monthName || !state.selectedMonths.has(meet._monthName)) return false;
     }
     
     return true;
@@ -474,19 +438,20 @@ function generateGoogleCalendarUrl(meet) {
   return `${baseUrl}?${params.toString()}`;
 }
 
-// Build table row HTML with attributes for responsive mobile card views
+// Build table row HTML with attributes for desktop table & responsive mobile cards
 function createTableRowHTML(meet) {
   const displayDate = meet.formattedDate || meet.date;
   const displayLocation = meet.location || 'TBD';
   const displayRegion = meet.region || 'Unknown';
-  const displayCourse = meet.course || 'TBD';
+  const displayCourse = getCourseLength(meet.course);
   const displayLevel = meet.level || 'TBD';
+  const typeClass = getMeetTypeClass(meet.meetType);
 
   const googleCalUrl = generateGoogleCalendarUrl(meet);
 
   const calendarLinkHTML = `
     <a href="${escapeHTML(googleCalUrl)}" target="_blank" rel="noopener noreferrer" class="gcal-icon-btn" title="Add to Google Calendar" aria-label="Add ${escapeHTML(meet.name)} to Google Calendar">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
         <line x1="16" y1="2" x2="16" y2="6"></line>
         <line x1="8" y1="2" x2="8" y2="6"></line>
@@ -498,32 +463,38 @@ function createTableRowHTML(meet) {
   `;
 
   const holidayBadgeHTML = meet.isHoliday 
-    ? '<span class="holiday-badge">🏖️ Holiday</span>' 
+    ? '<span class="holiday-badge" title="Falls within school holiday period">🏖️ Holiday</span>' 
     : '';
 
+  const meetNameHTML = meet.sourceUrl
+    ? `<a href="${escapeHTML(meet.sourceUrl)}" target="_blank" rel="noopener noreferrer" class="meet-name-link" title="Open official event source">${escapeHTML(meet.name)}</a>`
+    : `<span class="meet-name-text">${escapeHTML(meet.name)}</span>`;
+
   return `
-    <tr>
-      <td class="col-date" data-label="Date">${escapeHTML(displayDate)}</td>
+    <tr class="${meet.isHoliday ? 'row-holiday' : ''}">
+      <td class="col-date" data-label="Date">
+        <span class="date-badge">${escapeHTML(displayDate)}</span>
+      </td>
       <td class="col-meet-name cell-meet-name" data-label="Meet">
         <div class="meet-name-wrapper">
-          <span class="meet-name-text">${escapeHTML(meet.name)}</span>
+          ${meetNameHTML}
           ${holidayBadgeHTML}
         </div>
       </td>
-      <td data-label="Location">
+      <td class="col-location" data-label="Location">
         <div class="col-location-info">
           <span class="location-name">${escapeHTML(displayLocation)}</span>
           <span class="region-tag">${escapeHTML(displayRegion)}</span>
         </div>
       </td>
-      <td data-label="Format">
+      <td class="col-format" data-label="Format">
         <div class="col-course-info">
-          <span class="course-format">${escapeHTML(getCourseLength(displayCourse))}</span>
+          <span class="course-format">${escapeHTML(displayCourse)}</span>
           <span class="level-badge">${escapeHTML(displayLevel)}</span>
         </div>
       </td>
-      <td data-label="Type">
-        <span class="type-tag">${escapeHTML(meet.meetType || 'Other')}</span>
+      <td class="col-type" data-label="Type">
+        <span class="type-tag ${typeClass}">${escapeHTML(meet.meetType || 'Other')}</span>
       </td>
       <td class="text-center col-actions" data-label="Calendar">
         ${calendarLinkHTML}
@@ -582,21 +553,20 @@ function setupEventListeners() {
     });
   }
 
-  if (monthTrigger) {
-    monthTrigger.addEventListener('click', (e) => {
-      e.stopPropagation();
-      toggleDropdown(monthCustomSelect);
-    });
-  }
-
-  // Prevent dropdown closing when clicking options
+  // Prevent dropdown closing when clicking inside options
   if (regionOptions) regionOptions.addEventListener('click', (e) => e.stopPropagation());
   if (meetTypeOptions) meetTypeOptions.addEventListener('click', (e) => e.stopPropagation());
-  if (monthOptions) monthOptions.addEventListener('click', (e) => e.stopPropagation());
 
   // Close dropdowns on clicking outside
   document.addEventListener('click', () => {
     closeAllDropdowns();
+  });
+
+  // Close dropdowns on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeAllDropdowns();
+    }
   });
 
   if (resetFiltersBtn) {
@@ -632,26 +602,21 @@ function closeAllDropdowns() {
 
 function resetFilters() {
   state.search = '';
-  state.selectedRegions.clear();
-  state.selectedMeetTypes.clear();
-  state.selectedMonths.clear();
   
-  // Sync inputs
+  // Re-apply default selections
+  setDefaultFilters();
+  
+  // Sync search inputs
   if (searchInput) searchInput.value = '';
   if (clearSearchBtn) clearSearchBtn.style.display = 'none';
   
-  // Uncheck all checkbox inputs in dropdown lists
-  const checkboxes = document.querySelectorAll('.options-container input[type="checkbox"]');
-  checkboxes.forEach(cb => {
-    cb.checked = false;
-    const label = cb.closest('.option-item');
-    if (label) label.classList.remove('checked');
-  });
+  // Sync checkboxes in dropdown lists
+  syncCheckboxesInContainer(regionOptions, state.selectedRegions);
+  syncCheckboxesInContainer(meetTypeOptions, state.selectedMeetTypes);
 
-  // Reset triggers labels text representation
-  updateTriggerText(regionTrigger, state.selectedRegions, 'Region', 'Regions');
-  updateTriggerText(meetTypeTrigger, state.selectedMeetTypes, 'Meet Type', 'Meet Types');
-  updateTriggerText(monthTrigger, state.selectedMonths, 'Month', 'Months');
+  // Reset triggers label text
+  updateTriggerText(regionTrigger, state.selectedRegions, regions.length, 'Region', 'Regions');
+  updateTriggerText(meetTypeTrigger, state.selectedMeetTypes, meetTypes.length, 'Meet Type', 'Meet Types');
 
   renderMeets();
 }
@@ -661,7 +626,7 @@ function updateLastUpdated(dateStr) {
   if (lastUpdatedElement && dateStr) {
     const date = new Date(dateStr);
     if (!isNaN(date.getTime())) {
-      const options = { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' };
+      const options = { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' };
       lastUpdatedElement.textContent = `Last updated: ${date.toLocaleDateString('en-GB', options)}`;
       return;
     }
