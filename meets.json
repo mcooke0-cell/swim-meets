@@ -1,59 +1,7 @@
 {
-  "lastUpdated": "2026-10-07T03:06:21.752Z",
-  "meetsCount": 433,
+  "lastUpdated": "2026-10-09T03:28:19.567Z",
+  "meetsCount": 441,
   "meets": [
-    {
-      "id": "city-of-cambridge-sc-1500m-and-400im-time-trials-9thoct-2026",
-      "name": "City of Cambridge SC 1500m and 400IM Time Trials",
-      "date": "9thOct 2026",
-      "formattedDate": "09/10/2026",
-      "location": "Cambridge",
-      "region": "East",
-      "course": "Short Course (25m)",
-      "level": "Level 3",
-      "meetType": "Time Trial",
-      "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89789&page=1&region=P&level=P&month=P&year=P"
-    },
-    {
-      "id": "borough-of-stockton-winter-swimming-festival-26-9thoct-2026",
-      "name": "Borough of Stockton Winter Swimming Festival 26",
-      "date": "9thOct 2026",
-      "formattedDate": "09/10/2026",
-      "location": "Billingham",
-      "region": "North East",
-      "course": "Short Course (25m)",
-      "level": "Level 2",
-      "meetType": "Open Meet",
-      "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88888&page=1&region=P&level=P&month=P&year=P"
-    },
-    {
-      "id": "bristol-north-swimming-club-champs-2026-9thoct-2026",
-      "name": "Bristol North Swimming Club Champs 2026",
-      "date": "9thOct 2026",
-      "formattedDate": "09/10/2026",
-      "location": "Bristol BS34 7PS",
-      "region": "South West",
-      "course": "Short Course (25m)",
-      "level": "Level 4",
-      "meetType": "Club Champs",
-      "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88191&page=1&region=P&level=P&month=P&year=P"
-    },
-    {
-      "id": "keynsham-asc-club-championships-2026-9thoct-2026",
-      "name": "Keynsham ASC Club Championships 2026",
-      "date": "9thOct 2026",
-      "formattedDate": "09/10/2026",
-      "location": "Keynsham",
-      "region": "South West",
-      "course": "Short Course (25m)",
-      "level": "Level 4",
-      "meetType": "Club Champs",
-      "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89229&page=1&region=P&level=P&month=P&year=P"
-    },
     {
       "id": "basildon-phoenix-800m-distance-qualifier-2026-10thoct-2026",
       "name": "Basildon & Phoenix 800m Distance Qualifier 2026",
@@ -117,7 +65,7 @@
       "level": "Level 3",
       "meetType": "League",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89365&page=2&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89365&page=1&region=P&level=P&month=P&year=P"
     },
     {
       "id": "the-national-arena-swimming-league-western-gala-2-10thoct-2026",
@@ -130,7 +78,7 @@
       "level": "Level 3",
       "meetType": "League",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89366&page=2&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89366&page=1&region=P&level=P&month=P&year=P"
     },
     {
       "id": "newmarket-district-october-sprint-meet-2026-11thoct-2026",
@@ -143,7 +91,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=87561&page=3&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=87561&page=2&region=P&level=P&month=P&year=P"
     },
     {
       "id": "witham-dolphins-swimming-club-festival-of-swimming-11thoct-2026",
@@ -156,7 +104,7 @@
       "level": "Level 4",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88848&page=3&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88848&page=2&region=P&level=P&month=P&year=P"
     },
     {
       "id": "bushey-amateur-swimming-club-time-trials-3-2026-11thoct-2026",
@@ -182,7 +130,7 @@
       "level": "Level 4",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89297&page=3&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89297&page=2&region=P&level=P&month=P&year=P"
     },
     {
       "id": "coalville-sc-2026-autumn-time-trials-11thoct-2026",
@@ -208,7 +156,7 @@
       "level": "Level 4",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88916&page=3&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88916&page=2&region=P&level=P&month=P&year=P"
     },
     {
       "id": "clitheroe-dolphins-sc-dolphins-dash-2026-11thoct-2026",
@@ -247,7 +195,7 @@
       "level": "Level 4",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89577&page=3&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89577&page=2&region=P&level=P&month=P&year=P"
     },
     {
       "id": "w-dsc-invitational-autumn-distance-meet-11thoct-2026",
@@ -260,7 +208,7 @@
       "level": "Level 4",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88064&page=3&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88064&page=2&region=P&level=P&month=P&year=P"
     },
     {
       "id": "city-of-plymouth-annual-swim-meet-2026-11thoct-2026",
@@ -286,7 +234,7 @@
       "level": "Level 4",
       "meetType": "Club",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88873&page=3&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88873&page=2&region=P&level=P&month=P&year=P"
     },
     {
       "id": "seagulls-club-champs-2026-11thoct-2026",
@@ -299,7 +247,7 @@
       "level": "Level 4",
       "meetType": "Club Champs",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89140&page=3&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89140&page=2&region=P&level=P&month=P&year=P"
     },
     {
       "id": "masters-swim-england-south-west-region-masters-open-meet-2026-25m",
@@ -351,7 +299,7 @@
       "level": "Level 4",
       "meetType": "Time Trial",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89750&page=3&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89750&page=2&region=P&level=P&month=P&year=P"
     },
     {
       "id": "bramcote-sc-2026-race-nights-13thoct-2026",
@@ -364,7 +312,7 @@
       "level": "Level 4",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89314&page=3&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89314&page=2&region=P&level=P&month=P&year=P"
     },
     {
       "id": "clevedon-asc-club-champ-800m-free-13thoct-2026",
@@ -377,7 +325,7 @@
       "level": "Level 4",
       "meetType": "Club Champs",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88963&page=3&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88963&page=2&region=P&level=P&month=P&year=P"
     },
     {
       "id": "leicester-penguins-sc-time-trials-15thoct-2026",
@@ -442,7 +390,7 @@
       "level": "Level 4",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89599&page=4&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89599&page=3&region=P&level=P&month=P&year=P"
     },
     {
       "id": "carn-brea-helston-combined-club-championships-16thoct-2026",
@@ -468,7 +416,7 @@
       "level": "Level 4",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88852&page=4&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88852&page=3&region=P&level=P&month=P&year=P"
     },
     {
       "id": "city-of-hereford-sc-mappa-mundi-2026-16thoct-2026",
@@ -507,7 +455,7 @@
       "level": "Level 2",
       "meetType": "Open Meet",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=87550&page=4&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=87550&page=3&region=P&level=P&month=P&year=P"
     },
     {
       "id": "flitwick-open-2026-17thoct-2026",
@@ -559,7 +507,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88790&page=4&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88790&page=3&region=P&level=P&month=P&year=P"
     },
     {
       "id": "lincoln-vulcans-louth-sc-l3-meet-2026-17thoct-2026",
@@ -598,7 +546,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89120&page=4&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89120&page=3&region=P&level=P&month=P&year=P"
     },
     {
       "id": "yorkshire-sa-winter-competitions-2026-17thoct-2026",
@@ -624,7 +572,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88886&page=4&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88886&page=3&region=P&level=P&month=P&year=P"
     },
     {
       "id": "middlesbrough-asc-last-chance-ner-qualifier-17thoct-2026",
@@ -650,7 +598,7 @@
       "level": "Level 2",
       "meetType": "Open Meet",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=87421&page=4&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=87421&page=3&region=P&level=P&month=P&year=P"
     },
     {
       "id": "city-of-southampton-sc-james-moreno-open-meet-2026-17thoct-2026",
@@ -663,7 +611,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88842&page=4&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88842&page=3&region=P&level=P&month=P&year=P"
     },
     {
       "id": "hart-sc-distance-meet-2026-17thoct-2026",
@@ -728,7 +676,7 @@
       "level": "Level 4",
       "meetType": "Club Champs",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88192&page=4&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88192&page=3&region=P&level=P&month=P&year=P"
     },
     {
       "id": "bristol-south-gloucs-sc-county-qualifier-17thoct-2026",
@@ -741,7 +689,7 @@
       "level": "Level 3",
       "meetType": "County",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88805&page=4&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88805&page=3&region=P&level=P&month=P&year=P"
     },
     {
       "id": "somerset-asa-county-development-meet-17thoct-2026",
@@ -806,7 +754,7 @@
       "level": "Level 2",
       "meetType": "Open Meet",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88306&page=4&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88306&page=3&region=P&level=P&month=P&year=P"
     },
     {
       "id": "leamington-spa-asc-autumn-open-meet-2026-17thoct-2026",
@@ -832,7 +780,7 @@
       "level": "Level 4",
       "meetType": "Open Meet",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89676&page=4&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89676&page=3&region=P&level=P&month=P&year=P"
     },
     {
       "id": "wrekin-sc-winter-time-trials-2026-17thoct-2026",
@@ -858,7 +806,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89331&page=5&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89331&page=4&region=P&level=P&month=P&year=P"
     },
     {
       "id": "northampton-sc-autumn-time-trials-18thoct-2026",
@@ -871,7 +819,7 @@
       "level": "Level 4",
       "meetType": "Time Trial",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89038&page=5&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89038&page=4&region=P&level=P&month=P&year=P"
     },
     {
       "id": "south-east-london-long-distance-series-18thoct-2026",
@@ -884,7 +832,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88678&page=5&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88678&page=4&region=P&level=P&month=P&year=P"
     },
     {
       "id": "erith-and-district-sc-club-time-trial-2026-18thoct-2026",
@@ -897,7 +845,7 @@
       "level": "Level 4",
       "meetType": "Time Trial",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88831&page=5&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88831&page=4&region=P&level=P&month=P&year=P"
     },
     {
       "id": "2026-copeland-800m-time-trial-18thoct-2026",
@@ -923,7 +871,7 @@
       "level": "Level 4",
       "meetType": "Club Champs",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89353&page=5&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89353&page=4&region=P&level=P&month=P&year=P"
     },
     {
       "id": "paignton-s-c-middle-distance-events-21stoct-2026",
@@ -936,7 +884,7 @@
       "level": "Level 4",
       "meetType": "Open Meet",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88853&page=5&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88853&page=4&region=P&level=P&month=P&year=P"
     },
     {
       "id": "bristol-south-glous-sc-800m-club-championships-22ndoct-2026",
@@ -949,7 +897,7 @@
       "level": "Level 4",
       "meetType": "Club Champs",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89381&page=5&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89381&page=4&region=P&level=P&month=P&year=P"
     },
     {
       "id": "masters-swim-england-masters-national-championships-25m-2025-2",
@@ -988,7 +936,7 @@
       "level": "Level 4",
       "meetType": "Time Trial",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89633&page=5&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89633&page=4&region=P&level=P&month=P&year=P"
     },
     {
       "id": "cwsc-millfield-school-2026-international-open-23rdoct-2026",
@@ -1001,7 +949,7 @@
       "level": "Level 2",
       "meetType": "Open Meet",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89088&page=5&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89088&page=4&region=P&level=P&month=P&year=P"
     },
     {
       "id": "cheshunt-sc-21st-annual-open-meet-2026-24thoct-2026",
@@ -1235,7 +1183,7 @@
       "level": "Level 2",
       "meetType": "Open Meet",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=87649&page=6&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=87649&page=5&region=P&level=P&month=P&year=P"
     },
     {
       "id": "city-of-salford-sc-long-distance-meet-2026-30thoct-2026",
@@ -1274,7 +1222,7 @@
       "level": "Level 4",
       "meetType": "Open Meet",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89588&page=6&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89588&page=5&region=P&level=P&month=P&year=P"
     },
     {
       "id": "basildon-phoenix-sc-autumn-qualifier-sc-meet-2026-31stoct-2026",
@@ -1287,7 +1235,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89594&page=6&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89594&page=5&region=P&level=P&month=P&year=P"
     },
     {
       "id": "herts-aquatics-1500-meet-31stoct-2026",
@@ -1300,7 +1248,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88101&page=6&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88101&page=5&region=P&level=P&month=P&year=P"
     },
     {
       "id": "leicester-sharks-csc-trick-or-treat-2026-31stoct-2026",
@@ -1313,7 +1261,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88718&page=6&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88718&page=5&region=P&level=P&month=P&year=P"
     },
     {
       "id": "se-north-east-regional-age-group-championships-25m-31stoct-2026",
@@ -1326,7 +1274,7 @@
       "level": "Level 2",
       "meetType": "Open Meet",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=87866&page=6&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=87866&page=5&region=P&level=P&month=P&year=P"
     },
     {
       "id": "city-of-salford-sc-potential-olympians-meet-31stoct-2026",
@@ -1339,7 +1287,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88612&page=6&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88612&page=5&region=P&level=P&month=P&year=P"
     },
     {
       "id": "epsom-district-halloween-open-meet-2026-31stoct-2026",
@@ -1352,7 +1300,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89707&page=6&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89707&page=5&region=P&level=P&month=P&year=P"
     },
     {
       "id": "mid-sussex-marlins-scary-sprint-meet-31stoct-2026",
@@ -1365,7 +1313,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89783&page=6&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89783&page=5&region=P&level=P&month=P&year=P"
     },
     {
       "id": "autumn-l3-open-meet-31stoct-2026",
@@ -1378,7 +1326,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89405&page=6&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89405&page=5&region=P&level=P&month=P&year=P"
     },
     {
       "id": "calne-alpha-4-swim-club-l3-open-meet-31stoct-2026",
@@ -1391,7 +1339,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89506&page=6&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89506&page=5&region=P&level=P&month=P&year=P"
     },
     {
       "id": "team-bath-as-l3-lc-halloween-frenzy-31stoct-2026",
@@ -1404,7 +1352,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89221&page=6&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89221&page=5&region=P&level=P&month=P&year=P"
     },
     {
       "id": "gcsc-level-4-club-long-event-opportunity-31stoct-2026",
@@ -1417,7 +1365,7 @@
       "level": "Level 4",
       "meetType": "Open Meet",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89091&page=6&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89091&page=5&region=P&level=P&month=P&year=P"
     },
     {
       "id": "ical-ncd-newquay-open-meet-31st-oct-1st-nov-2026",
@@ -1443,7 +1391,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88630&page=6&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88630&page=5&region=P&level=P&month=P&year=P"
     },
     {
       "id": "braintree-and-bocking-sc-long-distance-meet-2026-1stnov-2026",
@@ -1580,137 +1528,137 @@
       "name": "Torquay Leander SC Club Championships",
       "date": "5thNov 2026",
       "formattedDate": "05/11/2026",
-      "location": "Torquay Leander SC Club Championships - 4SW261486",
+      "location": "Torquay",
       "region": "South West",
       "course": "Short Course (25m)",
       "level": "Level 4",
       "meetType": "Club Champs",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88284&page=7&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88284&page=6&region=P&level=P&month=P&year=P"
     },
     {
       "id": "swim-england-east-region-s-c-championships-2026-6thnov-2026",
       "name": "Swim England East Region S/C Championships 2026",
       "date": "6thNov 2026",
       "formattedDate": "06/11/2026",
-      "location": "Swim England East Region S/C Championships 2026 - 2ER261838",
+      "location": "Luton",
       "region": "East",
       "course": "Short Course (25m)",
       "level": "Level 2",
       "meetType": "Regional",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88725&page=7&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88725&page=6&region=P&level=P&month=P&year=P"
     },
     {
       "id": "swim-england-east-midlands-short-course-champs-26-6thnov-2026",
       "name": "Swim England East Midlands Short Course Champs 26",
       "date": "6thNov 2026",
       "formattedDate": "06/11/2026",
-      "location": "Swim England East Midlands Short Course Champs 26 - 2EM262078",
+      "location": "Nottingham",
       "region": "East Midlands",
       "course": "Short Course (25m)",
       "level": "Level 2",
       "meetType": "Regional",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89054&page=7&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89054&page=6&region=P&level=P&month=P&year=P"
     },
     {
       "id": "dorking-swimming-club-1500m-time-trial-2026-6thnov-2026",
       "name": "Dorking Swimming Club 1500m Time Trial 2026",
       "date": "6thNov 2026",
       "formattedDate": "06/11/2026",
-      "location": "Dorking Swimming Club 1500m Time Trial 2026 - 4SE262055",
+      "location": "Dorking",
       "region": "South East",
       "course": "Short Course (25m)",
       "level": "Level 4",
       "meetType": "Time Trial",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89030&page=7&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89030&page=6&region=P&level=P&month=P&year=P"
     },
     {
       "id": "herne-bay-lifeguard-sc-50m-100m-club-time-trials-6thnov-2026",
       "name": "Herne Bay Lifeguard & SC 50m&100m Club Time Trials",
       "date": "6thNov 2026",
       "formattedDate": "06/11/2026",
-      "location": "Herne Bay Lifeguard & SC 50m&100m Club Time Trials - 4SE262684",
+      "location": "Herne Bay",
       "region": "South East",
       "course": "Short Course (25m)",
       "level": "Level 4",
       "meetType": "Time Trial",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89811&page=7&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89811&page=6&region=P&level=P&month=P&year=P"
     },
     {
       "id": "bristol-north-swimming-club-champs-2026-6thnov-2026",
       "name": "Bristol North Swimming Club Champs 2026",
       "date": "6thNov 2026",
       "formattedDate": "06/11/2026",
-      "location": "Bristol North Swimming Club Champs 2026 - 4SW261408",
+      "location": "Bristol BS34 7PS",
       "region": "South West",
       "course": "Short Course (25m)",
       "level": "Level 4",
       "meetType": "Club Champs",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88195&page=7&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88195&page=6&region=P&level=P&month=P&year=P"
     },
     {
       "id": "se-swr-winter-short-course-championships-2026-6thnov-2026",
       "name": "SE SWR Winter Short Course Championships 2026",
       "date": "6thNov 2026",
       "formattedDate": "06/11/2026",
-      "location": "SE SWR Winter Short Course Championships 2026 - 2SW262186",
+      "location": "Street",
       "region": "South West",
       "course": "Short Course (25m)",
       "level": "Level 2",
       "meetType": "Regional",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89170&page=7&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89170&page=6&region=P&level=P&month=P&year=P"
     },
     {
       "id": "swim-wales-regional-sc-championships-north-6thnov-2026",
       "name": "Swim Wales Regional SC Championships - North",
       "date": "6thNov 2026",
       "formattedDate": "06/11/2026",
-      "location": "Swim Wales Regional SC Championships - North - 2WL262249",
+      "location": "Llandudno",
       "region": "Wales",
       "course": "Short Course (25m)",
       "level": "Level 2",
       "meetType": "Regional",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89245&page=7&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89245&page=6&region=P&level=P&month=P&year=P"
     },
     {
       "id": "swim-wales-regional-sc-championships-south-east-6thnov-2026",
       "name": "Swim Wales Regional SC Championships - South East",
       "date": "6thNov 2026",
       "formattedDate": "06/11/2026",
-      "location": "Swim Wales Regional SC Championships - South East - 2WL262248",
+      "location": "Newport",
       "region": "Wales",
       "course": "Short Course (25m)",
       "level": "Level 2",
       "meetType": "Regional",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89244&page=7&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89244&page=6&region=P&level=P&month=P&year=P"
     },
     {
       "id": "swim-wales-regional-sc-championships-west-6thnov-2026",
       "name": "Swim Wales Regional SC Championships - West",
       "date": "6thNov 2026",
       "formattedDate": "06/11/2026",
-      "location": "Swim Wales Regional SC Championships - West - 2WL262247",
+      "location": "Haverfordwest",
       "region": "Wales",
       "course": "Short Course (25m)",
       "level": "Level 2",
       "meetType": "Regional",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89243&page=7&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89243&page=6&region=P&level=P&month=P&year=P"
     },
     {
       "id": "herts-aquatics-autumn-meet-7thnov-2026",
       "name": "Herts Aquatics Autumn Meet",
       "date": "7thNov 2026",
       "formattedDate": "07/11/2026",
-      "location": "Herts Aquatics Autumn Meet - 3ER261328",
+      "location": "Radlett, Herts",
       "region": "East",
       "course": "Short Course (25m)",
       "level": "Level 3",
@@ -1723,7 +1671,7 @@
       "name": "Dartford District & Erith Fireworks Meet 2026",
       "date": "7thNov 2026",
       "formattedDate": "07/11/2026",
-      "location": "Dartford District & Erith Fireworks Meet 2026 - 3LR260953",
+      "location": "Bexleyheath",
       "region": "London",
       "course": "Short Course (25m)",
       "level": "Level 3",
@@ -1736,7 +1684,7 @@
       "name": "SE London Winter Championships 2026",
       "date": "7thNov 2026",
       "formattedDate": "07/11/2026",
-      "location": "SE London Winter Championships 2026 - 2LR262179",
+      "location": "Stratford",
       "region": "London",
       "course": "Short Course (25m)",
       "level": "Level 2",
@@ -1762,7 +1710,7 @@
       "name": "Windsor SC Level 3 Sprint and Slog Open Meet",
       "date": "7thNov 2026",
       "formattedDate": "07/11/2026",
-      "location": "Windsor SC Level 3 Sprint and Slog Open Meet - 3SE262527",
+      "location": "Maidenhead",
       "region": "South East",
       "course": "Short Course (25m)",
       "level": "Level 3",
@@ -1775,7 +1723,7 @@
       "name": "Swim England South East Short Course Championships",
       "date": "7thNov 2026",
       "formattedDate": "07/11/2026",
-      "location": "Swim England South East Short Course Championships - 2SE262225",
+      "location": "Winchester",
       "region": "South East",
       "course": "Short Course (25m)",
       "level": "Level 2",
@@ -1788,7 +1736,7 @@
       "name": "Forest of Dean SC Club Championships 26",
       "date": "7thNov 2026",
       "formattedDate": "07/11/2026",
-      "location": "Forest of Dean SC Club Championships 26 - 4SW262590",
+      "location": "Lydney",
       "region": "South West",
       "course": "Short Course (25m)",
       "level": "Level 4",
@@ -1801,7 +1749,7 @@
       "name": "Wareham & District SC 2026 Club Championships",
       "date": "7thNov 2026",
       "formattedDate": "07/11/2026",
-      "location": "Wareham & District SC 2026 Club Championships - 4SW262389",
+      "location": "Wareham",
       "region": "South West",
       "course": "Short Course (25m)",
       "level": "Level 4",
@@ -1814,20 +1762,20 @@
       "name": "Bristol & South Gloucestershire Autumn Sprint Meet",
       "date": "7thNov 2026",
       "formattedDate": "07/11/2026",
-      "location": "Bristol & South Gloucestershire Autumn Sprint Meet - 4SW262400",
+      "location": "Bristol",
       "region": "South West",
       "course": "Short Course (25m)",
       "level": "Level 4",
       "meetType": "County",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89427&page=7&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89427&page=6&region=P&level=P&month=P&year=P"
     },
     {
       "id": "sewmr-winter-championships-2026-7thnov-2026",
       "name": "SEWMR Winter Championships 2026",
       "date": "7thNov 2026",
       "formattedDate": "07/11/2026",
-      "location": "SEWMR Winter Championships 2026 - 2WM262022",
+      "location": "Smethwick",
       "region": "West Midlands",
       "course": "Short Course (25m)",
       "level": "Level 2",
@@ -1840,7 +1788,7 @@
       "name": "Bramcote SC 2026 Long Distance Time Trials",
       "date": "8thNov 2026",
       "formattedDate": "08/11/2026",
-      "location": "Bramcote SC 2026 Long Distance Time Trials - 4EM262642",
+      "location": "Bramcote",
       "region": "East Midlands",
       "course": "Short Course (25m)",
       "level": "Level 4",
@@ -1853,7 +1801,7 @@
       "name": "Spenborough SC Bonfire Bash 2026",
       "date": "8thNov 2026",
       "formattedDate": "08/11/2026",
-      "location": "Spenborough SC Bonfire Bash 2026 - 3NE261218",
+      "location": "Leeds",
       "region": "North East",
       "course": "Short Course (25m)",
       "level": "Level 3",
@@ -1866,7 +1814,7 @@
       "name": "Medway 50/200 Gala 2026",
       "date": "8thNov 2026",
       "formattedDate": "08/11/2026",
-      "location": "Medway 50/200 Gala 2026 - 3SE260938",
+      "location": "Gillingham",
       "region": "South East",
       "course": "Short Course (25m)",
       "level": "Level 3",
@@ -1879,7 +1827,7 @@
       "name": "Chesham Swimming Club DISTANCE MEET AUTUMN 2026",
       "date": "8thNov 2026",
       "formattedDate": "08/11/2026",
-      "location": "Chesham Swimming Club DISTANCE MEET AUTUMN 2026 - 4SE261921",
+      "location": "Chesham",
       "region": "South East",
       "course": "Short Course (25m)",
       "level": "Level 4",
@@ -1892,7 +1840,7 @@
       "name": "Farnham SC 2026 Distance Time Trials",
       "date": "8thNov 2026",
       "formattedDate": "08/11/2026",
-      "location": "Farnham SC 2026 Distance Time Trials - 4SE262205",
+      "location": "Farnham",
       "region": "South East",
       "course": "Short Course (25m)",
       "level": "Level 4",
@@ -1905,7 +1853,7 @@
       "name": "Herne Bay Lifeguard & SC 50m&100m Club Time Trials",
       "date": "9thNov 2026",
       "formattedDate": "09/11/2026",
-      "location": "Herne Bay Lifeguard & SC 50m&100m Club Time Trials - 4SE262685",
+      "location": "Herne Bay",
       "region": "South East",
       "course": "Short Course (25m)",
       "level": "Level 4",
@@ -1918,7 +1866,7 @@
       "name": "Torquay Leander SC Club Championships",
       "date": "9thNov 2026",
       "formattedDate": "09/11/2026",
-      "location": "Torquay Leander SC Club Championships - 4SW261487",
+      "location": "Torquay",
       "region": "South West",
       "course": "Short Course (25m)",
       "level": "Level 4",
@@ -1937,7 +1885,7 @@
       "level": "Level 4",
       "meetType": "Club Champs",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88713&page=8&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88713&page=7&region=P&level=P&month=P&year=P"
     },
     {
       "id": "paignton-s-c-middle-distance-events-11thnov-2026",
@@ -1950,7 +1898,7 @@
       "level": "Level 4",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88854&page=8&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88854&page=7&region=P&level=P&month=P&year=P"
     },
     {
       "id": "autumn-long-distance-time-trial-11thnov-2026",
@@ -1963,7 +1911,7 @@
       "level": "Level 4",
       "meetType": "Time Trial",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89595&page=8&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89595&page=7&region=P&level=P&month=P&year=P"
     },
     {
       "id": "bristol-north-swimming-club-champs-2026-13thnov-2026",
@@ -1976,7 +1924,7 @@
       "level": "Level 4",
       "meetType": "Club Champs",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88194&page=8&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88194&page=7&region=P&level=P&month=P&year=P"
     },
     {
       "id": "north-dorset-turbos-club-championships-2026-13thnov-2026",
@@ -2106,7 +2054,7 @@
       "level": "Level 3",
       "meetType": "League",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89372&page=9&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89372&page=8&region=P&level=P&month=P&year=P"
     },
     {
       "id": "saxon-crown-club-championships-15thnov-2026",
@@ -2145,7 +2093,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88410&page=9&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88410&page=8&region=P&level=P&month=P&year=P"
     },
     {
       "id": "scunthorpe-anchor-remembrance-meet-2026-15thnov-2026",
@@ -2171,7 +2119,7 @@
       "level": "Level 4",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89483&page=9&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89483&page=8&region=P&level=P&month=P&year=P"
     },
     {
       "id": "dorking-swimming-club-open-meet-2026-15thnov-2026",
@@ -2262,7 +2210,7 @@
       "level": "Level 4",
       "meetType": "Club Champs",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88964&page=9&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88964&page=8&region=P&level=P&month=P&year=P"
     },
     {
       "id": "southwold-club-champs-2026-l4-15thnov-2026",
@@ -2340,7 +2288,7 @@
       "level": "Level 4",
       "meetType": "Club Champs",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89692&page=10&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89692&page=9&region=P&level=P&month=P&year=P"
     },
     {
       "id": "leicester-penguins-sc-time-trials-19thnov-2026",
@@ -2353,7 +2301,7 @@
       "level": "Level 4",
       "meetType": "Time Trial",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89753&page=10&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89753&page=9&region=P&level=P&month=P&year=P"
     },
     {
       "id": "torquay-leander-sc-club-championships-19thnov-2026",
@@ -2366,7 +2314,7 @@
       "level": "Level 4",
       "meetType": "Club Champs",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88286&page=10&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88286&page=9&region=P&level=P&month=P&year=P"
     },
     {
       "id": "city-of-cambridge-sc-cambridge-grand-prix-2026-20thnov-2026",
@@ -2379,7 +2327,7 @@
       "level": "Level 2",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88095&page=10&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88095&page=9&region=P&level=P&month=P&year=P"
     },
     {
       "id": "tynemouth-asc-autumn-meet-2026-20thnov-2026",
@@ -2418,7 +2366,7 @@
       "level": "Level 4",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89485&page=10&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89485&page=9&region=P&level=P&month=P&year=P"
     },
     {
       "id": "bristol-north-club-champs-2026-20thnov-2026",
@@ -2431,7 +2379,7 @@
       "level": "Level 4",
       "meetType": "Club Champs",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89626&page=10&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89626&page=9&region=P&level=P&month=P&year=P"
     },
     {
       "id": "carn-brea-helston-26-combined-club-championships-20thnov-2026",
@@ -2444,7 +2392,7 @@
       "level": "Level 4",
       "meetType": "Club Champs",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=87631&page=10&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=87631&page=9&region=P&level=P&month=P&year=P"
     },
     {
       "id": "chippenham-asc-club-champs-200m-s-2026-20thnov-2026",
@@ -2457,7 +2405,7 @@
       "level": "Level 4",
       "meetType": "Club Champs",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89569&page=10&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89569&page=9&region=P&level=P&month=P&year=P"
     },
     {
       "id": "bbsc-bssc-christmas-cracker-2026-21stnov-2026",
@@ -2509,7 +2457,20 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89100&page=11&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89100&page=10&region=P&level=P&month=P&year=P"
+    },
+    {
+      "id": "dunmow-distance-time-trial-november-26-21stnov-2026",
+      "name": "Dunmow Distance Time Trial November 26",
+      "date": "21stNov 2026",
+      "formattedDate": "21/11/2026",
+      "location": "Great Dunmow",
+      "region": "East",
+      "course": "Short Course (25m)",
+      "level": "Level 4",
+      "meetType": "Time Trial",
+      "isHoliday": false,
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89838&page=10&region=P&level=P&month=P&year=P"
     },
     {
       "id": "buxton-5th-autumn-open-meet-21stnov-2026",
@@ -2548,7 +2509,7 @@
       "level": "Level 2",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89070&page=11&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89070&page=10&region=P&level=P&month=P&year=P"
     },
     {
       "id": "mansfield-major-oak-2026-21stnov-2026",
@@ -2561,7 +2522,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88654&page=11&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88654&page=10&region=P&level=P&month=P&year=P"
     },
     {
       "id": "not-the-summer-sprints-2026-21stnov-2026",
@@ -2600,7 +2561,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89341&page=11&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89341&page=10&region=P&level=P&month=P&year=P"
     },
     {
       "id": "york-city-baths-winter-swim-extravaganza-2026-21stnov-2026",
@@ -2652,7 +2613,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89198&page=11&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89198&page=10&region=P&level=P&month=P&year=P"
     },
     {
       "id": "chloe-naylor-winter-qualifier-21stnov-2026",
@@ -2717,7 +2678,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89043&page=11&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89043&page=10&region=P&level=P&month=P&year=P"
     },
     {
       "id": "oxford-bulls-county-chaser-21stnov-2026",
@@ -2730,7 +2691,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88993&page=11&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88993&page=10&region=P&level=P&month=P&year=P"
     },
     {
       "id": "mid-sussex-marlins-1500-distance-meet-21stnov-2026",
@@ -2743,7 +2704,7 @@
       "level": "Level 4",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89199&page=11&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89199&page=10&region=P&level=P&month=P&year=P"
     },
     {
       "id": "somerset-asa-the-john-bolton-21stnov-2026",
@@ -2782,7 +2743,7 @@
       "level": "Level 4",
       "meetType": "Club Champs",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88851&page=11&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88851&page=10&region=P&level=P&month=P&year=P"
     },
     {
       "id": "southwold-club-champs-2026-l4-21stnov-2026",
@@ -2964,7 +2925,7 @@
       "level": "Level 4",
       "meetType": "Time Trial",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89621&page=12&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89621&page=11&region=P&level=P&month=P&year=P"
     },
     {
       "id": "bridport-barracdas-club-championships-2026-25thnov-2026",
@@ -2977,7 +2938,7 @@
       "level": "Level 4",
       "meetType": "Club Champs",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89439&page=12&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89439&page=11&region=P&level=P&month=P&year=P"
     },
     {
       "id": "north-dorset-turbos-club-championships-2026-25thnov-2026",
@@ -2990,7 +2951,7 @@
       "level": "Level 4",
       "meetType": "Club Champs",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89649&page=12&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89649&page=11&region=P&level=P&month=P&year=P"
     },
     {
       "id": "bridgwater-sc-short-distance-club-championships-26thnov-2026",
@@ -3003,7 +2964,7 @@
       "level": "Level 4",
       "meetType": "Club Champs",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89793&page=12&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89793&page=11&region=P&level=P&month=P&year=P"
     },
     {
       "id": "west-norfolk-swimming-club-autumn-showdown-2026-27thnov-2026",
@@ -3068,7 +3029,7 @@
       "level": "Level 3",
       "meetType": "Regional",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89429&page=12&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89429&page=11&region=P&level=P&month=P&year=P"
     },
     {
       "id": "eastbourne-sc-time-trials-27thnov-2026",
@@ -3094,7 +3055,7 @@
       "level": "Level 4",
       "meetType": "Club Champs",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89332&page=12&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89332&page=11&region=P&level=P&month=P&year=P"
     },
     {
       "id": "bsgsc-1500m-club-championships-27thnov-2026",
@@ -3107,7 +3068,7 @@
       "level": "Level 4",
       "meetType": "Club Champs",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89738&page=12&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89738&page=11&region=P&level=P&month=P&year=P"
     },
     {
       "id": "chippenham-asc-club-champs-200m-s-2026-27thnov-2026",
@@ -3134,6 +3095,19 @@
       "meetType": "Club Champs",
       "isHoliday": false,
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88714&page=12&region=P&level=P&month=P&year=P"
+    },
+    {
+      "id": "basildon-phoenix-sc-last-chance-qualifier-2026-28thnov-2026",
+      "name": "Basildon & Phoenix SC Last Chance Qualifier 2026",
+      "date": "28thNov 2026",
+      "formattedDate": "28/11/2026",
+      "location": "Basildon",
+      "region": "East",
+      "course": "Short Course (25m)",
+      "level": "Level 3",
+      "meetType": "Open Meet",
+      "isHoliday": false,
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89825&page=12&region=P&level=P&month=P&year=P"
     },
     {
       "id": "ccsc-robin-springett-qualifier-meet-2026-28thnov-2026",
@@ -3344,6 +3318,19 @@
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88758&page=13&region=P&level=P&month=P&year=P"
     },
     {
+      "id": "staines-swimming-club-winter-meet-2026-28thnov-2026",
+      "name": "Staines Swimming Club Winter Meet 2026",
+      "date": "28thNov 2026",
+      "formattedDate": "28/11/2026",
+      "location": "Staines-upon-Thames",
+      "region": "South East",
+      "course": "Short Course (25m)",
+      "level": "Level 4",
+      "meetType": "Open Meet",
+      "isHoliday": false,
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89829&page=13&region=P&level=P&month=P&year=P"
+    },
+    {
       "id": "seagulls-club-champs-2026-28thnov-2026",
       "name": "Seagulls Club Champs 2026",
       "date": "28thNov 2026",
@@ -3354,7 +3341,7 @@
       "level": "Level 4",
       "meetType": "Club Champs",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89141&page=13&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89141&page=12&region=P&level=P&month=P&year=P"
     },
     {
       "id": "severnside-tritons-november-sparkler-28thnov-2026",
@@ -3367,7 +3354,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88981&page=13&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88981&page=12&region=P&level=P&month=P&year=P"
     },
     {
       "id": "taunton-dean-county-qualifier-open-meet-2026-28thnov-2026",
@@ -3419,7 +3406,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88657&page=13&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88657&page=12&region=P&level=P&month=P&year=P"
     },
     {
       "id": "wrekin-sc-winter-time-trials-2026-28thnov-2026",
@@ -3614,7 +3601,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88791&page=14&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88791&page=13&region=P&level=P&month=P&year=P"
     },
     {
       "id": "grantham-swimming-club-snowstorm-2026-5thdec-2026",
@@ -3627,7 +3614,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89758&page=14&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89758&page=13&region=P&level=P&month=P&year=P"
     },
     {
       "id": "borough-of-barnsley-30th-annual-christmas-sprint-5thdec-2026",
@@ -3640,7 +3627,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89398&page=14&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89398&page=13&region=P&level=P&month=P&year=P"
     },
     {
       "id": "doncaster-dartes-santa-splash-5thdec-2026",
@@ -3653,7 +3640,20 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89761&page=14&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89761&page=13&region=P&level=P&month=P&year=P"
+    },
+    {
+      "id": "wear-valley-asc-festive-fizzer-2026-5thdec-2026",
+      "name": "Wear Valley ASC Festive Fizzer 2026",
+      "date": "5thDec 2026",
+      "formattedDate": "05/12/2026",
+      "location": "Durham City",
+      "region": "North East",
+      "course": "Short Course (25m)",
+      "level": "Level 3",
+      "meetType": "Open Meet",
+      "isHoliday": false,
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89839&page=14&region=P&level=P&month=P&year=P"
     },
     {
       "id": "the-national-arena-swimming-league-western-gala-1-5thdec-2026",
@@ -3718,7 +3718,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89397&page=15&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89397&page=14&region=P&level=P&month=P&year=P"
     },
     {
       "id": "teamipswich-swimming-christmas-bonanza-2026-6thdec-2026",
@@ -3770,7 +3770,7 @@
       "level": "Level 4",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88918&page=15&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88918&page=14&region=P&level=P&month=P&year=P"
     },
     {
       "id": "hart-sc-last-chance-qualifier-2026-6thdec-2026",
@@ -3848,7 +3848,7 @@
       "level": "Level 4",
       "meetType": "Club",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89540&page=15&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89540&page=14&region=P&level=P&month=P&year=P"
     },
     {
       "id": "seagulls-club-champs-2026-6thdec-2026",
@@ -3861,7 +3861,7 @@
       "level": "Level 4",
       "meetType": "Club Champs",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89142&page=15&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89142&page=14&region=P&level=P&month=P&year=P"
     },
     {
       "id": "plymouth-leander-xmas-level-3-open-meet-2026-6thdec-2026",
@@ -3874,7 +3874,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89645&page=15&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89645&page=14&region=P&level=P&month=P&year=P"
     },
     {
       "id": "newcastle-staffs-sc-yule-in-the-pool-2026-6thdec-2026",
@@ -4107,7 +4107,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88766&page=16&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88766&page=15&region=P&level=P&month=P&year=P"
     },
     {
       "id": "the-ernehale-open-meet-christmas-chaos-2026-12thdec-2026",
@@ -4120,7 +4120,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89678&page=16&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89678&page=15&region=P&level=P&month=P&year=P"
     },
     {
       "id": "bromley-swimming-club-christmas-gold-2026-12thdec-2026",
@@ -4146,7 +4146,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88507&page=16&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88507&page=15&region=P&level=P&month=P&year=P"
     },
     {
       "id": "city-of-bradford-sc-christmas-lc-meet-2026-12thdec-2026",
@@ -4224,7 +4224,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89104&page=16&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89104&page=15&region=P&level=P&month=P&year=P"
     },
     {
       "id": "7oaks-sc-schools-out-for-santa-2026-12thdec-2026",
@@ -4289,7 +4289,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89689&page=16&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89689&page=15&region=P&level=P&month=P&year=P"
     },
     {
       "id": "city-of-coventry-sc-winter-meet-2026-12thdec-2026",
@@ -4328,7 +4328,7 @@
       "level": "Level 4",
       "meetType": "Time Trial",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88989&page=16&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88989&page=15&region=P&level=P&month=P&year=P"
     },
     {
       "id": "woking-sc-december-dasher-meet-13thdec-2026",
@@ -4500,6 +4500,19 @@
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88890&page=16&region=P&level=P&month=P&year=P"
     },
     {
+      "id": "crawley-sc-speedo-open-meet-2ndjan-2027",
+      "name": "Crawley SC â€“ Speedo Open Meet",
+      "date": "2ndJan 2027",
+      "formattedDate": "02/01/2027",
+      "location": "Crawley",
+      "region": "South East",
+      "course": "Long Course (50m)",
+      "level": "Level 3",
+      "meetType": "Open Meet",
+      "isHoliday": true,
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89831&page=16&region=P&level=P&month=P&year=P"
+    },
+    {
       "id": "kent-weald-8th-last-chance-county-qualifier-2ndjan-2027",
       "name": "Kent Weald 8th Last Chance County Qualifier",
       "date": "2ndJan 2027",
@@ -4666,7 +4679,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89665&page=17&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89665&page=16&region=P&level=P&month=P&year=P"
     },
     {
       "id": "nuel-sc-january-sprint-madness-open-meet-2027-10thjan-2027",
@@ -4679,7 +4692,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89426&page=17&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89426&page=16&region=P&level=P&month=P&year=P"
     },
     {
       "id": "arun-tridents-sc-splash-into-2027-10thjan-2027",
@@ -4705,7 +4718,7 @@
       "level": "Level 1",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89696&page=17&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89696&page=16&region=P&level=P&month=P&year=P"
     },
     {
       "id": "city-of-brighton-hove-sc-tom-handley-open-16thjan-2027",
@@ -4718,7 +4731,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88930&page=17&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88930&page=16&region=P&level=P&month=P&year=P"
     },
     {
       "id": "wiltshire-swimming-age-groups-championships-2027-16thjan-2027",
@@ -4825,6 +4838,19 @@
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89512&page=17&region=P&level=P&month=P&year=P"
     },
     {
+      "id": "devon-county-championships-2027-23rdjan-2027",
+      "name": "Devon County Championships 2027",
+      "date": "23rdJan 2027",
+      "formattedDate": "23/01/2027",
+      "location": "Plymouth",
+      "region": "South West",
+      "course": "Long Course (50m)",
+      "level": "Level 1",
+      "meetType": "County",
+      "isHoliday": false,
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89841&page=17&region=P&level=P&month=P&year=P"
+    },
+    {
       "id": "gloucester-county-swimming-championships-2027-23rdjan-2027",
       "name": "Gloucester County Swimming Championships 2027",
       "date": "23rdJan 2027",
@@ -4890,6 +4916,19 @@
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88667&page=17&region=P&level=P&month=P&year=P"
     },
     {
+      "id": "devon-county-championships-2027-30thjan-2027",
+      "name": "Devon County Championships 2027",
+      "date": "30thJan 2027",
+      "formattedDate": "30/01/2027",
+      "location": "Plymouth",
+      "region": "South West",
+      "course": "Long Course (50m)",
+      "level": "Level 1",
+      "meetType": "County",
+      "isHoliday": false,
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89842&page=17&region=P&level=P&month=P&year=P"
+    },
+    {
       "id": "wiltshire-swimming-age-groups-championships-2027-30thjan-2027",
       "name": "Wiltshire Swimming Age Groups & Championships 2027",
       "date": "30thJan 2027",
@@ -4953,6 +4992,19 @@
       "meetType": "Masters",
       "isHoliday": false,
       "sourceUrl": "https://www.swimming.org/calendar/all/isle-wight-marlins-open-meet/"
+    },
+    {
+      "id": "devon-county-championships-2027-6thfeb-2027",
+      "name": "Devon County Championships 2027",
+      "date": "6thFeb 2027",
+      "formattedDate": "06/02/2027",
+      "location": "Plymouth",
+      "region": "South West",
+      "course": "Long Course (50m)",
+      "level": "Level 1",
+      "meetType": "County",
+      "isHoliday": false,
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89843&page=17&region=P&level=P&month=P&year=P"
     },
     {
       "id": "gloucester-county-swimming-championships-2027-6thfeb-2027",
@@ -5082,7 +5134,7 @@
       "level": "Level 2",
       "meetType": "County",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89730&page=18&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89730&page=17&region=P&level=P&month=P&year=P"
     },
     {
       "id": "masters-royal-navy-masters-open-meet-2027",
@@ -5108,7 +5160,7 @@
       "level": "Level 4",
       "meetType": "Open Meet",
       "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89214&page=18&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89214&page=17&region=P&level=P&month=P&year=P"
     },
     {
       "id": "oojsc-edsc-spring-meet-2027-27thfeb-2027",
@@ -5254,6 +5306,19 @@
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89624&page=18&region=P&level=P&month=P&year=P"
     },
     {
+      "id": "borough-of-harrow-regional-qualifier-2027-13thmar-2027",
+      "name": "Borough of Harrow Regional Qualifier 2027",
+      "date": "13thMar 2027",
+      "formattedDate": "13/03/2027",
+      "location": "Hendon, London",
+      "region": "London",
+      "course": "Short Course (25m)",
+      "level": "Level 3",
+      "meetType": "Regional",
+      "isHoliday": false,
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89840&page=18&region=P&level=P&month=P&year=P"
+    },
+    {
       "id": "oxford-bulls-spring-equinox-13thmar-2027",
       "name": "Oxford Bulls Spring Equinox",
       "date": "13thMar 2027",
@@ -5304,6 +5369,19 @@
       "meetType": "Open Meet",
       "isHoliday": false,
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89786&page=18&region=P&level=P&month=P&year=P"
+    },
+    {
+      "id": "winchester-spring-qualifier-2027-19thmar-2027",
+      "name": "Winchester Spring Qualifier 2027",
+      "date": "19thMar 2027",
+      "formattedDate": "19/03/2027",
+      "location": "Winchester",
+      "region": "South East",
+      "course": "Long Course (50m)",
+      "level": "Level 1",
+      "meetType": "Open Meet",
+      "isHoliday": false,
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89828&page=18&region=P&level=P&month=P&year=P"
     },
     {
       "id": "corby-asc-annual-lc-open-meet-2027-20thmar-2027",
@@ -5382,6 +5460,19 @@
       "meetType": "Open Meet",
       "isHoliday": true,
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89092&page=18&region=P&level=P&month=P&year=P"
+    },
+    {
+      "id": "rtsc-last-chance-regional-qualifier-meet-2027-3rdapr-2027",
+      "name": "RTSC Last Chance Regional Qualifier Meet 2027",
+      "date": "3rdApr 2027",
+      "formattedDate": "03/04/2027",
+      "location": "Hornchurch RM11 1JU",
+      "region": "London",
+      "course": "Short Course (25m)",
+      "level": "Level 3",
+      "meetType": "Regional",
+      "isHoliday": true,
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89335&page=18&region=P&level=P&month=P&year=P"
     },
     {
       "id": "kingston-upon-hull-sc-easter-a-b-lc-meet-2027-3rdapr-2027",
@@ -5475,19 +5566,6 @@
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89420&page=18&region=P&level=P&month=P&year=P"
     },
     {
-      "id": "rtsc-last-chance-regional-qualifier-meet-2027-10thapr-2027",
-      "name": "RTSC Last Chance Regional Qualifier Meet 2027",
-      "date": "10thApr 2027",
-      "formattedDate": "10/04/2027",
-      "location": "Romford, London",
-      "region": "London",
-      "course": "Short Course (25m)",
-      "level": "Level 3",
-      "meetType": "Regional",
-      "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89335&page=18&region=P&level=P&month=P&year=P"
-    },
-    {
       "id": "masters-hampshire-channel-islands-county-masters-championships-weekend-1",
       "name": "Hampshire and The Channel Islands - County Masters Championships Weekend 1",
       "date": "10 Apr 2027",
@@ -5512,6 +5590,19 @@
       "meetType": "National",
       "isHoliday": false,
       "sourceUrl": "https://scottishswimming.com/events/scottish-national-age-group-championships/"
+    },
+    {
+      "id": "ealing-spring-l4-mini-invitational-17thapr-2027",
+      "name": "Ealing Spring L4 Mini Invitational",
+      "date": "17thApr 2027",
+      "formattedDate": "17/04/2027",
+      "location": "Northolt LC, London",
+      "region": "London",
+      "course": "Short Course (25m)",
+      "level": "Level 4",
+      "meetType": "Open Meet",
+      "isHoliday": false,
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89844&page=18&region=P&level=P&month=P&year=P"
     },
     {
       "id": "newham-uel-sc-time-trials-2026-27-18thapr-2027",
@@ -5577,6 +5668,19 @@
       "meetType": "Masters",
       "isHoliday": false,
       "sourceUrl": "https://www.swimming.org/calendar/all/northumberland-durham-county-masters-championships-2027/"
+    },
+    {
+      "id": "ealing-spring-l4-mini-invitational-22ndmay-2027",
+      "name": "Ealing Spring L4 Mini Invitational",
+      "date": "22ndMay 2027",
+      "formattedDate": "22/05/2027",
+      "location": "Northolt LC, London",
+      "region": "London",
+      "course": "Short Course (25m)",
+      "level": "Level 4",
+      "meetType": "Open Meet",
+      "isHoliday": false,
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89845&page=18&region=P&level=P&month=P&year=P"
     },
     {
       "id": "oxford-bulls-may-medley-22ndmay-2027",
