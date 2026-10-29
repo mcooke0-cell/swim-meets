@@ -1,20 +1,7 @@
 {
-  "lastUpdated": "2026-10-27T02:44:37.191Z",
-  "meetsCount": 404,
+  "lastUpdated": "2026-10-29T03:16:56.745Z",
+  "meetsCount": 412,
   "meets": [
-    {
-      "id": "leighton-linslade-sc-s-the-beachy-head-battle-29thoct-2026",
-      "name": "Leighton Linslade SC's The Beachy Head Battle!",
-      "date": "29thOct 2026",
-      "formattedDate": "29/10/2026",
-      "location": "Eastbourne",
-      "region": "East",
-      "course": "Short Course (25m)",
-      "level": "Level 4",
-      "meetType": "Open Meet",
-      "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88827&page=1&region=P&level=P&month=P&year=P"
-    },
     {
       "id": "se-north-east-regional-open-championships-25m-30thoct-2026",
       "name": "SE North East Regional Open Championships (25m)",
@@ -289,6 +276,19 @@
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89034&page=1&region=P&level=P&month=P&year=P"
     },
     {
+      "id": "poole-sc-invitational-long-distance-event-2026-1stnov-2026",
+      "name": "Poole SC Invitational Long Distance Event 2026",
+      "date": "1stNov 2026",
+      "formattedDate": "01/11/2026",
+      "location": "Poole",
+      "region": "South West",
+      "course": "Short Course (25m)",
+      "level": "Level 4",
+      "meetType": "Club",
+      "isHoliday": true,
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89539&page=1&region=P&level=P&month=P&year=P"
+    },
+    {
       "id": "forest-of-dean-sc-club-championships-26-1stnov-2026",
       "name": "Forest of Dean SC Club Championships 26",
       "date": "1stNov 2026",
@@ -300,19 +300,6 @@
       "meetType": "Club Champs",
       "isHoliday": true,
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89670&page=1&region=P&level=P&month=P&year=P"
-    },
-    {
-      "id": "poole-sc-invitational-long-distance-event-2026-1stnov-2026",
-      "name": "Poole SC Invitational Long Distance Event 2026",
-      "date": "1stNov 2026",
-      "formattedDate": "01/11/2026",
-      "location": "Poole",
-      "region": "South West",
-      "course": "Short Course (25m)",
-      "level": "Level 4",
-      "meetType": "Club Champs",
-      "isHoliday": true,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89136&page=1&region=P&level=P&month=P&year=P"
     },
     {
       "id": "herne-bay-lifeguard-sc-800m-club-time-trials-2ndnov-2026",
@@ -663,7 +650,7 @@
       "level": "Level 4",
       "meetType": "Time Trial",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89887&page=3&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89887&page=2&region=P&level=P&month=P&year=P"
     },
     {
       "id": "medway-50-200-gala-2026-8thnov-2026",
@@ -676,7 +663,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=87624&page=3&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=87624&page=2&region=P&level=P&month=P&year=P"
     },
     {
       "id": "chesham-swimming-club-distance-meet-autumn-2026-8thnov-2026",
@@ -703,19 +690,6 @@
       "meetType": "Time Trial",
       "isHoliday": false,
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89197&page=2&region=P&level=P&month=P&year=P"
-    },
-    {
-      "id": "kwsc-long-distance-time-trials-26-9thnov-2026",
-      "name": "KWSC Long Distance Time Trials 26",
-      "date": "9thNov 2026",
-      "formattedDate": "09/11/2026",
-      "location": "Romford, Essex",
-      "region": "London",
-      "course": "Short Course (25m)",
-      "level": "Level 4",
-      "meetType": "Time Trial",
-      "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89999&page=3&region=P&level=P&month=P&year=P"
     },
     {
       "id": "herne-bay-lifeguard-sc-50m-100m-club-time-trials-9thnov-2026",
@@ -858,7 +832,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88759&page=4&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88759&page=3&region=P&level=P&month=P&year=P"
     },
     {
       "id": "city-of-norwich-sc-november-mini-meet-2026-14thnov-2026",
@@ -884,7 +858,7 @@
       "level": "Level 3",
       "meetType": "Time Trial",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89299&page=4&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89299&page=3&region=P&level=P&month=P&year=P"
     },
     {
       "id": "durham-city-aquatics-medley-challenge-14thnov-2026",
@@ -897,7 +871,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89217&page=4&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89217&page=3&region=P&level=P&month=P&year=P"
     },
     {
       "id": "somerset-asa-the-john-bolton-14thnov-2026",
@@ -988,7 +962,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88410&page=5&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88410&page=4&region=P&level=P&month=P&year=P"
     },
     {
       "id": "scunthorpe-anchor-remembrance-meet-2026-15thnov-2026",
@@ -1235,7 +1209,20 @@
       "level": "Level 4",
       "meetType": "Club Champs",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88286&page=6&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88286&page=5&region=P&level=P&month=P&year=P"
+    },
+    {
+      "id": "severnside-tritons-winter-time-trials2026-19thnov-2026",
+      "name": "Severnside Tritons Winter Time Trials2026",
+      "date": "19thNov 2026",
+      "formattedDate": "19/11/2026",
+      "location": "Stroud",
+      "region": "South West",
+      "course": "Short Course (25m)",
+      "level": "Level 4",
+      "meetType": "Time Trial",
+      "isHoliday": false,
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=90000&page=5&region=P&level=P&month=P&year=P"
     },
     {
       "id": "city-of-cambridge-sc-cambridge-grand-prix-2026-20thnov-2026",
@@ -1888,19 +1875,6 @@
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89649&page=8&region=P&level=P&month=P&year=P"
     },
     {
-      "id": "market-drayton-club-time-trials-25thnov-2026",
-      "name": "Market Drayton Club Time Trials",
-      "date": "25thNov 2026",
-      "formattedDate": "25/11/2026",
-      "location": "Market Drayton",
-      "region": "West Midlands",
-      "course": "Short Course (25m)",
-      "level": "Level 4",
-      "meetType": "Time Trial",
-      "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89980&page=8&region=P&level=P&month=P&year=P"
-    },
-    {
       "id": "time-trials-2025-sherwood-colliery-swimming-club-26thnov-2026",
       "name": "Time Trials 2025-Sherwood Colliery Swimming Club",
       "date": "26thNov 2026",
@@ -2369,17 +2343,17 @@
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88840&page=9&region=P&level=P&month=P&year=P"
     },
     {
-      "id": "swimwales-swim-wales-masters-short-course-championships-2026-28th-30th-nov-2026",
-      "name": "Swim Wales Masters Short Course Championships 2026",
-      "date": "28th - 30th Nov 2026",
-      "formattedDate": "28/11/2026 - 30/11/2026",
+      "id": "masters-swim-wales-masters-sc-championships-2026",
+      "name": "Swim Wales Masters SC Championships 2026",
+      "date": "28 Nov - 29 Nov 2026",
+      "formattedDate": "28/11/2026 - 29/11/2026",
       "location": "Newport",
       "region": "Wales",
-      "course": "Short Course (25m)",
-      "level": "Level 2",
-      "meetType": "Meets & Competition",
+      "course": "Short Course",
+      "level": "Masters",
+      "meetType": "Masters",
       "isHoliday": false,
-      "sourceUrl": "https://SwimWales.JustGo.com/workbench/public/Events?ref=F73D0481FF09A307F0775996CC7931E2569ABF00"
+      "sourceUrl": "https://www.swimming.org/calendar/all/swim-wales-masters-sc-championships-2026/"
     },
     {
       "id": "cheadle-and-district-asc-cheadle-district-68-28thnov-2026",
@@ -2406,6 +2380,19 @@
       "meetType": "Open Meet",
       "isHoliday": false,
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88657&page=9&region=P&level=P&month=P&year=P"
+    },
+    {
+      "id": "market-drayton-club-time-trials-28thnov-2026",
+      "name": "Market Drayton Club Time Trials",
+      "date": "28thNov 2026",
+      "formattedDate": "28/11/2026",
+      "location": "Market Drayton",
+      "region": "West Midlands",
+      "course": "Short Course (25m)",
+      "level": "Level 4",
+      "meetType": "Time Trial",
+      "isHoliday": false,
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89980&page=9&region=P&level=P&month=P&year=P"
     },
     {
       "id": "wrekin-sc-winter-time-trials-2026-28thnov-2026",
@@ -2938,7 +2925,7 @@
       "level": "Level 4",
       "meetType": "Time Trial",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=90001&page=11&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=90024&page=11&region=P&level=P&month=P&year=P"
     },
     {
       "id": "newcastle-staffs-sc-yule-in-the-pool-2026-6thdec-2026",
@@ -3019,6 +3006,19 @@
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89808&page=11&region=P&level=P&month=P&year=P"
     },
     {
+      "id": "kwsc-long-distance-time-trials-26-9thdec-2026",
+      "name": "KWSC Long Distance Time Trials 26",
+      "date": "9thDec 2026",
+      "formattedDate": "09/12/2026",
+      "location": "Romford, Essex",
+      "region": "London",
+      "course": "Short Course (25m)",
+      "level": "Level 4",
+      "meetType": "Time Trial",
+      "isHoliday": false,
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89999&page=11&region=P&level=P&month=P&year=P"
+    },
+    {
       "id": "bebington-sc-qualifier-meet-2026-9thdec-2026",
       "name": "Bebington SC Qualifier Meet 2026",
       "date": "9thDec 2026",
@@ -3055,7 +3055,7 @@
       "level": "Level 4",
       "meetType": "Time Trial",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89955&page=11&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89955&page=12&region=P&level=P&month=P&year=P"
     },
     {
       "id": "winter-time-trials-mansfield-s-c-10thdec-2026",
@@ -3396,7 +3396,7 @@
     },
     {
       "id": "wdsc-yuletide-opener-l3-12thdec-2026",
-      "name": "WDSC Yuletide Opener L3 -",
+      "name": "WDSC Yuletide Opener L3",
       "date": "12thDec 2026",
       "formattedDate": "12/12/2026",
       "location": "Dorchester",
@@ -3499,6 +3499,19 @@
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=88989&page=12&region=P&level=P&month=P&year=P"
     },
     {
+      "id": "masters-bbfsc-masters-last-chance-decathlon-meet",
+      "name": "BBFSC Masters Last Chance Decathlon Meet",
+      "date": "13 Dec 2026",
+      "formattedDate": "13/12/2026",
+      "location": "Basingstoke",
+      "region": "South East",
+      "course": "Short Course",
+      "level": "Masters",
+      "meetType": "Masters",
+      "isHoliday": false,
+      "sourceUrl": "https://www.swimming.org/calendar/all/bbfsc-masters-last-chance-decathlon-meet/"
+    },
+    {
       "id": "haslemere-last-chance-2026-13thdec-2026",
       "name": "Haslemere Last Chance 2026",
       "date": "13thDec 2026",
@@ -3548,7 +3561,7 @@
       "level": "Level 4",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89600&page=12&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89600&page=13&region=P&level=P&month=P&year=P"
     },
     {
       "id": "lewes-sc-winter-meet-13thdec-2026",
@@ -3847,7 +3860,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=90011&page=13&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=90011&page=14&region=P&level=P&month=P&year=P"
     },
     {
       "id": "time-trial-2027-bromley-swimming-club-9thjan-2027",
@@ -3860,7 +3873,7 @@
       "level": "Level 4",
       "meetType": "Time Trial",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=90014&page=13&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=90014&page=14&region=P&level=P&month=P&year=P"
     },
     {
       "id": "city-of-sheffield-swim-squad-winter-meet-2027-9thjan-2027",
@@ -4053,7 +4066,7 @@
       "region": "Wales",
       "course": "Unknown",
       "level": "Unknown",
-      "meetType": "Club Events",
+      "meetType": "Meet License Under Review",
       "isHoliday": false,
       "sourceUrl": "https://SwimWales.JustGo.com/workbench/public/Events?ref=7A9D58EDB3EC86A1A5D530C3532EBC76E471B5C1"
     },
@@ -4088,11 +4101,11 @@
       "name": "2027 Cornwall County Championships",
       "date": "17thJan 2027",
       "formattedDate": "17/01/2027",
-      "location": "Penzance",
+      "location": "Bodmin",
       "region": "South West",
       "course": "Short Course (25m)",
       "level": "Level 2",
-      "meetType": "Club Champs",
+      "meetType": "County",
       "isHoliday": false,
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89994&page=14&region=P&level=P&month=P&year=P"
     },
@@ -4188,17 +4201,17 @@
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89627&page=14&region=P&level=P&month=P&year=P"
     },
     {
-      "id": "ical-cornwall-county-championships-2027-1500m-24th-jan-2027",
-      "name": "Cornwall County Championships 2027: 1500m",
-      "date": "24th Jan 2027",
+      "id": "2027-cornwall-county-championships-24thjan-2027",
+      "name": "2027 Cornwall County Championships",
+      "date": "24thJan 2027",
       "formattedDate": "24/01/2027",
       "location": "Bodmin",
       "region": "South West",
-      "course": "Unknown",
-      "level": "Unknown",
-      "meetType": "County Championship",
+      "course": "Short Course (25m)",
+      "level": "Level 2",
+      "meetType": "County",
       "isHoliday": false,
-      "sourceUrl": "https://calendar.google.com/calendar/ical/88e25b5e901f73664ee5db21cd9c994e899294a60bdb007aefef12875d0dbfa1@group.calendar.google.com/public/basic.ics"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=90025&page=14&region=P&level=P&month=P&year=P"
     },
     {
       "id": "romford-town-sc-non-county-qualifier-meet-2027-30thjan-2027",
@@ -4227,6 +4240,19 @@
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89842&page=14&region=P&level=P&month=P&year=P"
     },
     {
+      "id": "2027-cornwall-county-championships-30thjan-2027",
+      "name": "2027 Cornwall County Championships",
+      "date": "30thJan 2027",
+      "formattedDate": "30/01/2027",
+      "location": "Penzance",
+      "region": "South West",
+      "course": "Short Course (25m)",
+      "level": "Level 2",
+      "meetType": "County",
+      "isHoliday": false,
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=90026&page=14&region=P&level=P&month=P&year=P"
+    },
+    {
       "id": "wiltshire-swimming-age-groups-championships-2027-30thjan-2027",
       "name": "Wiltshire Swimming Age Groups & Championships 2027",
       "date": "30thJan 2027",
@@ -4240,17 +4266,17 @@
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89729&page=14&region=P&level=P&month=P&year=P"
     },
     {
-      "id": "ical-cornwall-county-championships-2027-30th-jan-2027",
-      "name": "Cornwall County Championships 2027",
-      "date": "30th Jan 2027",
-      "formattedDate": "30/01/2027",
-      "location": "Penzance Leisure Centre, St Clare St, St Clare, Penzance TR18 3QW, UK",
+      "id": "2027-cornwall-county-championships-31stjan-2027",
+      "name": "2027 Cornwall County Championships",
+      "date": "31stJan 2027",
+      "formattedDate": "31/01/2027",
+      "location": "Bodmin",
       "region": "South West",
-      "course": "Unknown",
-      "level": "Unknown",
-      "meetType": "County Championship",
+      "course": "Short Course (25m)",
+      "level": "Level 2",
+      "meetType": "County",
       "isHoliday": false,
-      "sourceUrl": "https://calendar.google.com/calendar/ical/88e25b5e901f73664ee5db21cd9c994e899294a60bdb007aefef12875d0dbfa1@group.calendar.google.com/public/basic.ics"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=90027&page=14&region=P&level=P&month=P&year=P"
     },
     {
       "id": "dorset-county-championships-2027-31stjan-2027",
@@ -4264,19 +4290,6 @@
       "meetType": "County",
       "isHoliday": false,
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89722&page=14&region=P&level=P&month=P&year=P"
-    },
-    {
-      "id": "ical-cornwall-county-championships-2027-31st-jan-2027",
-      "name": "Cornwall County Championships 2027",
-      "date": "31st Jan 2027",
-      "formattedDate": "31/01/2027",
-      "location": "Bodmin Leisure Centre, Lostwithiel Rd, Bodmin PL31 1DE, UK",
-      "region": "South West",
-      "course": "Unknown",
-      "level": "Level 3",
-      "meetType": "County Championship",
-      "isHoliday": false,
-      "sourceUrl": "https://calendar.google.com/calendar/ical/88e25b5e901f73664ee5db21cd9c994e899294a60bdb007aefef12875d0dbfa1@group.calendar.google.com/public/basic.ics"
     },
     {
       "id": "masters-isle-wight-marlins-open-meet",
@@ -4315,7 +4328,7 @@
       "level": "Level 1",
       "meetType": "County",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89843&page=14&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89843&page=15&region=P&level=P&month=P&year=P"
     },
     {
       "id": "gloucester-county-swimming-championships-2027-6thfeb-2027",
@@ -4328,7 +4341,7 @@
       "level": "Level 1",
       "meetType": "County",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89718&page=14&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89718&page=15&region=P&level=P&month=P&year=P"
     },
     {
       "id": "wiltshire-swimming-age-groups-championships-2026-6thfeb-2027",
@@ -4344,6 +4357,19 @@
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89726&page=15&region=P&level=P&month=P&year=P"
     },
     {
+      "id": "2027-cornwall-county-championships-6thfeb-2027",
+      "name": "2027 Cornwall County Championships",
+      "date": "6thFeb 2027",
+      "formattedDate": "06/02/2027",
+      "location": "Penzance",
+      "region": "South West",
+      "course": "Short Course (25m)",
+      "level": "Level 2",
+      "meetType": "County",
+      "isHoliday": false,
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=90028&page=14&region=P&level=P&month=P&year=P"
+    },
+    {
       "id": "dorset-county-championships-2027-6thfeb-2027",
       "name": "Dorset County Championships 2027",
       "date": "6thFeb 2027",
@@ -4354,20 +4380,7 @@
       "level": "Level 2",
       "meetType": "County",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89723&page=14&region=P&level=P&month=P&year=P"
-    },
-    {
-      "id": "ical-cornwall-county-championships-2027-6th-feb-2027",
-      "name": "Cornwall County Championships 2027",
-      "date": "6th Feb 2027",
-      "formattedDate": "06/02/2027",
-      "location": "Penzance Leisure Centre, St Clare St, St Clare, Penzance TR18 3QW, UK",
-      "region": "South West",
-      "course": "Unknown",
-      "level": "Unknown",
-      "meetType": "County Championship",
-      "isHoliday": false,
-      "sourceUrl": "https://calendar.google.com/calendar/ical/88e25b5e901f73664ee5db21cd9c994e899294a60bdb007aefef12875d0dbfa1@group.calendar.google.com/public/basic.ics"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89723&page=15&region=P&level=P&month=P&year=P"
     },
     {
       "id": "warwickshire-county-championships-2027-6thfeb-2027",
@@ -4396,17 +4409,30 @@
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89960&page=15&region=P&level=P&month=P&year=P"
     },
     {
-      "id": "ical-cornwall-county-championships-2027-7th-feb-2027",
-      "name": "Cornwall County Championships 2027",
-      "date": "7th Feb 2027",
+      "id": "2027-cornwall-county-championships-7thfeb-2027",
+      "name": "2027 Cornwall County Championships",
+      "date": "7thFeb 2027",
       "formattedDate": "07/02/2027",
-      "location": "Bodmin Leisure Centre, Lostwithiel Rd, Bodmin PL31 1DE, UK",
+      "location": "Bodmin",
       "region": "South West",
-      "course": "Unknown",
-      "level": "Level 3",
-      "meetType": "County Championship",
+      "course": "Short Course (25m)",
+      "level": "Level 2",
+      "meetType": "County",
       "isHoliday": false,
-      "sourceUrl": "https://calendar.google.com/calendar/ical/88e25b5e901f73664ee5db21cd9c994e899294a60bdb007aefef12875d0dbfa1@group.calendar.google.com/public/basic.ics"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=90029&page=15&region=P&level=P&month=P&year=P"
+    },
+    {
+      "id": "devon-county-championships-2027-7thfeb-2027",
+      "name": "Devon County Championships 2027",
+      "date": "7thFeb 2027",
+      "formattedDate": "07/02/2027",
+      "location": "Plymouth",
+      "region": "South West",
+      "course": "Short Course (25m)",
+      "level": "Level 2",
+      "meetType": "County",
+      "isHoliday": false,
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=90016&page=15&region=P&level=P&month=P&year=P"
     },
     {
       "id": "masters-carlisle-aquatics-masters-open-short-course-meet-2",
@@ -4591,6 +4617,19 @@
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89875&page=15&region=P&level=P&month=P&year=P"
     },
     {
+      "id": "masters-bracknell-sc-masters-31st-open-meet",
+      "name": "Bracknell SC Masters 31st Open Meet",
+      "date": "6 Mar 2027",
+      "formattedDate": "06/03/2027",
+      "location": "Bracknell",
+      "region": "South East",
+      "course": "Short Course",
+      "level": "Masters",
+      "meetType": "Masters",
+      "isHoliday": false,
+      "sourceUrl": "https://www.swimming.org/calendar/all/bracknell-sc-masters-31st-open-meet/"
+    },
+    {
       "id": "atlantis-march-madness-sprint-meet-2027-6thmar-2027",
       "name": "Atlantis March Madness Sprint Meet 2027",
       "date": "6thMar 2027",
@@ -4757,7 +4796,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89178&page=15&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89178&page=16&region=P&level=P&month=P&year=P"
     },
     {
       "id": "costa-spring-meet-2027-14thmar-2027",
@@ -4770,7 +4809,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89786&page=15&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89786&page=16&region=P&level=P&month=P&year=P"
     },
     {
       "id": "winchester-spring-qualifier-2027-19thmar-2027",
@@ -4783,7 +4822,7 @@
       "level": "Level 1",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89828&page=15&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89828&page=16&region=P&level=P&month=P&year=P"
     },
     {
       "id": "ccsc-sprints-endurance-qualifier-meet-2027-20thmar-2027",
@@ -4796,7 +4835,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89984&page=15&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89984&page=16&region=P&level=P&month=P&year=P"
     },
     {
       "id": "corby-asc-annual-lc-open-meet-2027-20thmar-2027",
@@ -4809,7 +4848,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89760&page=15&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89760&page=16&region=P&level=P&month=P&year=P"
     },
     {
       "id": "nuel-sc-national-qualifier-open-meet-2027-20thmar-2027",
@@ -4822,7 +4861,7 @@
       "level": "Level 1",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89950&page=15&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89950&page=16&region=P&level=P&month=P&year=P"
     },
     {
       "id": "trident-long-course-open-meet-20thmar-2027",
@@ -4835,7 +4874,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89849&page=15&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89849&page=16&region=P&level=P&month=P&year=P"
     },
     {
       "id": "city-of-coventry-sc-john-hughes-meet-2027-20thmar-2027",
@@ -4848,7 +4887,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89005&page=15&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89005&page=16&region=P&level=P&month=P&year=P"
     },
     {
       "id": "wolverhampton-sc-spring-open-meet-2027-20thmar-2027",
@@ -4861,7 +4900,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89018&page=15&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89018&page=16&region=P&level=P&month=P&year=P"
     },
     {
       "id": "city-of-sheffield-swim-squad-march-madness-2027-21stmar-2027",
@@ -4874,7 +4913,7 @@
       "level": "Level 3",
       "meetType": "Open Meet",
       "isHoliday": false,
-      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89623&page=15&region=P&level=P&month=P&year=P"
+      "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89623&page=16&region=P&level=P&month=P&year=P"
     },
     {
       "id": "swimwales-swim-wales-national-championships-2027-25th-28th-mar-2027",
@@ -5072,6 +5111,32 @@
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89567&page=16&region=P&level=P&month=P&year=P"
     },
     {
+      "id": "masters-sussex-masters-championships-5",
+      "name": "Sussex Masters Championships",
+      "date": "18 Apr 2027",
+      "formattedDate": "18/04/2027",
+      "location": "Burgess Hill",
+      "region": "South East",
+      "course": "Short Course",
+      "level": "Masters",
+      "meetType": "Masters",
+      "isHoliday": false,
+      "sourceUrl": "https://www.swimming.org/calendar/all/sussex-masters-championships-5/"
+    },
+    {
+      "id": "masters-yorkshire-masters-senior-age-group-championships",
+      "name": "Yorkshire Masters & Senior Age Group Championships",
+      "date": "24 Apr 2027",
+      "formattedDate": "24/04/2027",
+      "location": "Harrogate",
+      "region": "North East",
+      "course": "Short Course",
+      "level": "Masters",
+      "meetType": "Masters",
+      "isHoliday": false,
+      "sourceUrl": "https://www.swimming.org/calendar/all/yorkshire-masters-senior-age-group-championships/"
+    },
+    {
       "id": "stocksbridge-pentaqua-sc-spring-open-meet-2027-24thapr-2027",
       "name": "Stocksbridge Pentaqua SC Spring Open Meet 2027",
       "date": "24thApr 2027",
@@ -5083,6 +5148,19 @@
       "meetType": "Open Meet",
       "isHoliday": false,
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89337&page=16&region=P&level=P&month=P&year=P"
+    },
+    {
+      "id": "masters-gloucester-masters-open-meet-2027",
+      "name": "Gloucester Masters Open Meet 2027",
+      "date": "25 Apr 2027",
+      "formattedDate": "25/04/2027",
+      "location": "Bruton Way",
+      "region": "South West",
+      "course": "Short Course",
+      "level": "Masters",
+      "meetType": "Masters",
+      "isHoliday": false,
+      "sourceUrl": "https://www.swimming.org/calendar/all/gloucester-masters-open-meet-2027/"
     },
     {
       "id": "may-l1-nqt-meet-2027-city-of-coventry-swimming-cl-7thmay-2027",
@@ -5148,6 +5226,19 @@
       "meetType": "Open Meet",
       "isHoliday": false,
       "sourceUrl": "https://www.swimmingresults.org/licensed_meets/meet.php?meet=89845&page=16&region=P&level=P&month=P&year=P"
+    },
+    {
+      "id": "masters-hampshire-channel-island-county-masters-championships-26",
+      "name": "Hampshire and the Channel Island - County Masters Championships 26",
+      "date": "22 May 2027",
+      "formattedDate": "22/05/2027",
+      "location": "Fleet",
+      "region": "South East",
+      "course": "Short Course",
+      "level": "Masters",
+      "meetType": "Masters",
+      "isHoliday": false,
+      "sourceUrl": "https://www.swimming.org/calendar/all/hampshire-channel-island-county-masters-championships-26/"
     },
     {
       "id": "oxford-bulls-may-medley-22ndmay-2027",
@@ -5239,6 +5330,19 @@
       "meetType": "Meets & Competition",
       "isHoliday": true,
       "sourceUrl": "https://SwimWales.JustGo.com/workbench/public/Events?ref=1CF595B162D4274F283FE7C9DA5466382CAC704E"
+    },
+    {
+      "id": "masters-berks-south-bucks-32nd-masters-open-meet",
+      "name": "Berks & South Bucks 32nd Masters Open Meet",
+      "date": "5 Sep 2027",
+      "formattedDate": "05/09/2027",
+      "location": "Bracknell",
+      "region": "South East",
+      "course": "Short Course",
+      "level": "Masters",
+      "meetType": "Masters",
+      "isHoliday": false,
+      "sourceUrl": "https://www.swimming.org/calendar/all/berks-south-bucks-32nd-masters-open-meet/"
     },
     {
       "id": "scotswim-scottish-national-leagues-2026-october-december-2026",
