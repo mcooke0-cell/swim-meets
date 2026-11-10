@@ -1,11 +1,9 @@
-name: Update Swim Calendar
+name: Update Swim Calendar (Mothballed)
 
+# PROJECT MOTHBALLED: Scheduled background execution has been deactivated.
+# To run manually in the future, trigger via workflow_dispatch from the GitHub UI.
 on:
-  schedule:
-    # Runs at 00:00 every 2 days
-    - cron: '0 0 */2 * *'
   workflow_dispatch:
-    # Allows manual trigger from the GitHub UI
 
 permissions:
   contents: write # Needed to commit and push meets.json back to the repo
