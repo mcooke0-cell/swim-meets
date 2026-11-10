@@ -1,0 +1,6 @@
+node_modules
+dist
+.env
+meets.json.tmp
+*.log
+.DS_Store
